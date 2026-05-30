@@ -1,8 +1,8 @@
-<x-aui::popover>
-    <x-slot:trigger>
-        <x-aui::button variant="outline">Open popover</x-aui::button>
-    </x-slot:trigger>
-    <x-slot:popover-content class="w-80">
+<april:popover>
+    <slot:trigger>
+        <april:button variant="outline">Open popover</april:button>
+    </slot:trigger>
+    <slot:popover-content class="w-80">
         <div class="grid gap-4">
             <div class="space-y-2">
                 <h4 class="font-medium leading-none">Dimensions</h4>
@@ -12,22 +12,22 @@
             </div>
             <div class="grid gap-2">
                 <div class="grid grid-cols-3 items-center gap-4">
-                    <x-aui::label for="width">Width</x-aui::label>
-                    <x-aui::input id="width" value="100%" class="col-span-2 h-8" />
+                    <april:label for="width">Width</april:label>
+                    <april:input id="width" value="100%" class="col-span-2 h-8" />
                 </div>
                 <div class="grid grid-cols-3 items-center gap-4">
-                    <x-aui::label for="maxWidth">Max. width</x-aui::label>
-                    <x-aui::input id="maxWidth" value="300px" class="col-span-2 h-8" />
+                    <april:label for="maxWidth">Max. width</april:label>
+                    <april:input id="maxWidth" value="300px" class="col-span-2 h-8" />
                 </div>
                 <div class="grid grid-cols-3 items-center gap-4">
-                    <x-aui::label for="height">Height</x-aui::label>
-                    <x-aui::input id="height" value="25px" class="col-span-2 h-8" />
+                    <april:label for="height">Height</april:label>
+                    <april:input id="height" value="25px" class="col-span-2 h-8" />
                 </div>
                 <div class="grid grid-cols-3 items-center gap-4">
-                    <x-aui::label for="maxHeight">Max. height</x-aui::label>
-                    <x-aui::input id="maxHeight" value="none" class="col-span-2 h-8" />
+                    <april:label for="maxHeight">Max. height</april:label>
+                    <april:input id="maxHeight" value="none" class="col-span-2 h-8" />
                 </div>
             </div>
         </div>
-    </x-slot:popover-content>
-</x-aui::popover>
+    </slot:popover-content>
+</april:popover>

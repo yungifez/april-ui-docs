@@ -1,1 +1,1 @@
-<x-aui::badge variant="destructive">Destructive</x-aui::badge>
+<april:badge variant="destructive">Destructive</april:badge>

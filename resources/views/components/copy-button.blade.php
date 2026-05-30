@@ -1,4 +1,4 @@
-<x-aui::button x-data="{
+<april:button x-data="{
         hasCopied: false,
         copyToClipBoard(value){
             navigator.clipboard.writeText(value)
@@ -13,4 +13,4 @@
     <span class="sr-only">Copy</span>
     <i class="far fa-copy" x-show="!hasCopied"></i>
     <i class="fa fa-check" x-cloak x-show="hasCopied"></i>
-</x-aui::button>
+</april:button>

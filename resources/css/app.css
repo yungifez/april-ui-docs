@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-@import url(/vendor/yungifez/artisan-ui/dist/artisan.css);
+@import url(/vendor/yungifez/april-ui/dist/april.css);
 
 @config '../../tailwind.config.js';
 

@@ -1,1 +1,1 @@
-<x-aui::badge>Badge</x-aui::badge>
+<april:badge>Badge</april:badge>

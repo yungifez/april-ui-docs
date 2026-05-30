@@ -1,1 +1,1 @@
-<x-aui::button-link href="https://x.com/yungifez">Button</x-aui::button-link>
+<april:button-link href="https://x.com/yungifez">Button</april:button-link>

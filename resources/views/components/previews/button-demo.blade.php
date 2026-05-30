@@ -1,1 +1,1 @@
-<x-aui::button>Button</x-aui::button>
+<april:button>Button</april:button>

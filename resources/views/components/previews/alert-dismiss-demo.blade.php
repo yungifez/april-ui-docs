@@ -1,9 +1,9 @@
-<x-aui::alert dismissable>
-    <x-slot:icon>
+<april:alert dismissable>
+    <slot:icon>
         <i class="fa-solid fa-terminal h-4 w-4"></i>
-    </x-slot:icon>
-    <x-slot:title>Heads up!</x-slot:title>
-    <x-slot:description>
+    </slot:icon>
+    <slot:title>Heads up!</slot:title>
+    <slot:description>
         You can add components to your app using the cli.
-    </x-slot:description>
-</x-aui::alert>
+    </slot:description>
+</april:alert>

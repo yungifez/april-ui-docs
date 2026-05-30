@@ -1,1 +1,1 @@
-<x-aui::badge variant="secondary">Secondary</x-aui::badge>
+<april:badge variant="secondary">Secondary</april:badge>

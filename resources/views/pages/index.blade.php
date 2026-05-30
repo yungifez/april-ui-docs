@@ -9,13 +9,13 @@
             A fresh new look for blade inspired by Shadcn
         </h3>
         <div class="gap-x-2 flex">
-            <x-aui::button-link href="docs/0.x/index" size="sm" class="font-bold">
+            <april:button-link href="docs/0.x/index" size="sm" class="font-bold">
                 Get started
-            </x-aui::button-link>
-            <x-aui::button-link href="http://github.com/yungifez/artisan-ui" target="_blank" variant="outline" size="sm"
+            </april:button-link>
+            <april:button-link href="http://github.com/yungifez/april-ui" target="_blank" variant="outline" size="sm"
                 class="font-bold">
                 <i class='fa-brands fa-github mx-2'> </i>Github
-            </x-aui::button-link>
+            </april:button-link>
         </div>
     </section>
     <section class="px-3 text-center">

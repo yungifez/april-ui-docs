@@ -1,1 +1,1 @@
-<x-aui::button variant="ghost">Button</x-aui::button>
+<april:button variant="ghost">Button</april:button>

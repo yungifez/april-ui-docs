@@ -1,2 +1,2 @@
 import './bootstrap';
-import '/vendor/yungifez/artisan-ui/dist/artisan.min.js'
+import '/vendor/yungifez/april-ui/dist/april.min.js'

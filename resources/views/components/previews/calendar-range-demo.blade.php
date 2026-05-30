@@ -1,5 +1,5 @@
 <div x-data="{value: []}" class="max-w-72">
-    <x-aui::calendar class="rounded-md border" mode="range" :selected="['from' => now(), 'to' => now()->addDays(14)]"
+    <april:calendar class="rounded-md border" mode="range" :selected="['from' => now(), 'to' => now()->addDays(14)]"
         @change="
             value = []
             value['from'] = $event.detail.value.from

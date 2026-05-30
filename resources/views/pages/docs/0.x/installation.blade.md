@@ -35,7 +35,7 @@ To set up the project:
     <li>
         Install the package using Composer
         <x-code-block-wrapper language="bash">
-            composer require yungifez/artisan-ui
+            composer require yungifez/april-ui
         </x-code-block-wrapper>
     </li>
     <li>
@@ -43,7 +43,7 @@ To set up the project:
         <x-code-block-wrapper title="tailwind.config.js" language="js{2-4}{2-4}">
 export default {
   presets: [
-    require('./vendor/yungifez/artisan-ui/tailwind.config.js'),
+    require('./vendor/yungifez/april-ui/tailwind.config.js'),
   ]
 }
         </x-code-block-wrapper>
@@ -51,18 +51,18 @@ export default {
     <li>
     In your CSS file, import the project's CSS file
     <x-code-block-wrapper title="app.css" language="css">
-        @import url(/vendor/yungifez/artisan-ui/dist/artisan.css);
+        @import url(/vendor/yungifez/april-ui/dist/april.css);
     </x-code-block-wrapper>
     </li>
     <li>
     In your JS file, import the project's Javascript file
     <x-code-block-wrapper title="app.js" language="js">
-        import '/vendor/yungifez/artisan-ui/dist/artisan.js'
+        import '/vendor/yungifez/april-ui/dist/april.js'
     </x-code-block-wrapper>
     Or you could use the blade directive
     <x-code-block-wrapper title="layout.blade.php" language="js">
         @verbatim
-            @artisanScripts
+            @aprilScripts
         @endverbatim
     </x-code-block-wrapper>
     </li>
@@ -70,7 +70,7 @@ export default {
     Test the setup was successful
     <x-code-block-wrapper title="index.blade.php" language="blade">
         @verbatim
-        <x-aui::button>Hello There Youtube!</x-aui::button>
+        <april:button>Hello There Youtube!</april:button>
         @endverbatim
     </x-code-block-wrapper>
     </li>

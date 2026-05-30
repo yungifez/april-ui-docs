@@ -19,7 +19,7 @@ services:
             IGNITION_LOCAL_SITES_PATH: '${PWD}'
         volumes:
             - '.:/var/www/html'
-            - '../artisan-ui:/var/www/artisan-ui'
+            - '../april-ui:/var/www/april-ui'
         networks:
             - sail
         depends_on: {  }

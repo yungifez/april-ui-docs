@@ -1,1 +1,1 @@
-<x-aui::date-picker class="w-96" mode="single" />
+<april:date-picker class="w-96" mode="single" />

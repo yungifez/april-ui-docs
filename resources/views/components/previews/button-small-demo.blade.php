@@ -1,1 +1,1 @@
-<x-aui::button size="sm">Button</x-aui::button>
+<april:button size="sm">Button</april:button>

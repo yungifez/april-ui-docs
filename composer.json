@@ -30,7 +30,7 @@
         "league/commonmark": "^2.4",
         "livewire/livewire": "^3.4",
         "snellingio/folio-markdown": "dev-main",
-        "yungifez/artisan-ui": "dev-main"
+        "yungifez/april-ui": "dev-main"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

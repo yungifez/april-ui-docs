@@ -57,3 +57,6 @@ The button component comes in multiple sizes
 ---
 ### Large
 <x-component-preview component="previews.button-large-demo"></x-component-preview>
+
+
+<x-publish-command :views="['button', 'button-link']"/>

@@ -13,3 +13,5 @@ When in `range` mode, the names of the `for`/`to` hidden attributes is gotten by
 You can override the default names of the `from`, and 'to' attribute by including the `from-name` and `to-name` respectively
 
 </x-callout>
+
+<x-publish-command view="date-picker"/>

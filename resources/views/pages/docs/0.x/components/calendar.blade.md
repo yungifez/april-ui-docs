@@ -102,3 +102,6 @@ To disable a range of days, an array with a `dayOfWeek` key and an int value fro
 You can pass an array of these rules to disable dates based on multiple rules
 
 <x-component-preview component="previews.calendar-disabled-multiple-demo"></x-component-preview>
+
+
+<x-publish-command view="calendar"/>

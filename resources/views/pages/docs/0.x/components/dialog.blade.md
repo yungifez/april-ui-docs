@@ -14,3 +14,5 @@ description: A window overlaid on either the primary window or another dialog wi
 To avoid Z-Index and other bizarre CSS issues (looking at you `backdrop-filter:blur`), the `dialog` component supports x-teleport provided by Alpine, you however do not need to wrap the dialog in a `template` element.
 
 <x-component-preview component="previews.dialog-teleport-demo"></x-component-preview>
+
+<x-publish-command :views="['dialog', 'dialog-header', 'dialog-footer']"/>

@@ -22,3 +22,5 @@ The badge component comes in multiple variants
 ---
 ### Destructive
 <x-component-preview component="previews.badge-destructive-demo"></x-component-preview>
+
+<x-publish-command view="badge"/>

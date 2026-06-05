@@ -20,3 +20,5 @@ You can compose `breadcrumb-item` with a `dropdown-menu` to create a dropdown in
 
 We provide a `breadcrumb-elipsis` component to show a collapsed state when the breadcrumb is too long.
 <x-component-preview component="previews.breadcrumb-collapsed-demo"></x-component-preview>
+
+<x-publish-command :views="['breadcrumb', 'breadcrumb-item', 'breadcrumb-link', 'breadcrumb-seperator', 'breadcrumb-item', 'breadcrumb-page', 'breadcrumb-elipses']"/>

@@ -11,3 +11,6 @@ description: Fast, composable, styled command menu.
 
 ## Dialog 
 <x-component-preview component="previews.command-dialog-demo"></x-component-preview>
+
+
+<x-publish-command :views="['command', 'command-group', 'command-item', 'command-seperator', 'command-shortcut', 'command-dialog']"/>

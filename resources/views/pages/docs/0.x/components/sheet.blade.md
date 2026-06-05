@@ -11,3 +11,9 @@ description:  Extends the Dialog component to display content that complements t
 Use the side attribute in the `sheet` slot to indicate the edge of the screen where the component will appear. The values can be top, right, bottom or left.
 
 <x-component-preview component="previews.sheet-side-demo"></x-component-preview>
+
+<x-publish-command :views="[
+    'sheet',
+    'sheet-header',
+    'sheet-footer'
+]" />

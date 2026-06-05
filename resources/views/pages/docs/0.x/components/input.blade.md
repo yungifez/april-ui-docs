@@ -25,3 +25,8 @@ description: Displays a form input field or a component that looks like an input
 ## With button component
 
 <x-component-preview component="previews.input-with-button-demo"></x-component-preview>
+
+<x-publish-command :views="[
+    'input',
+    'input-group'
+]" />

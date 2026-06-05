@@ -16,3 +16,5 @@ The component also supports multiple select
 You can optionally use the native brwoser select
 
 <x-component-preview component="previews.native-select-demo"></x-component-preview>
+
+<x-publish-command :views="[ 'select', 'native-select' ]" />

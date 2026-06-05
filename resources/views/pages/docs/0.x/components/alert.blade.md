@@ -22,3 +22,5 @@ Additionally, an alert can be dismissed after a timeout
 You could also decide to start the timeout on intersect
 
 <x-component-preview component="previews.alert-dismiss-on-intersect-timeout-demo"></x-component-preview>
+
+<x-publish-command view="alert"/>

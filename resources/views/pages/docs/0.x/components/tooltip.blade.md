@@ -5,3 +5,5 @@ description: A popup that displays information related to an element when the el
 ---
 
 <x-component-preview component="previews.tooltip-demo"></x-component-preview>
+
+<x-publish-command view="tooltip" />

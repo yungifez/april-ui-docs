@@ -2,6 +2,10 @@
 
 @import "../../vendor/yungifez/april-ui/resources/css/april.css";
 
+/* The docs previews ship with the package. Tailwind skips vendor by default,
+   so point it at them or the preview classes never get generated. */
+@source "../../vendor/yungifez/april-ui/docs/previews";
+
 @utility component-preview {
     & h3 {
         @apply scroll-m-0 text-base font-normal tracking-normal mt-0;

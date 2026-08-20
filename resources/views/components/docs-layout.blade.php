@@ -1,6 +1,6 @@
 <x-layout :title="$title ?? null">
     <div
-        class="md:container px-3 md:px-10 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10">
+        class="md:container mx-auto px-3 md:px-10 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10">
         <aside class="fixed top-14 hidden w-full shrink-0 md:sticky md:block overflow-hidden beautify-scrollbar">
             <x-menu />
         </aside>

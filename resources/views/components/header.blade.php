@@ -1,5 +1,5 @@
 <header class="sticky top-0 z-10 w-full backdrop-blur-sm supports-backdrop-filter:bg-background/60 bg-background/95">
-    <div class="lg:px-10 flex h-14 max-w-(--breakpoint-2xl) items-center">
+    <div class="lg:px-10 flex h-14 max-w-(--breakpoint-2xl) mx-auto items-center">
         <div class="mr-4 hidden md:flex">
             <a href="{{route('home')}}"
                 class="mr-6 flex no-underline items-center space-x-2 font-bold">{{config("app.name")}}</a>

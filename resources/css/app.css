@@ -1,7 +1,6 @@
 @import 'tailwindcss';
-@import url(/vendor/yungifez/april-ui/dist/april.css);
 
-@config '../../tailwind.config.js';
+@import "../../vendor/yungifez/april-ui/resources/css/april.css";
 
 @utility component-preview {
     & h3 {
@@ -143,11 +142,11 @@
     }
 
     th {
-        @apply border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right
+        @apply border px-4 py-2 text-left font-bold [[align=center]]:text-center [[align=right]]:text-right
     }
 
     td {
-        @apply border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right
+        @apply border px-4 py-2 text-left [[align=center]]:text-center [[align=right]]:text-right
     }
 
 }

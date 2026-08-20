@@ -1,8 +1,16 @@
 ```blade +parse
 @if ($attributes->has('component'))
 @php
-$code = file_get_contents(base_path()."/resources/views/components/".str_replace('.', '/',
-$attributes->get('component')).'.blade.php');
+// Previews ship with the april-ui package. A preview that only makes sense for
+// this site can still live in resources/views/components.
+$relative = str_replace('.', '/', $attributes->get('component')).'.blade.php';
+
+$path = collect([
+april_docs_path($relative),
+base_path('resources/views/components/'.$relative),
+])->first(fn ($candidate) => file_exists($candidate));
+
+$code = $path ? file_get_contents($path) : '';
 @endphp
 @endif
 <april:tabs class="relative my-3 mr-auto w-full" defaultValue="preview">

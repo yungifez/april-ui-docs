@@ -11,14 +11,6 @@
         {
             "type": "vcs",
             "url": "https://github.com/yungifez/folio-markdown"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/yungifez/tailwind-merge-laravel.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/yungifez/tailwind-merge-php.git"
         }
     ],
     "require": {
@@ -47,7 +39,10 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        }
+        },
+        "files": [
+            "app/helpers.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
@@ -81,7 +76,10 @@
     },
     "config": {
         "optimize-autoloader": true,
-        "preferred-install": "dist",
+        "preferred-install": {
+            "yungifez/april-ui": "source",
+            "*": "dist"
+        },
         "sort-packages": true,
         "allow-plugins": {
             "pestphp/pest-plugin": true,

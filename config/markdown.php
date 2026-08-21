@@ -5,18 +5,19 @@ use App\Extensions\CommonMark\CodeRendererExtension;
 return [
     'code_highlighting' => [
         /*
-         * To highlight code, we'll use Shiki under the hood. Make sure it's installed.
+         * Code highlighting is handled by Torchlight below. Keeping Spatie's
+         * highlighter disabled prevents MarkdownRenderer from loading Shiki.
          *
-         * More info: https://spatie.be/docs/laravel-markdown/v1/installation-setup
+         * Set TORCHLIGHT_TOKEN to enable Torchlight in the current environment.
          */
-        'enabled' => true,
+        'enabled' => false,
 
         /*
-         * The name of or path to a Shiki theme
-         *
-         * More info: https://github.com/shikijs/shiki/blob/main/docs/themes.md
+         * Kept for compatibility with the x-markdown component API. Torchlight
+         * receives its theme from config/torchlight.php or a fence's theme:
+         * info word.
          */
-        'theme' => 'github-light',
+        'theme' => 'github-dark',
     ],
 
     /*
@@ -73,8 +74,13 @@ return [
      * More info: https://commonmark.thephpleague.com/2.4/extensions/overview/
      */
     'extensions' => [
-        CodeRendererExtension::class,
-        \League\CommonMark\Extension\Table\TableExtension::class,
+        ...array_values(array_filter([
+            env('TORCHLIGHT_TOKEN')
+                ? \Torchlight\Commonmark\V2\TorchlightExtension::class
+                : null,
+            CodeRendererExtension::class,
+            \League\CommonMark\Extension\Table\TableExtension::class,
+        ])),
     ],
 
     /*

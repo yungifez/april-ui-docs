@@ -48,20 +48,17 @@ html[data-april-density="compact"] [data-slot="card-footer"] {
     }
 }
 
-@utility shiki {
+@utility torchlight {
     @apply p-4 pt-8 rounded-lg border overflow-scroll beautify-scrollbar w-full h-full bg-zinc-900 dark:bg-zinc-950;
 
-    & > code {
+    & > .line {
         @apply bg-transparent flex flex-col w-fit min-w-full;
-    }
-
-    & > code > .line {
         @apply grow inline-block py-1 tracking-tight;
     }
 }
 
 @utility line {
-    .shiki > code > & {
+    .torchlight > & {
         @apply grow inline-block py-1 tracking-tight;
     }
 
@@ -73,11 +70,11 @@ html[data-april-density="compact"] [data-slot="card-footer"] {
         @apply blur-none;
     }
 
-    .highlighted.focus > code > &:not(.line.focus) {
+    .highlighted.focus > .line:not(.line.focus) {
         @apply blur-xs transition duration-200;
     }
 
-    .highlighted.focus:hover code > &:not(.line.focus) {
+    .highlighted.focus:hover > .line:not(.line.focus) {
         @apply blur-none;
     }
 }
@@ -93,21 +90,21 @@ html[data-april-density="compact"] [data-slot="card-footer"] {
         @apply blur-none;
     }
 
-    &.highlighted > code > .line:not(.line.focus) {
+    &.highlighted > .line:not(.line.focus) {
         @apply blur-xs transition duration-200;
     }
 
-    &.highlighted:hover code > .line:not(.line.focus) {
+    &.highlighted:hover > .line:not(.line.focus) {
         @apply blur-none;
     }
 }
 
 @utility highlighted {
-    &.focus > code > .line:not(.line.focus) {
+    &.focus > .line:not(.line.focus) {
         @apply blur-xs transition duration-200;
     }
 
-    &.focus:hover code > .line:not(.line.focus) {
+    &.focus:hover > .line:not(.line.focus) {
         @apply blur-none;
     }
 }

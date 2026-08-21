@@ -19,6 +19,7 @@
         "mallardduck/blade-lucide-icons": "^2.0",
         "spatie/laravel-markdown": "^2.8",
         "spatie/yaml-front-matter": "^2.1",
+        "torchlight/torchlight-commonmark": "^0.6",
         "yungifez/april-ui": "dev-main"
     },
     "require-dev": {

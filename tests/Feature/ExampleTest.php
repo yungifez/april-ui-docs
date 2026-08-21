@@ -53,6 +53,7 @@ class ExampleTest extends TestCase
             ->assertSee('sessionStorage', false)
             ->assertSee('april-ui-customization', false)
             ->assertSee('livewire:navigated', false)
+            ->assertSee('torchlight.dev', false)
             ->assertSee('System');
     }
 }

@@ -216,6 +216,13 @@
             document.documentElement.classList.toggle('dark', dark)
         }
 
+        window.setAprilTheme = function (theme) {
+            sessionStorage.removeItem('april-ui-customization')
+            localStorage.setItem('theme', theme)
+            window.applyAprilCustomization()
+            window.determineColorMode()
+        }
+
         window.syncAprilDocsNavigation = function () {
             const currentPath = window.location.pathname.replace(/\/$/, '') || '/'
 

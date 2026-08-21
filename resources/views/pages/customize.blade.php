@@ -11,9 +11,8 @@
 
             if (saved) {
                 Object.assign(this, saved)
+                window.applyAprilCustomization()
             }
-
-            this.persist()
         },
         persist() {
             sessionStorage.setItem('april-ui-customization', JSON.stringify({

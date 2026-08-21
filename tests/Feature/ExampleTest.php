@@ -49,7 +49,7 @@ class ExampleTest extends TestCase
         $response
             ->assertOk()
             ->assertSee('determineColorMode', false)
-            ->assertSee('localStorage.theme', false)
+            ->assertSee('localStorage.setItem', false)
             ->assertSee('sessionStorage', false)
             ->assertSee('april-ui-customization', false)
             ->assertSee('livewire:navigated', false)

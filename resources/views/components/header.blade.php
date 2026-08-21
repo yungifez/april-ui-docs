@@ -60,15 +60,15 @@
                             @endforeach
                         </april:command-group>
                         <april:command-group heading="Theme">
-                            <april:command-item x-on:click="localStorage.theme = 'light'; determineColorMode()">
+                            <april:command-item x-on:click="setAprilTheme('light')">
                                 <x-lucide-sun class="mr-2 h-4 w-4" />
                                 <span>Light</span>
                             </april:command-item>
-                            <april:command-item x-on:click="localStorage.theme = 'dark'; determineColorMode()">
+                            <april:command-item x-on:click="setAprilTheme('dark')">
                                 <x-lucide-moon class="mr-2 h-4 w-4" />
                                 <span>Dark</span>
                             </april:command-item>
-                            <april:command-item x-on:click="localStorage.theme = 'system'; determineColorMode()">
+                            <april:command-item x-on:click="setAprilTheme('system')">
                                 <x-lucide-monitor class="mr-2 h-4 w-4" />
                                 <span>System</span>
                             </april:command-item>
@@ -102,19 +102,19 @@
                     <slot:content class="w-40">
                         <april:dropdown-menu-item aria-label="Select light theme" size="sm" type="button"
                             class="w-full focus-visible:outline-hidden"
-                            x-on:click="localStorage.theme = 'light'; determineColorMode()">
+                            x-on:click="setAprilTheme('light')">
                             <x-lucide-sun class="mr-2 h-4 w-4" />
                             <p class="text-sm">Light</p>
                         </april:dropdown-menu-item>
                         <april:dropdown-menu-item aria-label="Select dark theme" size="sm" type="button"
                             class="w-full focus-visible:outline-hidden"
-                            x-on:click="localStorage.theme = 'dark'; determineColorMode()">
+                            x-on:click="setAprilTheme('dark')">
                             <x-lucide-moon class="mr-2 h-4 w-4" />
                             <p class="text-sm">Dark</p>
                         </april:dropdown-menu-item>
                         <april:dropdown-menu-item aria-label="Set theme based on system preference" size="sm"
                             type="button" class="w-full focus-visible:outline-hidden"
-                            x-on:click="localStorage.theme = 'system'; determineColorMode()">
+                            x-on:click="setAprilTheme('system')">
                             <x-lucide-monitor class="mr-2 h-4 w-4" />
                             <p class="text-sm">System</p>
                         </april:dropdown-menu-item>

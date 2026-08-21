@@ -7,12 +7,6 @@
         "framework"
     ],
     "license": "MIT",
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/yungifez/folio-markdown"
-        }
-    ],
     "require": {
         "php": "^8.2",
         "barryvdh/laravel-debugbar": "^3.13",
@@ -22,11 +16,14 @@
         "laravel/tinker": "^2.9",
         "league/commonmark": "^2.4",
         "livewire/livewire": "^3.4",
-        "snellingio/folio-markdown": "dev-main",
+        "mallardduck/blade-lucide-icons": "^2.0",
+        "spatie/laravel-markdown": "^2.8",
+        "spatie/yaml-front-matter": "^2.1",
         "yungifez/april-ui": "dev-main"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
+        "laravel/boost": "^2.5",
         "laravel/pint": "^1.13",
         "laravel/sail": "^1.26",
         "mockery/mockery": "^1.6",

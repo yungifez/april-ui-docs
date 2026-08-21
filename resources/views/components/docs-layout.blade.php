@@ -1,10 +1,13 @@
 <x-layout :title="$title ?? null">
-    <div
-        class="md:container mx-auto px-3 md:px-10 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10">
-        <aside class="fixed top-14 hidden w-full shrink-0 md:sticky md:block overflow-hidden beautify-scrollbar">
-            <x-menu />
-        </aside>
-        <main class="relative py-6 lg:gap-10 lg:py-8 xl:grid">
+    <april:sidebar-layout class="items-start px-3">
+        <april:sidebar collapsible="none"
+            class="hidden h-[calc(100vh-16px)] w-full bg-background shrink-0 lg:sticky lg:top-0 lg:flex lg:w-fit lg:min-w-[270px] max-h-[calc(100vh-16px)]">
+            <slot:content x-persist="menu" class="beautify-scrollbar" wire:scroll>
+                <x-menu />
+            </slot:content>
+        </april:sidebar>
+
+        <april:sidebar-inset class="relative docs-layout lg:mx-auto px-2 lg:max-w-3xl py-6 lg:gap-10 lg:py-8">
             <div class="space-y-2">
                 @isset($title)
                 <h1 class="scroll-m-20 text-4xl font-bold tracking-tight">
@@ -18,6 +21,6 @@
                 @endisset
             </div>
             {!!$slot!!}
-        </main>
-    </div>
+        </april:sidebar-inset>
+    </april:sidebar-layout>
 </x-layout>

@@ -19,6 +19,8 @@ services:
             IGNITION_LOCAL_SITES_PATH: '${PWD}'
         volumes:
             - '.:/var/www/html'
+            # The docs content lives here. april_docs_path() finds it as the
+            # checkout next to the project.
             - '../april-ui:/var/www/april-ui'
         networks:
             - sail

@@ -1,10 +1,28 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @import "../../vendor/yungifez/april-ui/resources/css/april.css";
+
+html[data-april-font="serif"] body {
+    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+html[data-april-font="mono"] body {
+    font-family:
+        ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
+}
+
+html[data-april-density="compact"] [data-slot="card-header"],
+html[data-april-density="compact"] [data-slot="card-content"],
+html[data-april-density="compact"] [data-slot="card-footer"] {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
 
 /* The docs previews ship with the package. Tailwind skips vendor by default,
    so point it at them or the preview classes never get generated. */
 @source "../../vendor/yungifez/april-ui/docs/previews";
+@source "../../april-ui/docs/previews";
 
 @utility component-preview {
     & h3 {
@@ -18,22 +36,32 @@
     & a {
         @apply no-underline;
     }
+
+    /* Keep fixed panels inside component previews instead of the browser viewport. */
+    & [data-slot="sidebar-wrapper"] {
+        transform: translateZ(0);
+        min-height: 620px;
+    }
+
+    & [data-slot="sidebar-wrapper"] [data-slot="sidebar-container"] {
+        height: 100%;
+    }
 }
 
 @utility shiki {
     @apply p-4 pt-8 rounded-lg border overflow-scroll beautify-scrollbar w-full h-full bg-zinc-900 dark:bg-zinc-950;
 
-    &>code {
+    & > code {
         @apply bg-transparent flex flex-col w-fit min-w-full;
     }
 
-    &>code>.line {
+    & > code > .line {
         @apply grow inline-block py-1 tracking-tight;
     }
 }
 
 @utility line {
-    .shiki>code>& {
+    .shiki > code > & {
         @apply grow inline-block py-1 tracking-tight;
     }
 
@@ -45,11 +73,11 @@
         @apply blur-none;
     }
 
-    .highlighted.focus>code>&:not(.line.focus) {
+    .highlighted.focus > code > &:not(.line.focus) {
         @apply blur-xs transition duration-200;
     }
 
-    .highlighted.focus:hover code>&:not(.line.focus) {
+    .highlighted.focus:hover code > &:not(.line.focus) {
         @apply blur-none;
     }
 }
@@ -65,21 +93,21 @@
         @apply blur-none;
     }
 
-    &.highlighted>code>.line:not(.line.focus) {
+    &.highlighted > code > .line:not(.line.focus) {
         @apply blur-xs transition duration-200;
     }
 
-    &.highlighted:hover code>.line:not(.line.focus) {
+    &.highlighted:hover code > .line:not(.line.focus) {
         @apply blur-none;
     }
 }
 
 @utility highlighted {
-    &.focus>code>.line:not(.line.focus) {
+    &.focus > code > .line:not(.line.focus) {
         @apply blur-xs transition duration-200;
     }
 
-    &.focus:hover code>.line:not(.line.focus) {
+    &.focus:hover code > .line:not(.line.focus) {
         @apply blur-none;
     }
 }
@@ -100,57 +128,56 @@
     }
 }
 
-@layer base {
-    code {
-        @apply rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm
+@utility docs-layout {
+    & code {
+        @apply rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm;
     }
 
-    h1 {
-        @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl
+    & h1 {
+        @apply scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-4xl;
     }
 
-    h2 {
-        @apply mt-12 scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0
+    & h2 {
+        @apply mt-8 scroll-m-20 border-b pb-2 text-xl font-semibold tracking-tight first:mt-0;
     }
 
-    h3 {
-        @apply scroll-m-20 text-2xl font-semibold tracking-tight mt-8
+    & h3 {
+        @apply scroll-m-20 text-lg font-semibold tracking-tight mt-4;
     }
 
-    p {
-        @apply leading-7 not-first:mt-6
+    & p {
+        @apply leading-7 not-first:mt-4;
     }
 
-    a {
-        @apply underline underline-offset-2
+    & a {
+        @apply underline underline-offset-2;
     }
 
-    blockquote {
-        @apply mt-6 border-l-2 pl-6 italic
+    & blockquote {
+        @apply mt-6 border-l-2 pl-6 italic;
     }
 
-    ul {
-        @apply my-6 ml-6 list-disc [&>li]:mt-2
+    & ul:not([data-sidebar]) {
+        @apply my-6 ml-6 list-disc [&>li]:mt-2;
     }
 
-    hr {
+    & hr {
         margin: 2rem 0 1rem 0;
     }
 
-    table {
-        @apply w-full
+    & table {
+        @apply w-full;
     }
 
-    tr {
-        @apply m-0 border-t p-0
+    & tr {
+        @apply m-0 border-t p-0;
     }
 
-    th {
-        @apply border px-4 py-2 text-left font-bold [[align=center]]:text-center [[align=right]]:text-right
+    & th {
+        @apply border px-4 py-2 text-left font-bold [[align=center]]:text-center [[align=right]]:text-right;
     }
 
-    td {
-        @apply border px-4 py-2 text-left [[align=center]]:text-center [[align=right]]:text-right
+    & td {
+        @apply border px-4 py-2 text-left [[align=center]]:text-center [[align=right]]:text-right;
     }
-
 }

@@ -11,6 +11,6 @@
     dark:hover:text-zinc-50'])}}
     @click="copyToClipBoard($el.getAttribute('value'))" value="{{$attributes->Get('value')}}">
     <span class="sr-only">Copy</span>
-    <i class="far fa-copy" x-show="!hasCopied"></i>
-    <i class="fa fa-check" x-cloak x-show="hasCopied"></i>
+        <x-lucide-copy class="h-4 w-4" x-show="!hasCopied" />
+        <x-lucide-check class="h-4 w-4" x-cloak x-show="hasCopied" />
 </april:button>

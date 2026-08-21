@@ -62,7 +62,7 @@ html[data-april-density="compact"] [data-slot="card-footer"] {
     }
 
     .docs-layout code.torchlight {
-        @apply bg-zinc-900! dark:bg-zinc-950! flex flex-col overflow-auto beautify-scrollbar min-w-full h-full min-h-0 max-h-full ;
+        @apply bg-zinc-900! dark:bg-zinc-950! flex flex-col overflow-auto beautify-scrollbar min-w-full h-fit min-h-0 max-h-full ;
     }
 
     .torchlight > .line {

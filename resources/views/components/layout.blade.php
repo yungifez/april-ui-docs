@@ -19,16 +19,6 @@
     <meta name="twitter:url" content="/">
     <meta name="twitter:title" content="{{$title}}">
     <meta name="twitter:image" content="/image.jpg">
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="/favicon.png?width=76" />
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-    <link rel="canonical" href="">
-    @vite('resources/css/app.css')
-    @stack('head-scripts')
-    <livewire:styles />
-</head>
-
-<body class="scroll-smooth">
     <script>
         const createAprilPalette = (name, values) => {
             const light = {
@@ -267,6 +257,17 @@
             window.aprilCustomizationListenersBound = true
         }
     </script>
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="/favicon.png?width=76" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <link rel="canonical" href="">
+    @vite('resources/css/app.css')
+    @stack('head-scripts')
+    <livewire:styles />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body class="scroll-smooth">
     <x-header />
     <main class="max-w-screen min-h-screen">
         {!!$slot!!}

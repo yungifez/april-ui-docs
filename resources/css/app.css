@@ -124,7 +124,7 @@ html[data-april-density="compact"] [data-slot="card-footer"] {
     }
 
     &::-webkit-scrollbar-thumb {
-        @apply bg-muted dark:bg-muted rounded;
+        @apply bg-muted rounded;
     }
 }
 

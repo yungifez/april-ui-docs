@@ -1,12 +1,42 @@
-<div x-persist="menu" class="relative beautify-scrollbar overflow-y-scroll md:max-h-[calc(100vh-3.5rem)] pr-6 py-2"
-    wire:scroll>
-    @foreach ($links as $link)
-    @if (isset($link['type']) && $link['type'] == 'header')
-    <h4 class="mb-3 mt-6 rounded-md text-sm font-semibold">{{$link['text']}}</h4>
-    @else
-    <x-link wire:current.exact="text-foreground! !hover:text-foreground"
-        class=" mb-3 block text-sm capitalize text-muted-foreground hover:text-foreground/80"
-        href="{{url($link['href'])}}">{{$link['text']}}</x-link>
+@php
+$groups = [];
+
+foreach ($links as $link) {
+if (($link['type'] ?? null) === 'header') {
+$groups[] = ['label' => $link['text'], 'links' => []];
+
+continue;
+}
+
+if (! isset($link['href'])) {
+continue;
+}
+
+if ($groups === []) {
+$groups[] = ['label' => null, 'links' => []];
+}
+
+$groups[array_key_last($groups)]['links'][] = $link;
+}
+@endphp
+
+@foreach ($groups as $group)
+<april:sidebar-group>
+    @if ($group['label'])
+    <april:sidebar-group-label>{{$group['label']}}</april:sidebar-group-label>
     @endif
-    @endforeach
-</div>
+    <april:sidebar-group-content>
+        <april:sidebar-menu>
+            @foreach ($group['links'] as $link)
+            <april:sidebar-menu-item>
+                <april:sidebar-menu-button-link class="no-underline" href="{{url($link['href'])}}" wire:navigate
+                    wire:current.exact="bg-sidebar-accent font-medium text-sidebar-accent-foreground"
+                    :active="rtrim(request()->url(), '/') === rtrim(url($link['href']), '/')">
+                    <span class="capitalize">{{$link['text']}}</span>
+                </april:sidebar-menu-button-link>
+            </april:sidebar-menu-item>
+            @endforeach
+        </april:sidebar-menu>
+    </april:sidebar-group-content>
+</april:sidebar-group>
+@endforeach

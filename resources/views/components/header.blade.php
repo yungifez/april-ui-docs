@@ -6,21 +6,15 @@
             <nav class="flex items-center gap-4 text-sm lg:gap-6">
                 <x-link href="{{'/docs/' . config('aui.latest-version')}}">Docs</x-link>
                 <x-link href="{{'/docs/' . config('aui.latest-version').'/components/accordion'}}">Components</x-link>
+                <x-link href="/examples">Examples</x-link>
+                <x-link href="{{route('customize')}}">Customize</x-link>
             </nav>
         </div>
         <div x-data="{searchOpened: false}" class="flex flex-1 items-center justify-between space-x-2 md:justify-end">
             <april:sheet dismissable x-teleport="body">
                 <slot:trigger>
                     <april:button aria-label="Open Menu" class="justify-center md:hidden" size="icon" variant="ghost">
-                        <svg stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-                            class="h-5 w-5">
-                            <path d="M3 5H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                stroke-linejoin="round"></path>
-                            <path d="M3 12H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                stroke-linejoin="round"></path>
-                            <path d="M3 19H21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                stroke-linejoin="round"></path>
-                        </svg>
+                        <x-lucide-menu class="h-5 w-5" />
                     </april:button>
                 </slot:trigger>
                 <slot:content side="left" class="overflow-scroll beautify-scrollbar">
@@ -30,6 +24,8 @@
                         href="{{'/docs/' . config('aui.latest-version')}}">Docs</x-link>
                     <x-link class="block hover:no-underline"
                         href="{{'/docs/' . config('aui.latest-version').'/components/accordion'}}">Components</x-link>
+                    <x-link class="block hover:no-underline" href="/examples">Examples</x-link>
+                    <x-link class="block hover:no-underline" href="{{route('customize')}}">Customize</x-link>
                     <x-menu />
                     <april:sheet-footer />
                 </slot:content>
@@ -57,7 +53,7 @@
                             @foreach ($links as $link)
                             @isset($link['href'])
                             <april:command-item @click="Alpine.navigate('{{$link['href']}}')">
-                                <i class="fa-regular fa-file"></i>
+                                <x-lucide-file class="mr-2 h-4 w-4" />
                                 <span>{{$link['text']}}</span>
                             </april:command-item>
                             @endisset
@@ -65,15 +61,15 @@
                         </april:command-group>
                         <april:command-group heading="Theme">
                             <april:command-item x-on:click="localStorage.theme = 'light'; determineColorMode()">
-                                <i class="fa-regular fa-sun"></i>
+                                <x-lucide-sun class="mr-2 h-4 w-4" />
                                 <span>Light</span>
                             </april:command-item>
                             <april:command-item x-on:click="localStorage.theme = 'dark'; determineColorMode()">
-                                <i class="fa-regular fa-moon"></i>
+                                <x-lucide-moon class="mr-2 h-4 w-4" />
                                 <span>Dark</span>
                             </april:command-item>
-                            <april:command-item x-on:click="localStorage.removeItem('theme'); determineColorMode()">
-                                <i class="fas fa-laptop"></i>
+                            <april:command-item x-on:click="localStorage.theme = 'system'; determineColorMode()">
+                                <x-lucide-monitor class="mr-2 h-4 w-4" />
                                 <span>System</span>
                             </april:command-item>
                         </april:command-group>
@@ -84,14 +80,14 @@
                 <a target="_blank" rel="noreferrer" href="https://github.com/yungifez/april-ui">
                     <div
                         class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 py-2 w-9 px-0">
-                        <i class="fa-brands fa-github"></i>
+                        <x-lucide-github class="h-4 w-4" />
                         <span class="sr-only">GitHub</span>
                     </div>
                 </a>
                 <a target="_blank" rel="noreferrer" href="http://x.com/yungifez">
                     <div
                         class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 py-2 w-9 px-0">
-                        <i class="fa-brands fa-x-twitter"></i>
+                        <x-lucide-at-sign class="h-4 w-4" />
                         <span class="sr-only">Twitter</span>
                     </div>
                 </a>
@@ -99,24 +95,27 @@
                     <slot:trigger>
                         <april:button aria-label="open theme selection" class="justify-center" size="icon"
                             variant="ghost" type="button">
-                            <i class="dark:hidden fa fa-sun"></i>
-                            <i class="hidden dark:block fas fa-moon"></i>
+                            <x-lucide-sun class="h-4 w-4 dark:hidden" />
+                            <x-lucide-moon class="hidden h-4 w-4 dark:block" />
                         </april:button>
                     </slot:trigger>
                     <slot:content class="w-40">
                         <april:dropdown-menu-item aria-label="Select light theme" size="sm" type="button"
                             class="w-full focus-visible:outline-hidden"
                             x-on:click="localStorage.theme = 'light'; determineColorMode()">
+                            <x-lucide-sun class="mr-2 h-4 w-4" />
                             <p class="text-sm">Light</p>
                         </april:dropdown-menu-item>
                         <april:dropdown-menu-item aria-label="Select dark theme" size="sm" type="button"
                             class="w-full focus-visible:outline-hidden"
                             x-on:click="localStorage.theme = 'dark'; determineColorMode()">
+                            <x-lucide-moon class="mr-2 h-4 w-4" />
                             <p class="text-sm">Dark</p>
                         </april:dropdown-menu-item>
                         <april:dropdown-menu-item aria-label="Set theme based on system preference" size="sm"
                             type="button" class="w-full focus-visible:outline-hidden"
-                            x-on:click="localStorage.removeItem('theme'); determineColorMode()">
+                            x-on:click="localStorage.theme = 'system'; determineColorMode()">
+                            <x-lucide-monitor class="mr-2 h-4 w-4" />
                             <p class="text-sm">System</p>
                         </april:dropdown-menu-item>
                     </slot:content>

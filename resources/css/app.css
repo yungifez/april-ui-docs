@@ -49,8 +49,16 @@ html[data-april-density="compact"] [data-slot="card-footer"] {
 }
 
 @layer components {
+    .docs-layout .code-block {
+        @apply min-w-0 overflow-hidden;
+    }
+
+    .docs-layout .code-block > pre {
+        @apply m-0 h-full min-h-0 overflow-hidden;
+    }
+
     .docs-layout code.torchlight {
-        @apply p-4 pt-8 rounded-lg border overflow-scroll beautify-scrollbar flex flex-col w-fit min-w-full h-full bg-zinc-900 dark:bg-zinc-950;
+        @apply box-border p-4 pt-8 rounded-lg border overflow-auto beautify-scrollbar flex flex-col w-fit min-w-full h-full min-h-0 max-h-full bg-zinc-900 dark:bg-zinc-950;
     }
 
     .torchlight > .line {

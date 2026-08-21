@@ -57,8 +57,12 @@ html[data-april-density="compact"] [data-slot="card-footer"] {
         @apply m-0 h-full min-h-0 overflow-hidden;
     }
 
+    .docs-layout .code-block {
+        @apply box-border p-4 pt-8 rounded-lg border w-fit bg-zinc-900 dark:bg-zinc-950;
+    }
+
     .docs-layout code.torchlight {
-        @apply box-border p-4 pt-8 rounded-lg border overflow-auto beautify-scrollbar flex flex-col w-fit min-w-full h-full min-h-0 max-h-full bg-zinc-900 dark:bg-zinc-950;
+        @apply bg-zinc-900! dark:bg-zinc-950! flex flex-col overflow-auto beautify-scrollbar min-w-full h-full min-h-0 max-h-full ;
     }
 
     .torchlight > .line {

@@ -101,17 +101,17 @@
                     </slot:trigger>
                     <slot:content class="w-40">
                         <april:dropdown-menu-item aria-label="Select light theme" size="sm" type="button"
-                            class="w-full focus-visible:outline-hidden" x-on:click="setAprilTheme('light')">
+                            class="w-full justify-left focus-visible:outline-hidden" x-on:click="setAprilTheme('light')">
                             <x-lucide-sun class="mr-2 h-4 w-4" />
                             <p class="text-sm">Light</p>
                         </april:dropdown-menu-item>
                         <april:dropdown-menu-item aria-label="Select dark theme" size="sm" type="button"
-                            class="w-full focus-visible:outline-hidden" x-on:click="setAprilTheme('dark')">
+                            class="w-full justify-left focus-visible:outline-hidden" x-on:click="setAprilTheme('dark')">
                             <x-lucide-moon class="mr-2 h-4 w-4" />
                             <p class="text-sm">Dark</p>
                         </april:dropdown-menu-item>
                         <april:dropdown-menu-item aria-label="Set theme based on system preference" size="sm"
-                            type="button" class="w-full focus-visible:outline-hidden"
+                            type="button" class="w-full justify-left focus-visible:outline-hidden"
                             x-on:click="setAprilTheme('system')">
                             <x-lucide-monitor class="mr-2 h-4 w-4" />
                             <p class="text-sm">System</p>

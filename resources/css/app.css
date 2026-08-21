@@ -50,12 +50,11 @@ html[data-april-density="compact"] [data-slot="card-footer"] {
 
 @layer components {
     .torchlight {
-        @apply p-4 pt-8 rounded-lg border overflow-scroll beautify-scrollbar w-full h-full bg-zinc-900 dark:bg-zinc-950;
+        @apply p-4 pt-8 rounded-lg border overflow-scroll beautify-scrollbar flex flex-col w-fit min-w-full h-full bg-zinc-900 dark:bg-zinc-950;
     }
 
     .torchlight > .line {
-        @apply bg-transparent flex flex-col w-fit min-w-full;
-        @apply grow inline-block py-1 tracking-tight;
+        @apply bg-transparent grow inline-block py-1 tracking-tight;
     }
 }
 

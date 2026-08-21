@@ -49,7 +49,7 @@ html[data-april-density="compact"] [data-slot="card-footer"] {
 }
 
 @layer components {
-    .torchlight {
+    .docs-layout code.torchlight {
         @apply p-4 pt-8 rounded-lg border overflow-scroll beautify-scrollbar flex flex-col w-fit min-w-full h-full bg-zinc-900 dark:bg-zinc-950;
     }
 

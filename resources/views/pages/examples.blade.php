@@ -15,7 +15,7 @@
                     <p class="mt-2 text-muted-foreground">A responsive workspace with navigation, metrics, activity, and
                         recent sales.</p>
                 </div>
-                <x-component-preview component="examples.dashboard" />
+                <x-component-preview component="examples.dashboard" image="{{ asset('images/examples/dashboard.png') }}" imageAlt="Dashboard example" />
             </section>
 
             <section class="space-y-4">
@@ -24,7 +24,7 @@
                     <p class="mt-2 text-muted-foreground">A focused authentication surface with inputs, actions, and
                         supporting copy.</p>
                 </div>
-                <x-component-preview component="examples.login" />
+                <x-component-preview component="examples.login" image="{{ asset('images/examples/login.png') }}" imageAlt="Sign-in form example" />
             </section>
 
             <section class="space-y-4">
@@ -33,7 +33,7 @@
                     <p class="mt-2 text-muted-foreground">Organize account preferences with tabs, form controls, and
                         clear save actions.</p>
                 </div>
-                <x-component-preview component="examples.settings" />
+                <x-component-preview component="examples.settings" image="{{ asset('images/examples/settings.png') }}" imageAlt="Settings example" />
             </section>
 
             <section class="space-y-4">
@@ -42,7 +42,7 @@
                     <p class="mt-2 text-muted-foreground">Pair command menus with quick actions for dense application
                         workflows.</p>
                 </div>
-                <x-component-preview component="examples.command-center" />
+                <x-component-preview component="examples.command-center" image="{{ asset('images/examples/command-center.png') }}" imageAlt="Command center example" />
             </section>
 
             <section class="space-y-4">
@@ -51,7 +51,7 @@
                     <p class="mt-2 text-muted-foreground">A compact feed using avatars, badges, alerts, and separators.
                     </p>
                 </div>
-                <x-component-preview component="examples.activity-feed" />
+                <x-component-preview component="examples.activity-feed" image="{{ asset('images/examples/activity-feed.png') }}" imageAlt="Activity feed example" />
             </section>
         </div>
 

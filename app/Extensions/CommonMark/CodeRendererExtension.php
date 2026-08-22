@@ -21,7 +21,13 @@ class CodeRendererExtension implements ExtensionInterface, NodeRendererInterface
 
     public function render(Node $node, ChildNodeRendererInterface $childRenderer)
     {
-        /** @var FencedCode|IndentedCode $node  */
+        // Indented code blocks never carry info words, so leave them to the
+        // default renderer.
+        if ($node instanceof IndentedCode) {
+            return null;
+        }
+
+        /** @var FencedCode $node  */
         $info = $node->getInfoWords();
         // Look for our magic word
         if (in_array('+parse', $info)) {

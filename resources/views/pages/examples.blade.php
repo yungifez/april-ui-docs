@@ -15,7 +15,7 @@
                     <p class="mt-2 text-muted-foreground">A responsive workspace with navigation, metrics, activity, and
                         recent sales.</p>
                 </div>
-                <x-component-preview-non-markdown component="examples.dashboard" />
+                <x-component-preview component="examples.dashboard" />
             </section>
 
             <section class="space-y-4">
@@ -24,7 +24,7 @@
                     <p class="mt-2 text-muted-foreground">A focused authentication surface with inputs, actions, and
                         supporting copy.</p>
                 </div>
-                <x-component-preview-non-markdown component="examples.login" />
+                <x-component-preview component="examples.login" />
             </section>
 
             <section class="space-y-4">
@@ -33,7 +33,7 @@
                     <p class="mt-2 text-muted-foreground">Organize account preferences with tabs, form controls, and
                         clear save actions.</p>
                 </div>
-                <x-component-preview-non-markdown component="examples.settings" />
+                <x-component-preview component="examples.settings" />
             </section>
 
             <section class="space-y-4">
@@ -42,7 +42,7 @@
                     <p class="mt-2 text-muted-foreground">Pair command menus with quick actions for dense application
                         workflows.</p>
                 </div>
-                <x-component-preview-non-markdown component="examples.command-center" />
+                <x-component-preview component="examples.command-center" />
             </section>
 
             <section class="space-y-4">
@@ -51,7 +51,7 @@
                     <p class="mt-2 text-muted-foreground">A compact feed using avatars, badges, alerts, and separators.
                     </p>
                 </div>
-                <x-component-preview-non-markdown component="examples.activity-feed" />
+                <x-component-preview component="examples.activity-feed" />
             </section>
         </div>
 

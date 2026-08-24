@@ -83,7 +83,7 @@
                     <h2 class="text-2xl font-semibold tracking-tight">Conversation workspace</h2>
                     <p class="mt-2 text-muted-foreground">A lightweight message thread that combines bubbles, avatars, badges, and a reply composer.</p>
                 </div>
-                <x-component-preview component="examples.conversation" />
+                <x-component-preview component="examples.conversation" image="{{ asset('images/examples/conversation.png') }}" imageAlt="Conversation workspace example" />
             </section>
         </div>
 

@@ -59,7 +59,7 @@
                     <h2 class="text-2xl font-semibold tracking-tight">Analytics overview</h2>
                     <p class="mt-2 text-muted-foreground">Metric cards, responsive charts, and a focused channel breakdown.</p>
                 </div>
-                <x-component-preview component="examples.analytics" />
+                <x-component-preview component="examples.analytics" image="{{ asset('images/examples/analytics.png') }}" imageAlt="Analytics growth overview example" />
             </section>
 
             <section class="space-y-4">

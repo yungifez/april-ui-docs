@@ -70,6 +70,20 @@ class ExampleTest extends TestCase
         $this->assertLessThan($livewire, $april);
     }
 
+    public function test_docs_menu_persistence_is_scoped_to_the_desktop_sidebar(): void
+    {
+        $html = $this->get('/docs/0.x/components/calendar')
+            ->assertOk()
+            ->getContent();
+
+        $this->assertMatchesRegularExpression(
+            '/data-slot="sidebar"\s+x-persist="desktop-menu"/',
+            $html,
+        );
+        $this->assertStringNotContainsString('x-persist="menu"', $html);
+        $this->assertStringNotContainsString('x-persist="desktop-menu-mobile"', $html);
+    }
+
     public function test_alert_previews_render_the_alert_content_not_a_markdown_code_block(): void
     {
         $this->get('/docs/0.x/components/alert')

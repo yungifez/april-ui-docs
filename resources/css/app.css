@@ -176,7 +176,9 @@ html[data-april-density="compact"] [data-slot="card-footer"] {
     }
 
     & table {
-        @apply w-full;
+        /* Markdown emits tables without a wrapper. Make the table itself the
+           scroll container so wide columns cannot widen the page. */
+        @apply block w-full max-w-full overflow-x-auto;
     }
 
     & tr {

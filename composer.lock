@@ -7139,7 +7139,7 @@
             "dist": {
                 "type": "path",
                 "url": "../april-ui",
-                "reference": "d9e93edd2a1f19d6962b386131f46ef7023d3616"
+                "reference": "0f1abc6c4ef535a69a178548b1eaf4bb07532eeb"
             },
             "require": {
                 "illuminate/contracts": "^12.0|^13.0",

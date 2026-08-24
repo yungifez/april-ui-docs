@@ -8,11 +8,8 @@
     ],
     "repositories": [
         {
-            "type": "path",
-            "url": "../april-ui",
-            "options": {
-                "symlink": true
-            }
+            "type": "vcs",
+            "url": "https://github.com/yungifez/april-ui.git"
         }
     ],
     "license": "MIT",

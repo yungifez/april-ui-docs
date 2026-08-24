@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "66bbf7ba0157cf448cfd80ff66d26444",
+    "content-hash": "3eae9842fe4ae70a3743436044133bf1",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -7136,10 +7136,16 @@
         {
             "name": "yungifez/april-ui",
             "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yungifez/april-ui.git",
+                "reference": "62dd75a8b1f72fc04dce2499623aaea07e396b77"
+            },
             "dist": {
-                "type": "path",
-                "url": "../april-ui",
-                "reference": "0f1abc6c4ef535a69a178548b1eaf4bb07532eeb"
+                "type": "zip",
+                "url": "https://api.github.com/repos/yungifez/april-ui/zipball/62dd75a8b1f72fc04dce2499623aaea07e396b77",
+                "reference": "62dd75a8b1f72fc04dce2499623aaea07e396b77",
+                "shasum": ""
             },
             "require": {
                 "illuminate/contracts": "^12.0|^13.0",
@@ -7163,6 +7169,7 @@
             "suggest": {
                 "livewire/livewire": "Required when using the optional Livewire data-table adapter."
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -7238,10 +7245,11 @@
                 "laravel",
                 "yungifez"
             ],
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
+            "support": {
+                "source": "https://github.com/yungifez/april-ui/tree/main",
+                "issues": "https://github.com/yungifez/april-ui/issues"
+            },
+            "time": "2026-08-24T19:53:38+00:00"
         }
     ],
     "packages-dev": [

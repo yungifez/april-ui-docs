@@ -1,4 +1,3 @@
-```blade +parse
 <april:alert class="my-2">
     @isset($title)
     <slot:title {{$title->attributes}}>{{$title}}</slot:title>
@@ -9,4 +8,3 @@
         </x-markdown>
     </slot:description>
 </april:alert>
-```

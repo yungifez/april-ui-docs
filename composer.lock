@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b9e42f2230c4da40bb2357a9978d6479",
+    "content-hash": "66bbf7ba0157cf448cfd80ff66d26444",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -7160,6 +7160,9 @@
                 "phpstan/phpstan-deprecation-rules": "^2.0",
                 "phpstan/phpstan-phpunit": "^2.0"
             },
+            "suggest": {
+                "livewire/livewire": "Required when using the optional Livewire data-table adapter."
+            },
             "type": "library",
             "extra": {
                 "laravel": {
@@ -7235,41 +7238,6 @@
                 "laravel",
                 "yungifez"
             ],
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
-        },
-        {
-            "name": "yungifez/april-ui-livewire",
-            "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "../april-ui/packages/livewire",
-                "reference": "882c8e93ad4ee21ca080622545b719c77f50e7b1"
-            },
-            "require": {
-                "livewire/livewire": "^3.4",
-                "php": "^8.3",
-                "yungifez/april-ui": "dev-main"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Yungifez\\AprilUI\\Livewire\\AprilLivewireServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Yungifez\\AprilUI\\Livewire\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Livewire data-table adapter for April UI.",
             "transport-options": {
                 "symlink": true,
                 "relative": true
@@ -10152,8 +10120,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "yungifez/april-ui": 20,
-        "yungifez/april-ui-livewire": 20
+        "yungifez/april-ui": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

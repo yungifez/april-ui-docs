@@ -13,13 +13,6 @@
             "options": {
                 "symlink": true
             }
-        },
-        {
-            "type": "path",
-            "url": "../april-ui/packages/livewire",
-            "options": {
-                "symlink": true
-            }
         }
     ],
     "license": "MIT",
@@ -36,8 +29,7 @@
         "spatie/laravel-markdown": "^2.8",
         "spatie/yaml-front-matter": "^2.1",
         "torchlight/torchlight-commonmark": "^0.6",
-        "yungifez/april-ui": "dev-main",
-        "yungifez/april-ui-livewire": "dev-main"
+        "yungifez/april-ui": "dev-main"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

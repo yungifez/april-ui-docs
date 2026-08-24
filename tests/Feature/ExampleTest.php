@@ -27,7 +27,11 @@ class ExampleTest extends TestCase
             ->assertSee('Total revenue')
             ->assertSee('Welcome back')
             ->assertSee('Command center')
-            ->assertSee('Activity feed');
+            ->assertSee('Activity feed')
+            ->assertSee('Growth overview')
+            ->assertSee('Team members')
+            ->assertSee('Monday, August 24')
+            ->assertSee('Alex Morgan');
     }
 
     public function test_the_customize_page_renders_the_theme_builder(): void

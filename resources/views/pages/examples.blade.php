@@ -53,12 +53,44 @@
                 </div>
                 <x-component-preview component="examples.activity-feed" image="{{ asset('images/examples/activity-feed.png') }}" imageAlt="Activity feed example" />
             </section>
+
+            <section class="space-y-4">
+                <div>
+                    <h2 class="text-2xl font-semibold tracking-tight">Analytics overview</h2>
+                    <p class="mt-2 text-muted-foreground">Metric cards, responsive charts, and a focused channel breakdown.</p>
+                </div>
+                <x-component-preview component="examples.analytics" />
+            </section>
+
+            <section class="space-y-4">
+                <div>
+                    <h2 class="text-2xl font-semibold tracking-tight">Team directory</h2>
+                    <p class="mt-2 text-muted-foreground">An interactive member list built with the April data table, avatars, and status states.</p>
+                </div>
+                <x-component-preview component="examples.team-directory" />
+            </section>
+
+            <section class="space-y-4">
+                <div>
+                    <h2 class="text-2xl font-semibold tracking-tight">Daily planner</h2>
+                    <p class="mt-2 text-muted-foreground">Pair the calendar with task cards to make a compact planning workspace.</p>
+                </div>
+                <x-component-preview component="examples.planner" />
+            </section>
+
+            <section class="space-y-4">
+                <div>
+                    <h2 class="text-2xl font-semibold tracking-tight">Conversation workspace</h2>
+                    <p class="mt-2 text-muted-foreground">A lightweight message thread that combines bubbles, avatars, badges, and a reply composer.</p>
+                </div>
+                <x-component-preview component="examples.conversation" />
+            </section>
         </div>
 
         <div class="mt-16 rounded-xl border bg-muted/20 p-6">
             <p class="text-sm font-medium">Used across these examples</p>
             <div class="mt-4 flex flex-wrap gap-2">
-                @foreach (['Sidebar', 'Card', 'Button', 'Input', 'Tabs', 'Command', 'Avatar', 'Badge', 'Alert'] as $componentName)
+                @foreach (['Sidebar', 'Card', 'Button', 'Input', 'Tabs', 'Command', 'Avatar', 'Badge', 'Alert', 'Chart', 'Data Table', 'Calendar', 'Bubble'] as $componentName)
                 <april:badge variant="outline">{{$componentName}}</april:badge>
                 @endforeach
             </div>

@@ -76,4 +76,14 @@ class ExampleTest extends TestCase
             ->assertOk()
             ->assertSee('<h5 data-slot="alert-title"', false);
     }
+
+    public function test_calendar_preview_renders_each_day_as_one_alpine_root(): void
+    {
+        $html = $this->get('/docs/0.x/components/calendar')
+            ->assertOk()
+            ->getContent();
+
+        $this->assertStringContainsString('<div class="contents">', $html);
+        $this->assertStringNotContainsString('x-if="cell.outside', $html);
+    }
 }

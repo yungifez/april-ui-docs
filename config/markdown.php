@@ -46,7 +46,10 @@ return [
      * the default cache store will be used. If you do not want to use
      * caching set this value to `false`.
      */
-    'cache_store' => null,
+    // Markdown pages contain rendered Blade components. Do not cache the
+    // resulting HTML forever: component markup can change while the Markdown
+    // source stays the same (for example, a package component fix).
+    'cache_store' => false,
 
 
     /*

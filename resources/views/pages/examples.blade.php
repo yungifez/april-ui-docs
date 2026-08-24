@@ -67,7 +67,7 @@
                     <h2 class="text-2xl font-semibold tracking-tight">Team directory</h2>
                     <p class="mt-2 text-muted-foreground">An interactive member list built with the April data table, avatars, and status states.</p>
                 </div>
-                <x-component-preview component="examples.team-directory" />
+                <x-component-preview component="examples.team-directory" image="{{ asset('images/examples/team-directory.png') }}" imageAlt="Team directory example" />
             </section>
 
             <section class="space-y-4">
@@ -75,7 +75,7 @@
                     <h2 class="text-2xl font-semibold tracking-tight">Daily planner</h2>
                     <p class="mt-2 text-muted-foreground">Pair the calendar with task cards to make a compact planning workspace.</p>
                 </div>
-                <x-component-preview component="examples.planner" />
+                <x-component-preview component="examples.planner" image="{{ asset('images/examples/planner.png') }}" imageAlt="Daily planner example" />
             </section>
 
             <section class="space-y-4">

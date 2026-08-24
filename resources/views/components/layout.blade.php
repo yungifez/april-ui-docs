@@ -282,6 +282,7 @@
     <x-footer />
 </body>
 @vite('resources/js/app.js')
+@aprilScripts
 <livewire:scripts />
 
 </html>

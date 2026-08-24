@@ -56,4 +56,20 @@ class ExampleTest extends TestCase
             ->assertSee('torchlight.dev', false)
             ->assertSee('System');
     }
+
+    public function test_april_ui_registers_before_livewire_starts_alpine(): void
+    {
+        $html = $this->get('/')->assertOk()->getContent();
+
+        $this->assertNotFalse($april = strpos($html, '/april-ui/april'));
+        $this->assertNotFalse($livewire = strpos($html, 'livewire.min.js'));
+        $this->assertLessThan($livewire, $april);
+    }
+
+    public function test_alert_previews_render_the_alert_content_not_a_markdown_code_block(): void
+    {
+        $this->get('/docs/0.x/components/alert')
+            ->assertOk()
+            ->assertSee('<h5 data-slot="alert-title"', false);
+    }
 }

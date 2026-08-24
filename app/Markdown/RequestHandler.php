@@ -126,12 +126,10 @@ class RequestHandler
         $data = $parser->matter() + $matchedView->data;
         $body = $parser->body();
 
-        if (str_ends_with($matchedView->path, '.blade.md')) {
-            $body = Blade::render($body, $data);
-        }
-
-        // The code blocks and the anchors come from the CommonMark extensions
-        // in config/markdown.php.
+        // Blade components must be rendered after CommonMark. Rendering them
+        // here turns their indented HTML into Markdown code blocks. The
+        // BladeParsingExtension renders them after the Markdown document is
+        // complete, while preserving real code blocks as literal source.
         $slot = app(MarkdownRenderer::class)
             ->disableHighlighting()
             ->disableAnchors()

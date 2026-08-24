@@ -1,5 +1,6 @@
 <?php
 
+use App\Extensions\CommonMark\BladeParsingExtension;
 use App\Extensions\CommonMark\CodeRendererExtension;
 
 return [
@@ -78,6 +79,7 @@ return [
             env('TORCHLIGHT_TOKEN')
                 ? \Torchlight\Commonmark\V2\TorchlightExtension::class
                 : null,
+            BladeParsingExtension::class,
             CodeRendererExtension::class,
             \League\CommonMark\Extension\Table\TableExtension::class,
         ])),

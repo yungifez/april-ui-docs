@@ -1,1 +1,1 @@
-<x-component-preview-non-markdown {{$attributes}}/>
+<x-component-preview-non-markdown {{$attributes}} />

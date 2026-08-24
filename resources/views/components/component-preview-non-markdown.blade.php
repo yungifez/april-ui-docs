@@ -1,6 +1,6 @@
 @props([
-    'image' => null,
-    'imageAlt' => 'Component preview',
+'image' => null,
+'imageAlt' => 'Component preview',
 ])
 
 @if ($attributes->has('component'))
@@ -36,11 +36,9 @@ $code = $path ? file_get_contents($path) : '';
                 class="max-h-[350px] w-full rounded-md object-contain object-top">
         </div>
         @endif
-        <div @class([
-            'w-full justify-center items-center min-h-[350px] p-10',
-            'hidden md:flex' => $image,
+        <div @class([ 'w-full justify-center items-center min-h-[350px] p-10' , 'hidden md:flex'=> $image,
             'flex' => ! $image,
-        ])>
+            ])>
             @if ($attributes->has('component'))
             <x-dynamic-component :component="$attributes->get('component')" />
             @endif

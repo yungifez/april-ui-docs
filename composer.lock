@@ -1299,16 +1299,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v12.67.0",
+            "version": "v12.68.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "fe2cdaba052cbb9f350761ccefc7ac221cbdf0b5"
+                "reference": "1343c22b92edd48e29ff273d8ce7c15cf75d974c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/fe2cdaba052cbb9f350761ccefc7ac221cbdf0b5",
-                "reference": "fe2cdaba052cbb9f350761ccefc7ac221cbdf0b5",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/1343c22b92edd48e29ff273d8ce7c15cf75d974c",
+                "reference": "1343c22b92edd48e29ff273d8ce7c15cf75d974c",
                 "shasum": ""
             },
             "require": {
@@ -1517,7 +1517,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2026-08-18T13:37:47+00:00"
+            "time": "2026-08-25T14:18:36+00:00"
         },
         {
             "name": "laravel/nightwatch",
@@ -1615,16 +1615,16 @@
         },
         {
             "name": "laravel/prompts",
-            "version": "v0.3.23",
+            "version": "v0.3.24",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/prompts.git",
-                "reference": "b7b4c35e5bc47450f6b6238c6cc9c47ba19b2221"
+                "reference": "5d3cdef29e93ca3b62b1871359db3078cd99908b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/prompts/zipball/b7b4c35e5bc47450f6b6238c6cc9c47ba19b2221",
-                "reference": "b7b4c35e5bc47450f6b6238c6cc9c47ba19b2221",
+                "url": "https://api.github.com/repos/laravel/prompts/zipball/5d3cdef29e93ca3b62b1871359db3078cd99908b",
+                "reference": "5d3cdef29e93ca3b62b1871359db3078cd99908b",
                 "shasum": ""
             },
             "require": {
@@ -1668,22 +1668,22 @@
             "description": "Add beautiful and user-friendly forms to your command-line applications.",
             "support": {
                 "issues": "https://github.com/laravel/prompts/issues",
-                "source": "https://github.com/laravel/prompts/tree/v0.3.23"
+                "source": "https://github.com/laravel/prompts/tree/v0.3.24"
             },
-            "time": "2026-08-11T18:58:24+00:00"
+            "time": "2026-08-20T12:55:36+00:00"
         },
         {
             "name": "laravel/serializable-closure",
-            "version": "v2.0.15",
+            "version": "v2.0.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/serializable-closure.git",
-                "reference": "dccd8bcb851bb03fcc005df650b708b57cc52661"
+                "reference": "7cfc24e4fa2cca045fb8dd2a797a2b2b13b655ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/serializable-closure/zipball/dccd8bcb851bb03fcc005df650b708b57cc52661",
-                "reference": "dccd8bcb851bb03fcc005df650b708b57cc52661",
+                "url": "https://api.github.com/repos/laravel/serializable-closure/zipball/7cfc24e4fa2cca045fb8dd2a797a2b2b13b655ed",
+                "reference": "7cfc24e4fa2cca045fb8dd2a797a2b2b13b655ed",
                 "shasum": ""
             },
             "require": {
@@ -1731,7 +1731,7 @@
                 "issues": "https://github.com/laravel/serializable-closure/issues",
                 "source": "https://github.com/laravel/serializable-closure"
             },
-            "time": "2026-07-21T16:49:22+00:00"
+            "time": "2026-08-18T20:28:54+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -2436,16 +2436,16 @@
         },
         {
             "name": "mallardduck/blade-lucide-icons",
-            "version": "2.0.6",
+            "version": "2.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mallardduck/blade-lucide-icons.git",
-                "reference": "403fd75af89fc93084ba2769c20c4cb0af6bdd66"
+                "reference": "e2785699a994a40c53b45b6985e8146dcce89b62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mallardduck/blade-lucide-icons/zipball/403fd75af89fc93084ba2769c20c4cb0af6bdd66",
-                "reference": "403fd75af89fc93084ba2769c20c4cb0af6bdd66",
+                "url": "https://api.github.com/repos/mallardduck/blade-lucide-icons/zipball/e2785699a994a40c53b45b6985e8146dcce89b62",
+                "reference": "e2785699a994a40c53b45b6985e8146dcce89b62",
                 "shasum": ""
             },
             "require": {
@@ -2490,9 +2490,9 @@
             ],
             "support": {
                 "issues": "https://github.com/mallardduck/blade-lucide-icons/issues",
-                "source": "https://github.com/mallardduck/blade-lucide-icons/tree/2.0.6"
+                "source": "https://github.com/mallardduck/blade-lucide-icons/tree/2.0.7"
             },
-            "time": "2026-08-20T00:59:16+00:00"
+            "time": "2026-08-25T01:01:25+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -7139,12 +7139,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yungifez/april-ui.git",
-                "reference": "ea743d71aa73fe31a03047c608e9c77336d27326"
+                "reference": "99497899c1f92cf98c74013a33e9f384a9059a32"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yungifez/april-ui/zipball/ea743d71aa73fe31a03047c608e9c77336d27326",
-                "reference": "ea743d71aa73fe31a03047c608e9c77336d27326",
+                "url": "https://api.github.com/repos/yungifez/april-ui/zipball/99497899c1f92cf98c74013a33e9f384a9059a32",
+                "reference": "99497899c1f92cf98c74013a33e9f384a9059a32",
                 "shasum": ""
             },
             "require": {
@@ -7156,6 +7156,7 @@
             "require-dev": {
                 "larastan/larastan": "^3.0",
                 "laravel/pint": "^1.0",
+                "livewire/livewire": "^3.4",
                 "mallardduck/blade-lucide-icons": "^2.0",
                 "nunomaduro/collision": "^8.0",
                 "orchestra/testbench": "^10.0",
@@ -7249,7 +7250,7 @@
                 "source": "https://github.com/yungifez/april-ui/tree/main",
                 "issues": "https://github.com/yungifez/april-ui/issues"
             },
-            "time": "2026-08-24T22:01:09+00:00"
+            "time": "2026-08-25T20:24:56+00:00"
         }
     ],
     "packages-dev": [
@@ -7521,16 +7522,16 @@
         },
         {
             "name": "laravel/boost",
-            "version": "v2.5.5",
+            "version": "v2.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/boost.git",
-                "reference": "a6c798975a893d3c0a609ebc6ed37a007ecbedec"
+                "reference": "44f5944bf837856bc727aab87aba026dc70faa94"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/boost/zipball/a6c798975a893d3c0a609ebc6ed37a007ecbedec",
-                "reference": "a6c798975a893d3c0a609ebc6ed37a007ecbedec",
+                "url": "https://api.github.com/repos/laravel/boost/zipball/44f5944bf837856bc727aab87aba026dc70faa94",
+                "reference": "44f5944bf837856bc727aab87aba026dc70faa94",
                 "shasum": ""
             },
             "require": {
@@ -7583,7 +7584,7 @@
                 "issues": "https://github.com/laravel/boost/issues",
                 "source": "https://github.com/laravel/boost"
             },
-            "time": "2026-08-19T02:26:00+00:00"
+            "time": "2026-08-25T15:25:31+00:00"
         },
         {
             "name": "laravel/mcp",

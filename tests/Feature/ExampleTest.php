@@ -69,6 +69,17 @@ class ExampleTest extends TestCase
         }
     }
 
+    public function test_dashboard_blocks_render_real_chart_regions(): void
+    {
+        $html = $this->get('/blocks/dashboard')
+            ->assertOk()
+            ->getContent();
+
+        $this->assertGreaterThanOrEqual(5, substr_count($html, 'data-slot="chart"'));
+        $this->assertStringContainsString('Revenue and expenses', $html);
+        $this->assertStringContainsString('Sprint velocity', $html);
+    }
+
     public function test_the_customize_page_renders_the_theme_builder(): void
     {
         $response = $this->get('/customize');

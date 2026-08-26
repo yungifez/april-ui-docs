@@ -47,6 +47,12 @@ html[data-april-density="compact"] [data-slot="card-footer"] {
     & [data-slot="sidebar-wrapper"] [data-slot="sidebar-container"] {
         height: 100%;
     }
+
+    /* Full-page blocks need the available preview width. Without this, a flex
+       preview lets centered forms and pricing grids shrink to their content. */
+    & > div:last-child > :first-child {
+        @apply w-full min-w-0;
+    }
 }
 
 @layer components {

@@ -156,5 +156,7 @@ class ExampleTest extends TestCase
 
         $this->assertStringContainsString('<div class="contents">', $html);
         $this->assertStringNotContainsString('x-if="cell.outside', $html);
+        $this->assertStringContainsString('Use the following command to publish this view:', $html);
+        $this->assertStringContainsString('april-view-calendar', $html);
     }
 }

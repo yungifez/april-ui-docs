@@ -1,0 +1,7 @@
+<div class="flex min-h-[600px] flex-col items-center justify-center bg-muted/20 p-6 md:p-10">
+    <div class="w-full max-w-sm">
+        <div class="mb-6 text-center"><div class="mx-auto flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground"><x-lucide-layers-3 class="h-5 w-5" /></div><h1 class="mt-4 text-2xl font-semibold tracking-tight">Welcome back</h1><p class="mt-2 text-sm text-muted-foreground">Enter your email to sign in to your account.</p></div>
+        <april:card><slot:content class="space-y-5"><div class="space-y-2"><april:label for="login-01-email">Email</april:label><april:input id="login-01-email" type="email" placeholder="you@example.com" class="w-full" /></div><div class="space-y-2"><div class="flex justify-between"><april:label for="login-01-password">Password</april:label><a href="#" class="text-xs text-primary underline-offset-4 hover:underline">Forgot password?</a></div><april:input id="login-01-password" type="password" class="w-full" /></div><april:button type="button" class="w-full">Sign in</april:button><div class="flex items-center gap-3 text-xs text-muted-foreground"><april:separator class="flex-1" /><span>or</span><april:separator class="flex-1" /></div><april:button type="button" variant="outline" class="w-full"><x-lucide-github class="mr-2 h-4 w-4" />Continue with GitHub</april:button></slot:content></april:card>
+        <p class="mt-5 text-center text-xs text-muted-foreground">By continuing, you agree to the Terms of Service.</p>
+    </div>
+</div>

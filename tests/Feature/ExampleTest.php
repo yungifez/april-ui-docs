@@ -40,13 +40,33 @@ class ExampleTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertSee('Product surfaces, ready to compose.')
-            ->assertSee('Browse blocks')
-            ->assertSee('Dashboard')
-            ->assertSee('Workspace setup')
-            ->assertSee('Landing hero')
-            ->assertSee('Search blocks')
-            ->assertSee('data-block-card', false);
+            ->assertSee('Building blocks for Laravel.')
+            ->assertSee('Small compositions for real product work.')
+            ->assertSee('Product showcase')
+            ->assertSee('Share document')
+            ->assertSee('Full-page layouts')
+            ->assertSee('Sign Up');
+    }
+
+    public function test_the_signup_blocks_page_renders_distinct_variants(): void
+    {
+        $this->get('/blocks/signup')
+            ->assertOk()
+            ->assertSee('Sign Up blocks.')
+            ->assertSee('Sign up 01')
+            ->assertSee('Sign up 02')
+            ->assertSee('Sign up 03')
+            ->assertSee('Create an account')
+            ->assertSee('Join your team');
+    }
+
+    public function test_all_block_category_pages_render(): void
+    {
+        foreach (array_keys(config('blocks.categories')) as $category) {
+            $this->get('/blocks/'.$category)
+                ->assertOk()
+                ->assertSee(config('blocks.categories.'.$category.'.label').' blocks.');
+        }
     }
 
     public function test_the_customize_page_renders_the_theme_builder(): void

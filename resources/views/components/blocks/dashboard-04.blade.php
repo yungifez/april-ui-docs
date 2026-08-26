@@ -1,0 +1,6 @@
+<div class="bg-muted/20 p-4 md:p-8">
+    <div class="mx-auto max-w-6xl space-y-5">
+        <div class="flex items-center justify-between gap-4"><div><p class="text-sm text-muted-foreground">Workspace / Projects</p><h2 class="text-2xl font-semibold tracking-tight">Launch website</h2></div><april:button type="button" size="sm"><x-lucide-plus class="mr-2 h-4 w-4" />Add task</april:button></div>
+        <div class="grid gap-4 md:grid-cols-3">@foreach ([['To do', [['Prepare brief', 'SC'], ['Collect references', 'JD']]], ['In progress', [['Build landing page', 'AB'], ['Review copy', 'SC']]], ['Done', [['Set up repository', 'JD'], ['Choose type scale', 'AB']]]] as [$column, $tasks])<april:card><slot:title class="flex items-center justify-between text-base">{{$column}}<april:badge variant="outline">{{count($tasks)}}</april:badge></slot:title><slot:content class="space-y-3">@foreach ($tasks as [$task, $initials])<div class="rounded-md border bg-background p-3"><p class="text-sm font-medium">{{$task}}</p><div class="mt-3 flex items-center justify-between"><april:avatar><slot:fallback>{{$initials}}</slot:fallback></april:avatar><april:button type="button" variant="ghost" size="icon"><x-lucide-ellipsis class="h-4 w-4" /></april:button></div></div>@endforeach</slot:content></april:card>@endforeach</div>
+    </div>
+</div>

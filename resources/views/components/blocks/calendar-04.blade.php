@@ -1,0 +1,3 @@
+<div class="bg-muted/20 p-4 md:p-8">
+    <div class="mx-auto grid max-w-5xl gap-4 lg:grid-cols-[1fr_260px]"><april:card><slot:title>Book a meeting</slot:title><slot:description>Choose a day that works for you.</slot:description><slot:content><april:calendar class="rounded-md border" mode="single" :selected="now()" /></slot:content></april:card><april:card><slot:title>Available times</slot:title><slot:description>Monday, June 8</slot:description><slot:content class="space-y-2">@foreach (['09:00 AM', '10:30 AM', '01:00 PM', '03:30 PM'] as $time)<april:button type="button" variant="outline" class="w-full">{{$time}}</april:button>@endforeach</slot:content></april:card></div>
+</div>

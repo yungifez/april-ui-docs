@@ -109,4 +109,21 @@
             </div>
         </div>
     </section>
+
+    <section class="border-t bg-muted/20">
+        <div class="mx-auto grid max-w-screen-xl gap-8 px-4 py-14 md:grid-cols-[1fr_auto] md:items-center md:px-10 md:py-20">
+            <div class="max-w-2xl">
+                <p class="text-sm font-medium text-primary">New: Blocks</p>
+                <h2 class="mt-2 text-3xl font-bold tracking-tight">Start with a complete product surface.</h2>
+                <p class="mt-3 text-muted-foreground">
+                    Browse dashboards, authentication flows, settings pages, and workspace patterns. Each block includes
+                    a live preview and copyable Blade code.
+                </p>
+            </div>
+            <april:button-link href="{{route('blocks')}}" size="lg">
+                Browse blocks
+                <x-lucide-arrow-right class="ml-2 h-4 w-4" />
+            </april:button-link>
+        </div>
+    </section>
 </x-layout>

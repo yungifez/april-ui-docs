@@ -56,6 +56,8 @@ class AppServiceProvider extends ServiceProvider
             ['href' => $prefix.'/components/tabs', 'text' => 'Tabs'],
             ['href' => $prefix.'/components/textarea', 'text' => 'Textarea'],
             ['href' => $prefix.'/components/tooltip', 'text' => 'Tooltip'],
+            ['type' => 'header', 'text' => 'Patterns'],
+            ['href' => '/blocks', 'text' => 'Blocks'],
         ];
 
         View::share('links', $links);

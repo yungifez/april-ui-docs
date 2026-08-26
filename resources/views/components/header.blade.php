@@ -7,6 +7,7 @@
                 <x-link href="{{'/docs/' . config('aui.latest-version')}}">Docs</x-link>
                 <x-link href="{{'/docs/' . config('aui.latest-version').'/components/accordion'}}">Components</x-link>
                 <x-link href="/examples">Examples</x-link>
+                <x-link href="{{route('blocks')}}">Blocks</x-link>
                 <x-link href="{{route('customize')}}">Customize</x-link>
             </nav>
         </div>
@@ -25,6 +26,7 @@
                     <x-link class="block hover:no-underline"
                         href="{{'/docs/' . config('aui.latest-version').'/components/accordion'}}">Components</x-link>
                     <x-link class="block hover:no-underline" href="/examples">Examples</x-link>
+                    <x-link class="block hover:no-underline" href="{{route('blocks')}}">Blocks</x-link>
                     <x-link class="block hover:no-underline" href="{{route('customize')}}">Customize</x-link>
                     <x-menu />
                     <april:sheet-footer />

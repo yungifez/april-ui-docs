@@ -34,6 +34,21 @@ class ExampleTest extends TestCase
             ->assertSee('Alex Morgan');
     }
 
+    public function test_the_blocks_page_renders_the_block_catalog(): void
+    {
+        $response = $this->get('/blocks');
+
+        $response
+            ->assertOk()
+            ->assertSee('Product surfaces, ready to compose.')
+            ->assertSee('Browse blocks')
+            ->assertSee('Dashboard')
+            ->assertSee('Workspace setup')
+            ->assertSee('Landing hero')
+            ->assertSee('Search blocks')
+            ->assertSee('data-block-card', false);
+    }
+
     public function test_the_customize_page_renders_the_theme_builder(): void
     {
         $response = $this->get('/customize');

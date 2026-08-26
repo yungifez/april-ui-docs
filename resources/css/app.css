@@ -23,6 +23,7 @@ html[data-april-density="compact"] [data-slot="card-footer"] {
    so point it at them or the preview classes never get generated. */
 @source "../../vendor/yungifez/april-ui/docs/previews";
 @source "../../april-ui/docs/previews";
+@source "../views/components/blocks";
 
 @utility component-preview {
     & h3 {

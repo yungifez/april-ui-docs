@@ -9,3 +9,5 @@ Route::get('/docs', function () {
 })->name('docs');
 
 Route::view('/customize', 'pages.customize')->name('customize');
+
+Route::view('/blocks', 'pages.blocks')->name('blocks');

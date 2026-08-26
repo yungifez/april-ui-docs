@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Docs\SearchIndex;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -61,7 +62,10 @@ class AppServiceProvider extends ServiceProvider
             ['href' => '/blocks', 'text' => 'Blocks'],
         ];
 
-        View::share('links', $links);
+        View::share([
+            'links' => $links,
+            'searchIndex' => app(SearchIndex::class)->entries(),
+        ]);
     }
 
     /**

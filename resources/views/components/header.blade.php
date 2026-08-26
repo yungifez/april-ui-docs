@@ -53,12 +53,20 @@
                     <slot:list>
                         <april:command-group heading="Menu">
                             @foreach ($links as $link)
-                            @isset($link['href'])
+                            @if (isset($link['href']) && !str_starts_with($link['href'], '/docs/'))
                             <april:command-item @click="Alpine.navigate('{{$link['href']}}')">
                                 <x-lucide-file class="mr-2 h-4 w-4" />
                                 <span>{{$link['text']}}</span>
                             </april:command-item>
-                            @endisset
+                            @endif
+                            @endforeach
+                        </april:command-group>
+                        <april:command-group heading="Documentation">
+                            @foreach ($searchIndex as $page)
+                                <april:command-item data-search="{{$page['search']}}" @click="Alpine.navigate('{{$page['url']}}')">
+                                    <x-lucide-file-text class="mr-2 h-4 w-4 shrink-0" />
+                                    <span class="min-w-0"><span class="block truncate">{{$page['title']}}</span><span class="block truncate text-xs text-muted-foreground">{{$page['description']}}</span></span>
+                                </april:command-item>
                             @endforeach
                         </april:command-group>
                         <april:command-group heading="Theme">

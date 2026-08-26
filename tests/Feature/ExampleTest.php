@@ -80,6 +80,17 @@ class ExampleTest extends TestCase
         $this->assertStringContainsString('Sprint velocity', $html);
     }
 
+    public function test_docs_search_includes_markdown_content(): void
+    {
+        $html = $this->get('/docs/0.x/components/chart')
+            ->assertOk()
+            ->getContent();
+
+        $this->assertStringContainsString('data-search=', $html);
+        $this->assertStringContainsString('Responsive Alpine charts', $html);
+        $this->assertStringContainsString('xKey', $html);
+    }
+
     public function test_the_customize_page_renders_the_theme_builder(): void
     {
         $response = $this->get('/customize');

@@ -8,6 +8,17 @@ Use the following command{{ count($views) > 1 ? 's' : '' }} to publish {{ count(
 
 @foreach ($views as $view)
 <x-code-block-wrapper language="shell">
-    php artisan vendor:publish --tag=april-view-{{ $view }}
+    php artisan april:publish {{ $view }}
 </x-code-block-wrapper>
 @endforeach
+
+April UI keeps package views in `vendor/` by default. The command uses Laravel's vendor publishing system and copies
+overrides to `resources/views/vendor/april/components`.
+
+To publish all components, run:
+
+<x-code-block-wrapper language="shell">
+    php artisan april:publish --all
+</x-code-block-wrapper>
+
+Review local overrides after an upgrade with `php artisan april:update --diff`.

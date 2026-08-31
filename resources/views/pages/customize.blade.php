@@ -1,6 +1,6 @@
 <x-layout title="Customize" description="Build a theme that feels like your product.">
     <div x-data="{
-        theme: 'zinc',
+        theme: 'green',
         radius: 'md',
         density: 'comfortable',
         font: 'sans',
@@ -159,5 +159,38 @@
                 </april:card>
             </main>
         </div>
+        <section class="mx-auto max-w-screen-xl border-t px-4 py-14 md:px-10">
+            <div class="max-w-3xl">
+                <april:badge variant="secondary">Package-first workflow</april:badge>
+                <h2 class="mt-4 text-3xl font-bold tracking-tight">Start with the package. Publish only what you need.</h2>
+                <p class="mt-4 text-muted-foreground">
+                    April UI keeps its components in the Composer package and uses Laravel's normal vendor override
+                    path when you need application-owned markup.
+                </p>
+                <div class="mt-6 grid gap-4 md:grid-cols-2">
+                    <april:card>
+                        <slot:title>Inspect the library</slot:title>
+                        <slot:content>
+                            <x-code-block-wrapper language="shell">php artisan april:list</x-code-block-wrapper>
+                        </slot:content>
+                    </april:card>
+                    <april:card>
+                        <slot:title>Publish one component</slot:title>
+                        <slot:content>
+                            <x-code-block-wrapper language="shell">php artisan april:publish button</x-code-block-wrapper>
+                        </slot:content>
+                    </april:card>
+                </div>
+                <p class="mt-5 text-sm text-muted-foreground">
+                    Published files live in <code>resources/views/vendor/april/components</code> and override the matching
+                    package view through Laravel's standard view lookup rules. Run <code>php artisan april:update --diff</code>
+                    to review changes after an upgrade.
+                </p>
+                <p class="mt-4 text-sm text-muted-foreground">
+                    For editor tooling, start <code>php artisan april:mcp</code>. It exposes component search, source
+                    resources, and the same vendor-path publishing operation over standard input and output.
+                </p>
+            </div>
+        </section>
     </div>
 </x-layout>

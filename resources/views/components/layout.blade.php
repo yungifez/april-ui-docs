@@ -2,7 +2,10 @@
 <html lang="en" dir="ltr">
 
 <head>
-    @php(isset($title) ? $title = $title.' | '.config('app.name') : $title = config('app.name'))
+    @php
+        $siteName = config('app.name') === 'Laravel' ? 'April UI' : config('app.name');
+        isset($title) ? $title = $title.' | '.$siteName : $title = $siteName;
+    @endphp
     <title>{{$title}}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -11,14 +14,14 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="{{$title}}">
     <meta property="og:description" content="{{$description ?? ''}}">
-    <meta property="og:image" content="/some-image.png">
-    <meta property="og:url" content="/this-page.html">
-    <meta property="og:site_name" content="{{config('app.name')}}">
+    <meta property="og:image" content="{{asset('images/examples/dashboard.png')}}">
+    <meta property="og:url" content="{{url()->current()}}">
+    <meta property="og:site_name" content="{{$siteName}}">
     <meta property="og:locale" content="en_US">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="/">
+    <meta name="twitter:url" content="{{url()->current()}}">
     <meta name="twitter:title" content="{{$title}}">
-    <meta name="twitter:image" content="/image.jpg">
+    <meta name="twitter:image" content="{{asset('images/examples/dashboard.png')}}">
     <script>
         const createAprilPalette = (name, values) => {
             const light = {
@@ -119,22 +122,25 @@
                 darkPrimary: '217.2 91.2% 59.8%',
                 darkPrimaryForeground: '222.2 47.4% 11.2%'
             }),
-            green: createAprilPalette('Green', {
-                primary: '142.1 76.2% 36.3%',
-                primaryForeground: '355.7 100% 97.3%',
-                lightBackground: '138 76% 97%',
-                lightForeground: '144.9 80.4% 10%',
-                lightMuted: '138 76% 94%',
-                lightMutedForeground: '145.4 16.3% 43.9%',
-                lightBorder: '141.7 25.6% 89%',
-                darkBackground: '145 80% 3%',
-                darkForeground: '138 76% 97%',
-                darkCard: '144.9 80.4% 10%',
-                darkMuted: '145 40% 15%',
-                darkMutedForeground: '143.8 61.2% 66.9%',
-                darkBorder: '145 40% 18%',
-                darkPrimary: '142.1 70.6% 45.3%',
-                darkPrimaryForeground: '144.9 80.4% 10%'
+            green: createAprilPalette('Forest', {
+                primary: '28 38% 32%',
+                primaryForeground: '35 35% 97%',
+                lightBackground: '105 24% 97%',
+                lightForeground: '145 30% 16%',
+                lightCard: '95 30% 99%',
+                lightMuted: '100 25% 93%',
+                lightMutedForeground: '145 12% 41%',
+                lightBorder: '100 16% 87%',
+                lightSidebarBackground: '100 26% 95%',
+                darkBackground: '145 27% 9%',
+                darkForeground: '45 35% 94%',
+                darkCard: '145 24% 12%',
+                darkMuted: '145 18% 18%',
+                darkMutedForeground: '90 14% 68%',
+                darkBorder: '145 16% 24%',
+                darkSidebarBackground: '145 30% 7%',
+                darkPrimary: '30 46% 62%',
+                darkPrimaryForeground: '145 27% 9%'
             }),
             rose: createAprilPalette('Rose', {
                 primary: '346.8 77.2% 49.8%',
@@ -182,7 +188,7 @@
                 return
             }
 
-            const palette = window.aprilCustomizationPalettes[customization.theme] || window.aprilCustomizationPalettes.zinc
+            const palette = window.aprilCustomizationPalettes[customization.theme] || window.aprilCustomizationPalettes.green
             const tokens = palette[customization.dark ? 'dark' : 'light']
             const radius = {
                 sm: '0.375rem',
@@ -191,7 +197,7 @@
                 xl: '1rem'
             }[customization.radius] || '0.5rem'
 
-            root.dataset.aprilTheme = customization.theme || 'zinc'
+            root.dataset.aprilTheme = customization.theme || 'green'
             root.dataset.aprilDensity = customization.density || 'comfortable'
             root.dataset.aprilFont = customization.font || 'sans'
             Object.entries(tokens).forEach(([property, value]) => root.style.setProperty('--' + property, value))

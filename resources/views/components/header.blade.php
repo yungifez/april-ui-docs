@@ -2,7 +2,7 @@
     <div class="px-2 lg:px-10 flex h-14 mx-auto items-center">
         <div class="mr-4 hidden md:flex">
             <a href="{{route('home')}}"
-                class="mr-6 flex no-underline items-center space-x-2 font-bold">{{config("app.name")}}</a>
+                class="mr-6 flex no-underline items-center gap-2 font-bold"><span class="flex size-7 items-center justify-center rounded-md bg-primary text-xs text-primary-foreground">A</span><span>April UI</span></a>
             <nav class="flex items-center gap-4 text-sm lg:gap-6">
                 <x-link href="{{'/docs/' . config('aui.latest-version')}}">Docs</x-link>
                 <x-link href="{{'/docs/' . config('aui.latest-version').'/components/accordion'}}">Components</x-link>
@@ -20,7 +20,7 @@
                 </slot:trigger>
                 <slot:content side="left" class="overflow-scroll beautify-scrollbar">
                     <a href="{{route('home')}}"
-                        class="mr-6 flex no-underline items-center space-x-2 font-bold">{{config("app.name")}}</a>
+                        class="mr-6 flex no-underline items-center gap-2 font-bold"><span class="flex size-7 items-center justify-center rounded-md bg-primary text-xs text-primary-foreground">A</span><span>April UI</span></a>
                     <x-link class="block my-2 hover:no-underline"
                         href="{{'/docs/' . config('aui.latest-version')}}">Docs</x-link>
                     <x-link class="block hover:no-underline"

@@ -5,8 +5,74 @@
         density: 'comfortable',
         font: 'sans',
         dark: document.documentElement.classList.contains('dark'),
+        background: 'default',
+        accent: 'default',
         palettes: window.aprilCustomizationPalettes,
+        extraPalettes: {
+            orange: {
+                name: 'Citrus',
+                light: { ...window.aprilCustomizationPalettes.rose.light, background: '30 100% 98%', foreground: '20 14% 4%', card: '0 0% 100%', 'card-foreground': '20 14% 4%', popover: '0 0% 100%', 'popover-foreground': '20 14% 4%', primary: '24 95% 53%', 'primary-foreground': '0 0% 100%', secondary: '30 80% 96%', 'secondary-foreground': '20 14% 4%', muted: '30 80% 96%', 'muted-foreground': '25 16% 47%', accent: '30 80% 92%', 'accent-foreground': '20 14% 4%', border: '30 20% 90%', input: '30 20% 90%', ring: '24 95% 53%', 'sidebar-background': '30 60% 96%', 'sidebar-foreground': '20 14% 4%', 'sidebar-primary': '24 95% 53%', 'sidebar-primary-foreground': '0 0% 100%', 'sidebar-accent': '30 80% 92%', 'sidebar-accent-foreground': '20 14% 4%', 'sidebar-border': '30 20% 90%', 'sidebar-ring': '24 95% 53%' },
+                dark: { ...window.aprilCustomizationPalettes.rose.dark, background: '20 14% 4%', foreground: '20 20% 98%', card: '20 10% 8%', 'card-foreground': '20 20% 98%', popover: '20 10% 8%', 'popover-foreground': '20 20% 98%', primary: '24 95% 53%', 'primary-foreground': '20 14% 4%', secondary: '24 10% 15%', 'secondary-foreground': '20 20% 98%', muted: '24 10% 15%', 'muted-foreground': '24 5% 65%', accent: '24 20% 18%', 'accent-foreground': '20 20% 98%', border: '24 10% 20%', input: '24 10% 20%', ring: '24 95% 53%', 'sidebar-background': '20 15% 6%', 'sidebar-foreground': '20 20% 98%', 'sidebar-primary': '24 95% 53%', 'sidebar-primary-foreground': '20 14% 4%', 'sidebar-accent': '24 20% 18%', 'sidebar-accent-foreground': '20 20% 98%', 'sidebar-border': '24 10% 20%', 'sidebar-ring': '24 95% 53%' }
+            },
+            violet: {
+                name: 'Violet',
+                light: { ...window.aprilCustomizationPalettes.blue.light, background: '250 30% 98%', foreground: '250 25% 15%', card: '0 0% 100%', 'card-foreground': '250 25% 15%', popover: '0 0% 100%', 'popover-foreground': '250 25% 15%', primary: '262 83% 58%', 'primary-foreground': '210 20% 98%', secondary: '250 30% 94%', 'secondary-foreground': '250 25% 15%', muted: '250 30% 94%', 'muted-foreground': '250 10% 45%', accent: '262 80% 95%', 'accent-foreground': '262 50% 25%', border: '250 20% 88%', input: '250 20% 88%', ring: '262 83% 58%', 'sidebar-background': '250 35% 95%', 'sidebar-foreground': '250 25% 15%', 'sidebar-primary': '262 83% 58%', 'sidebar-primary-foreground': '210 20% 98%', 'sidebar-accent': '262 80% 95%', 'sidebar-accent-foreground': '262 50% 25%', 'sidebar-border': '250 20% 88%', 'sidebar-ring': '262 83% 58%' },
+                dark: { ...window.aprilCustomizationPalettes.blue.dark, background: '250 25% 8%', foreground: '250 30% 96%', card: '250 22% 12%', 'card-foreground': '250 30% 96%', popover: '250 22% 12%', 'popover-foreground': '250 30% 96%', primary: '263 70% 50%', 'primary-foreground': '210 20% 98%', secondary: '250 20% 19%', 'secondary-foreground': '250 30% 96%', muted: '250 20% 19%', 'muted-foreground': '250 12% 70%', accent: '262 40% 18%', 'accent-foreground': '262 80% 90%', border: '250 20% 24%', input: '250 20% 24%', ring: '263 70% 50%', 'sidebar-background': '250 28% 6%', 'sidebar-foreground': '250 30% 96%', 'sidebar-primary': '263 70% 50%', 'sidebar-primary-foreground': '210 20% 98%', 'sidebar-accent': '262 40% 18%', 'sidebar-accent-foreground': '262 80% 90%', 'sidebar-border': '250 20% 24%', 'sidebar-ring': '263 70% 50%' }
+            },
+            teal: {
+                name: 'Teal',
+                light: { ...window.aprilCustomizationPalettes.green.light, background: '166 76% 97%', foreground: '180 25% 10%', card: '0 0% 100%', 'card-foreground': '180 25% 10%', popover: '0 0% 100%', 'popover-foreground': '180 25% 10%', primary: '173 80% 36%', 'primary-foreground': '0 0% 100%', secondary: '168 40% 94%', 'secondary-foreground': '180 25% 10%', muted: '168 40% 94%', 'muted-foreground': '170 15% 40%', accent: '170 60% 90%', 'accent-foreground': '180 25% 10%', border: '168 25% 86%', input: '168 25% 86%', ring: '173 80% 36%', 'sidebar-background': '168 40% 95%', 'sidebar-foreground': '180 25% 10%', 'sidebar-primary': '173 80% 36%', 'sidebar-primary-foreground': '0 0% 100%', 'sidebar-accent': '170 60% 90%', 'sidebar-accent-foreground': '180 25% 10%', 'sidebar-border': '168 25% 86%', 'sidebar-ring': '173 80% 36%' },
+                dark: { ...window.aprilCustomizationPalettes.green.dark, background: '180 25% 7%', foreground: '166 76% 97%', card: '180 20% 10%', 'card-foreground': '166 76% 97%', popover: '180 20% 10%', 'popover-foreground': '166 76% 97%', primary: '173 70% 45%', 'primary-foreground': '180 25% 7%', secondary: '180 20% 16%', 'secondary-foreground': '166 76% 97%', muted: '180 20% 16%', 'muted-foreground': '170 15% 68%', accent: '170 30% 18%', 'accent-foreground': '166 76% 97%', border: '180 18% 22%', input: '180 18% 22%', ring: '173 70% 45%', 'sidebar-background': '180 30% 5%', 'sidebar-foreground': '166 76% 97%', 'sidebar-primary': '173 70% 45%', 'sidebar-primary-foreground': '180 25% 7%', 'sidebar-accent': '170 30% 18%', 'sidebar-accent-foreground': '166 76% 97%', 'sidebar-border': '180 18% 22%', 'sidebar-ring': '173 70% 45%' }
+            },
+            amber: {
+                name: 'Amber',
+                light: { ...window.aprilCustomizationPalettes.green.light, background: '48 100% 97%', foreground: '26 83% 14%', card: '0 0% 100%', 'card-foreground': '26 83% 14%', popover: '0 0% 100%', 'popover-foreground': '26 83% 14%', primary: '38 92% 50%', 'primary-foreground': '26 83% 14%', secondary: '48 96% 89%', 'secondary-foreground': '26 83% 14%', muted: '48 96% 89%', 'muted-foreground': '32 20% 40%', accent: '45 95% 90%', 'accent-foreground': '32 50% 20%', border: '45 30% 85%', input: '45 30% 85%', ring: '38 92% 50%', 'sidebar-background': '48 80% 94%', 'sidebar-foreground': '26 83% 14%', 'sidebar-primary': '38 92% 50%', 'sidebar-primary-foreground': '26 83% 14%', 'sidebar-accent': '45 95% 90%', 'sidebar-accent-foreground': '32 50% 20%', 'sidebar-border': '45 30% 85%', 'sidebar-ring': '38 92% 50%' },
+                dark: { ...window.aprilCustomizationPalettes.green.dark, background: '24 10% 5%', foreground: '48 100% 96%', card: '24 10% 9%', 'card-foreground': '48 100% 96%', popover: '24 10% 9%', 'popover-foreground': '48 100% 96%', primary: '38 92% 50%', 'primary-foreground': '26 83% 14%', secondary: '24 10% 16%', 'secondary-foreground': '48 100% 96%', muted: '24 10% 16%', 'muted-foreground': '40 10% 68%', accent: '35 25% 18%', 'accent-foreground': '45 90% 85%', border: '24 10% 22%', input: '24 10% 22%', ring: '38 92% 50%', 'sidebar-background': '24 15% 6%', 'sidebar-foreground': '48 100% 96%', 'sidebar-primary': '38 92% 50%', 'sidebar-primary-foreground': '26 83% 14%', 'sidebar-accent': '35 25% 18%', 'sidebar-accent-foreground': '45 90% 85%', 'sidebar-border': '24 10% 22%', 'sidebar-ring': '38 92% 50%' }
+            }
+        },
+        backgroundOptions: {
+            default: { name: 'Palette', swatch: 'hsl(var(--background))' },
+            neutral: {
+                name: 'Neutral', swatch: 'hsl(210 20% 90%)',
+                light: { background: '210 20% 98%', foreground: '222 47% 11%', card: '0 0% 100%', 'card-foreground': '222 47% 11%', popover: '0 0% 100%', 'popover-foreground': '222 47% 11%', secondary: '210 40% 96%', 'secondary-foreground': '222 47% 11%', muted: '210 40% 96%', 'muted-foreground': '215 16% 47%', border: '214 32% 91%', input: '214 32% 91%', 'sidebar-background': '210 40% 96%', 'sidebar-foreground': '222 47% 11%', 'sidebar-accent': '210 40% 92%', 'sidebar-accent-foreground': '222 47% 11%', 'sidebar-border': '214 32% 91%' },
+                dark: { background: '222 47% 7%', foreground: '210 40% 98%', card: '222 47% 11%', 'card-foreground': '210 40% 98%', popover: '222 47% 11%', 'popover-foreground': '210 40% 98%', secondary: '217 33% 18%', 'secondary-foreground': '210 40% 98%', muted: '217 33% 18%', 'muted-foreground': '215 20% 65%', border: '217 33% 18%', input: '217 33% 18%', 'sidebar-background': '222 47% 5%', 'sidebar-foreground': '210 40% 98%', 'sidebar-accent': '217 33% 18%', 'sidebar-accent-foreground': '210 40% 98%', 'sidebar-border': '217 33% 18%' }
+            },
+            sand: {
+                name: 'Sand', swatch: 'hsl(38 55% 82%)',
+                light: { background: '40 30% 96%', foreground: '28 30% 14%', card: '40 40% 99%', 'card-foreground': '28 30% 14%', popover: '40 40% 99%', 'popover-foreground': '28 30% 14%', secondary: '38 35% 89%', 'secondary-foreground': '28 30% 14%', muted: '38 35% 89%', 'muted-foreground': '28 12% 42%', border: '36 22% 82%', input: '36 22% 82%', 'sidebar-background': '38 30% 92%', 'sidebar-foreground': '28 30% 14%', 'sidebar-accent': '38 35% 87%', 'sidebar-accent-foreground': '28 30% 14%', 'sidebar-border': '36 22% 82%' },
+                dark: { background: '28 22% 8%', foreground: '40 30% 94%', card: '28 20% 11%', 'card-foreground': '40 30% 94%', popover: '28 20% 11%', 'popover-foreground': '40 30% 94%', secondary: '28 18% 18%', 'secondary-foreground': '40 30% 94%', muted: '28 18% 18%', 'muted-foreground': '35 14% 68%', border: '28 18% 23%', input: '28 18% 23%', 'sidebar-background': '28 24% 6%', 'sidebar-foreground': '40 30% 94%', 'sidebar-accent': '28 18% 18%', 'sidebar-accent-foreground': '40 30% 94%', 'sidebar-border': '28 18% 23%' }
+            },
+            lavender: {
+                name: 'Lavender', swatch: 'hsl(250 55% 86%)',
+                light: { background: '250 30% 98%', foreground: '250 25% 15%', card: '0 0% 100%', 'card-foreground': '250 25% 15%', popover: '0 0% 100%', 'popover-foreground': '250 25% 15%', secondary: '250 30% 94%', 'secondary-foreground': '250 25% 15%', muted: '250 30% 94%', 'muted-foreground': '250 10% 45%', border: '250 20% 88%', input: '250 20% 88%', 'sidebar-background': '250 35% 95%', 'sidebar-foreground': '250 25% 15%', 'sidebar-accent': '250 30% 91%', 'sidebar-accent-foreground': '250 25% 15%', 'sidebar-border': '250 20% 88%' },
+                dark: { background: '250 25% 8%', foreground: '250 30% 96%', card: '250 22% 12%', 'card-foreground': '250 30% 96%', popover: '250 22% 12%', 'popover-foreground': '250 30% 96%', secondary: '250 20% 19%', 'secondary-foreground': '250 30% 96%', muted: '250 20% 19%', 'muted-foreground': '250 12% 70%', border: '250 20% 24%', input: '250 20% 24%', 'sidebar-background': '250 28% 6%', 'sidebar-foreground': '250 30% 96%', 'sidebar-accent': '250 20% 19%', 'sidebar-accent-foreground': '250 30% 96%', 'sidebar-border': '250 20% 24%' }
+            }
+        },
+        accentOptions: {
+            default: { name: 'Palette', swatch: 'hsl(var(--primary))' },
+            ocean: {
+                name: 'Ocean', swatch: 'hsl(199 89% 48%)',
+                light: { primary: '199 89% 48%', 'primary-foreground': '210 40% 98%', accent: '199 90% 94%', 'accent-foreground': '199 90% 20%', ring: '199 89% 48%', 'sidebar-primary': '199 89% 48%', 'sidebar-primary-foreground': '210 40% 98%', 'sidebar-ring': '199 89% 48%' },
+                dark: { primary: '199 89% 48%', 'primary-foreground': '210 40% 98%', accent: '199 50% 18%', 'accent-foreground': '199 80% 90%', ring: '199 89% 48%', 'sidebar-primary': '199 89% 48%', 'sidebar-primary-foreground': '210 40% 98%', 'sidebar-ring': '199 89% 48%' }
+            },
+            violet: {
+                name: 'Violet', swatch: 'hsl(262 83% 58%)',
+                light: { primary: '262 83% 58%', 'primary-foreground': '210 20% 98%', accent: '262 80% 95%', 'accent-foreground': '262 50% 25%', ring: '262 83% 58%', 'sidebar-primary': '262 83% 58%', 'sidebar-primary-foreground': '210 20% 98%', 'sidebar-ring': '262 83% 58%' },
+                dark: { primary: '263 70% 50%', 'primary-foreground': '210 20% 98%', accent: '262 40% 18%', 'accent-foreground': '262 80% 90%', ring: '263 70% 50%', 'sidebar-primary': '263 70% 50%', 'sidebar-primary-foreground': '210 20% 98%', 'sidebar-ring': '263 70% 50%' }
+            },
+            amber: {
+                name: 'Amber', swatch: 'hsl(38 92% 50%)',
+                light: { primary: '38 92% 50%', 'primary-foreground': '26 83% 14%', accent: '45 95% 90%', 'accent-foreground': '32 50% 20%', ring: '38 92% 50%', 'sidebar-primary': '38 92% 50%', 'sidebar-primary-foreground': '26 83% 14%', 'sidebar-ring': '38 92% 50%' },
+                dark: { primary: '38 92% 50%', 'primary-foreground': '26 83% 14%', accent: '35 25% 18%', 'accent-foreground': '45 90% 85%', ring: '38 92% 50%', 'sidebar-primary': '38 92% 50%', 'sidebar-primary-foreground': '26 83% 14%', 'sidebar-ring': '38 92% 50%' }
+            },
+            rose: {
+                name: 'Rose', swatch: 'hsl(347 77% 50%)',
+                light: { primary: '347 77% 50%', 'primary-foreground': '356 100% 97%', accent: '356 100% 96%', 'accent-foreground': '347 60% 25%', ring: '347 77% 50%', 'sidebar-primary': '347 77% 50%', 'sidebar-primary-foreground': '356 100% 97%', 'sidebar-ring': '347 77% 50%' },
+                dark: { primary: '347 77% 50%', 'primary-foreground': '356 100% 97%', accent: '347 35% 20%', 'accent-foreground': '356 80% 90%', ring: '347 77% 50%', 'sidebar-primary': '347 77% 50%', 'sidebar-primary-foreground': '356 100% 97%', 'sidebar-ring': '347 77% 50%' }
+            }
+        },
         init() {
+            Object.assign(this.palettes, this.extraPalettes)
             const saved = window.getAprilCustomization()
 
             if (saved) {
@@ -20,7 +86,9 @@
                 radius: this.radius,
                 density: this.density,
                 font: this.font,
-                dark: this.dark
+                dark: this.dark,
+                background: this.background,
+                accent: this.accent
             }))
             window.applyAprilCustomization()
         },
@@ -30,12 +98,23 @@
             this.radius = 'md'
             this.density = 'comfortable'
             this.font = 'sans'
+            this.background = 'default'
+            this.accent = 'default'
             window.applyAprilCustomization()
             window.determineColorMode()
             this.dark = document.documentElement.classList.contains('dark')
         },
         get palette() { return this.palettes[this.theme] },
-        get tokens() { return this.palette[this.dark ? 'dark' : 'light'] },
+        get tokens() {
+            const tokens = { ...this.palette[this.dark ? 'dark' : 'light'] }
+            const background = this.backgroundOptions[this.background] || this.backgroundOptions.default
+            const accent = this.accentOptions[this.accent] || this.accentOptions.default
+
+            if (this.background !== 'default') Object.assign(tokens, background[this.dark ? 'dark' : 'light'])
+            if (this.accent !== 'default') Object.assign(tokens, accent[this.dark ? 'dark' : 'light'])
+
+            return tokens
+        },
         get previewStyle() {
             const variables = Object.entries(this.tokens).flatMap(([property, value]) => [
                 '--' + property + ': ' + value + ';',
@@ -86,9 +165,35 @@
                     <div class="grid grid-cols-2 gap-2">
                         <template x-for="(palette, name) in palettes" :key="name">
                             <april:button type="button" variant="outline" size="sm" class="justify-start"
-                                x-bind:class="theme === name ? 'border-primary bg-accent' : ''" @click="theme = name; persist()">
+                                x-bind:class="theme === name ? 'border-primary bg-accent' : ''" @click="theme = name; background = 'default'; accent = 'default'; persist()">
                                 <span class="mr-2 h-3 w-3 rounded-full" :style="'background-color: hsl(' + palette.light.primary + ')'"></span>
                                 <span x-text="palette.name"></span>
+                            </april:button>
+                        </template>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <div><h2 class="text-sm font-semibold">Background</h2><p class="text-xs text-muted-foreground">Change the surface colors independently.</p></div>
+                    <div class="grid grid-cols-2 gap-2">
+                        <template x-for="(option, name) in backgroundOptions" :key="'background-' + name">
+                            <april:button type="button" variant="outline" size="sm" class="justify-start"
+                                x-bind:class="background === name ? 'border-primary bg-accent' : ''" @click="background = name; persist()">
+                                <span class="mr-2 h-3 w-3 rounded-full border" :style="'background-color: ' + option.swatch"></span>
+                                <span x-text="option.name"></span>
+                            </april:button>
+                        </template>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <div><h2 class="text-sm font-semibold">Accent</h2><p class="text-xs text-muted-foreground">Choose a separate action and highlight color.</p></div>
+                    <div class="grid grid-cols-2 gap-2">
+                        <template x-for="(option, name) in accentOptions" :key="'accent-' + name">
+                            <april:button type="button" variant="outline" size="sm" class="justify-start"
+                                x-bind:class="accent === name ? 'border-primary bg-accent' : ''" @click="accent = name; persist()">
+                                <span class="mr-2 h-3 w-3 rounded-full" :style="'background-color: ' + option.swatch"></span>
+                                <span x-text="option.name"></span>
                             </april:button>
                         </template>
                     </div>
@@ -196,13 +301,13 @@
                 </p>
                 <div class="mt-6 grid gap-4 md:grid-cols-2">
                     <april:card>
-                        <slot:title>Inspect the library</slot:title>
+                        <slot:title class="text-base">Inspect the library</slot:title>
                         <slot:content>
                             <x-code-block-wrapper language="shell">php artisan april:list</x-code-block-wrapper>
                         </slot:content>
                     </april:card>
                     <april:card>
-                        <slot:title>Publish one component</slot:title>
+                        <slot:title class="text-base">Publish one component</slot:title>
                         <slot:content>
                             <x-code-block-wrapper language="shell">php artisan april:publish button</x-code-block-wrapper>
                         </slot:content>

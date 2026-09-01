@@ -37,7 +37,13 @@
                                 @endforeach
                             </div>
                         </div>
-                        <x-component-preview :component="$block['component']" title="blade" />
+                        <x-component-preview
+                            :component="$block['component']"
+                            :image="isset($block['image']) ? asset($block['image']) : null"
+                            :image-light="isset($block['imageLight']) ? asset($block['imageLight']) : null"
+                            :image-class="$block['imageClass'] ?? 'max-h-[350px] w-full rounded-md object-contain object-top'"
+                            title="blade"
+                        />
                     </article>
                 @endforeach
             </div>

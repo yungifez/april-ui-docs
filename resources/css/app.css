@@ -128,23 +128,6 @@ html.dark:not([data-april-theme]) {
         color: hsl(var(--primary-text));
     }
 
-    .april-reveal {
-        transition:
-            opacity 910ms cubic-bezier(0.22, 1, 0.36, 1),
-            transform 910ms cubic-bezier(0.22, 1, 0.36, 1);
-        transition-delay: var(--april-delay, 0ms);
-    }
-
-    .js .april-reveal {
-        opacity: 0;
-        transform: translateY(22px);
-    }
-
-    .js .april-reveal.is-visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
     .april-lift {
         transition:
             transform 455ms cubic-bezier(0.22, 1, 0.36, 1),
@@ -175,10 +158,8 @@ html.dark:not([data-april-theme]) {
         animation: none;
     }
 
-    .april-reveal,
     .april-lift,
-    .js .april-reveal {
-        opacity: 1;
+    .april-hero-frame {
         transform: none;
     }
 }

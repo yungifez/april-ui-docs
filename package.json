@@ -3,7 +3,8 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
-        "build": "php artisan docs:search-index && vite build"
+        "build": "php artisan docs:search-index && vite build",
+        "screenshots:blocks": "node scripts/capture-block-screenshots.mjs"
     },
     "devDependencies": {
         "@tailwindcss/postcss": "^4.3.0",

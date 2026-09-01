@@ -2,6 +2,7 @@
 'image' => null,
 'imageLight' => null,
 'imageAlt' => 'Component preview',
+'imageClass' => 'max-h-[350px] w-full rounded-md object-contain object-top',
 ])
 
 @if ($attributes->has('component'))
@@ -34,12 +35,12 @@ $code = $path ? file_get_contents($path) : '';
         @if ($image || $imageLight)
         <div class="flex min-h-[350px] w-full items-center justify-center p-4 md:hidden dark:hidden">
             <img src="{{ $imageLight ?? $image }}" alt="{{ $imageAlt }}" loading="lazy"
-                class="max-h-[350px] w-full rounded-md object-contain object-top">
+                class="{{ $imageClass }}">
         </div>
         @if ($image)
         <div class="hidden min-h-[350px] w-full items-center justify-center p-4 dark:max-md:flex md:hidden">
             <img src="{{ $image }}" alt="{{ $imageAlt }}" loading="lazy"
-                class="max-h-[350px] w-full rounded-md object-contain object-top">
+                class="{{ $imageClass }}">
         </div>
         @endif
         @endif

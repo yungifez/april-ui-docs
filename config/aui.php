@@ -10,6 +10,7 @@ return [
                 ['type' => 'header', 'text' => 'Getting Started'],
                 ['href' => '/', 'text' => 'introduction'],
                 ['href' => 'installation', 'text' => 'installation'],
+                ['href' => 'starter-kits', 'text' => 'starter kits'],
                 ['href' => '/examples', 'text' => 'examples', 'scope' => 'global'],
                 ['href' => '/customize', 'text' => 'customize', 'scope' => 'global'],
                 ['href' => 'theming', 'text' => 'theming'],

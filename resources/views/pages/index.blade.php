@@ -54,7 +54,7 @@ SHELL;
                         <span class="text-border">/</span>
                         <span>Laravel Blade components</span>
                     </div>
-                    <h1 data-april-reveal class="april-reveal mt-7 max-w-xl text-balance text-5xl font-bold tracking-[-0.04em] md:text-6xl" style="--april-delay: 150ms">
+                    <h1 data-april-reveal class="april-reveal mt-7 max-w-xl text-balance text-5xl font-bold tracking-tighter md:leading-[4.5rem] md:text-6xl" style="--april-delay: 150ms">
                         UI components <span class="primary-text"> crafted </span> for Artisans
                     </h1>
                     <p data-april-reveal class="april-reveal mt-6 max-w-xl text-lg leading-8 text-muted-foreground" style="--april-delay: 230ms">
@@ -136,12 +136,12 @@ SHELL;
                 <april:button-link href="{{url('docs/0.x/components/accordion')}}" variant="outline" class="april-lift">See all components <x-lucide-arrow-right class="ml-2 size-4" /></april:button-link>
             </div>
             <div class="mt-12 grid gap-x-12 gap-y-10 border-y py-8 md:grid-cols-2 lg:grid-cols-3">
-                <div data-april-reveal class="april-reveal april-lift" style="--april-delay: 80ms"><p class="font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">Primitives</p><p class="mt-3 text-lg font-semibold">Button, card, badge, avatar</p><p class="mt-2 text-sm leading-6 text-muted-foreground">The basic language of a product interface.</p></div>
-                <div data-april-reveal class="april-reveal april-lift" style="--april-delay: 140ms"><p class="font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">Forms</p><p class="mt-3 text-lg font-semibold">Input, select, editor, date picker</p><p class="mt-2 text-sm leading-6 text-muted-foreground">Controls that fit inside native Laravel forms.</p></div>
-                <div data-april-reveal class="april-reveal april-lift" style="--april-delay: 200ms"><p class="font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">Overlays</p><p class="mt-3 text-lg font-semibold">Dialog, sheet, popover, command</p><p class="mt-2 text-sm leading-6 text-muted-foreground">Useful interactions with Alpine-friendly state.</p></div>
-                <div data-april-reveal class="april-reveal april-lift" style="--april-delay: 260ms"><p class="font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">Data</p><p class="mt-3 text-lg font-semibold">Data table, chart, calendar</p><p class="mt-2 text-sm leading-6 text-muted-foreground">Sortable, searchable, responsive product data.</p></div>
-                <div data-april-reveal class="april-reveal april-lift" style="--april-delay: 320ms"><p class="font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">Navigation</p><p class="mt-3 text-lg font-semibold">Sidebar, breadcrumb, tabs</p><p class="mt-2 text-sm leading-6 text-muted-foreground">Keep context visible as the app grows.</p></div>
-                <div data-april-reveal class="april-reveal april-lift" style="--april-delay: 380ms"><p class="font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">Blocks</p><p class="mt-3 text-lg font-semibold">Dashboards, auth, pricing</p><p class="mt-2 text-sm leading-6 text-muted-foreground">Complete starting points for common routes.</p></div>
+                <div data-april-reveal class="april-reveal april-lift" style="--april-delay: 80ms"><p class="font-mono text-xs uppercase text-muted-foreground">Primitives</p><p class="mt-3 text-lg font-semibold">Button, card, badge, avatar</p><p class="mt-2 text-sm leading-6 text-muted-foreground">The basic language of a product interface.</p></div>
+                <div data-april-reveal class="april-reveal april-lift" style="--april-delay: 140ms"><p class="font-mono text-xs uppercase text-muted-foreground">Forms</p><p class="mt-3 text-lg font-semibold">Input, select, editor, date picker</p><p class="mt-2 text-sm leading-6 text-muted-foreground">Controls that fit inside native Laravel forms.</p></div>
+                <div data-april-reveal class="april-reveal april-lift" style="--april-delay: 200ms"><p class="font-mono text-xs uppercase text-muted-foreground">Overlays</p><p class="mt-3 text-lg font-semibold">Dialog, sheet, popover, command</p><p class="mt-2 text-sm leading-6 text-muted-foreground">Useful interactions with Alpine-friendly state.</p></div>
+                <div data-april-reveal class="april-reveal april-lift" style="--april-delay: 260ms"><p class="font-mono text-xs uppercase text-muted-foreground">Data</p><p class="mt-3 text-lg font-semibold">Data table, chart, calendar</p><p class="mt-2 text-sm leading-6 text-muted-foreground">Sortable, searchable, responsive product data.</p></div>
+                <div data-april-reveal class="april-reveal april-lift" style="--april-delay: 320ms"><p class="font-mono text-xs uppercase text-muted-foreground">Navigation</p><p class="mt-3 text-lg font-semibold">Sidebar, breadcrumb, tabs</p><p class="mt-2 text-sm leading-6 text-muted-foreground">Keep context visible as the app grows.</p></div>
+                <div data-april-reveal class="april-reveal april-lift" style="--april-delay: 380ms"><p class="font-mono text-xs uppercase text-muted-foreground">Blocks</p><p class="mt-3 text-lg font-semibold">Dashboards, auth, pricing</p><p class="mt-2 text-sm leading-6 text-muted-foreground">Complete starting points for common routes.</p></div>
             </div>
         </section>
 

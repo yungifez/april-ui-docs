@@ -364,6 +364,7 @@
 </body>
 @vite('resources/js/app.js')
 @aprilScripts
+@stack('body-scripts')
 <livewire:scripts />
 
 </html>

@@ -128,7 +128,7 @@
                 darkAccent: '30 20% 15%',
                 darkSidebarBackground: '145 22% 4%',
                 darkPrimary: '28 50% 22%',
-                darkPrimaryText: '28 50% 46%',
+                darkPrimaryText: '28 50% 64%',
                 darkPrimaryForeground: '45 28% 92%'
             }),
             rose: createAprilPalette('Rose', {

@@ -90,7 +90,7 @@ html.dark:not([data-april-theme]) {
     --popover: 145 15% 9%;
     --popover-foreground: 45 28% 92%;
     --primary: 28 50% 22%;
-    --primary-text: 28 50% 46%;
+    --primary-text: 28 50% 64%;
     --primary-foreground: 45 28% 92%;
     --secondary: 145 12% 14%;
     --secondary-foreground: 45 28% 92%;
@@ -124,10 +124,7 @@ html.dark:not([data-april-theme]) {
 }
 
 @layer components {
-    /* The dark brown action color is too dark for copy on forest surfaces. */
-    .text-primary,
-    .primary-text,
-    .hover\:text-primary:hover {
+    .primary-text {
         color: hsl(var(--primary-text));
     }
 
@@ -161,6 +158,14 @@ html.dark:not([data-april-theme]) {
 
     .april-hero-frame {
         animation: april-float 12s ease-in-out infinite;
+    }
+}
+
+@layer utilities {
+    /* The dark brown action color is too dark for copy on forest surfaces. */
+    .dark .text-primary,
+    .dark .hover\:text-primary:hover {
+        color: hsl(var(--primary-text));
     }
 }
 

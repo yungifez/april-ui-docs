@@ -322,6 +322,12 @@ html.dark:not([data-april-theme]) {
 }
 
 @utility docs-layout {
+    /* Markdown already gives headings and examples their own rhythm. Keep
+       the page header from adding a second, oversized gap on desktop. */
+    & > :nth-child(2) {
+        margin-top: 0;
+    }
+
     & > p code,
     & > li code,
     & > table code {

@@ -93,6 +93,16 @@ class ExampleTest extends TestCase
         $this->assertStringContainsString('xKey', $html);
     }
 
+    public function test_the_docs_introduction_explains_the_laravel_workflow(): void
+    {
+        $this->get('/docs/1.x')
+            ->assertOk()
+            ->assertSee('Build polished interfaces without leaving Laravel.')
+            ->assertSee('A Laravel workflow, kept intact')
+            ->assertSee('Start with a kit')
+            ->assertSee('Browse blocks');
+    }
+
     public function test_the_customize_page_renders_the_theme_builder(): void
     {
         $response = $this->get('/customize');

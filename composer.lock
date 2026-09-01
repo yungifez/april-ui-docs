@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3eae9842fe4ae70a3743436044133bf1",
+    "content-hash": "7d0f8c49262acff5fcd475045192580d",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -7135,16 +7135,16 @@
         },
         {
             "name": "yungifez/april-ui",
-            "version": "dev-main",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yungifez/april-ui.git",
-                "reference": "c1904985658646b0f134e51eb87046134fad0175"
+                "reference": "74b1ac00f350049e61b0a16e868db585dcd6d490"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yungifez/april-ui/zipball/c1904985658646b0f134e51eb87046134fad0175",
-                "reference": "c1904985658646b0f134e51eb87046134fad0175",
+                "url": "https://api.github.com/repos/yungifez/april-ui/zipball/74b1ac00f350049e61b0a16e868db585dcd6d490",
+                "reference": "74b1ac00f350049e61b0a16e868db585dcd6d490",
                 "shasum": ""
             },
             "require": {
@@ -7159,7 +7159,7 @@
                 "livewire/livewire": "^3.4",
                 "mallardduck/blade-lucide-icons": "^2.0",
                 "nunomaduro/collision": "^8.0",
-                "orchestra/testbench": "^10.0",
+                "orchestra/testbench": "^10.0|^11.0",
                 "pestphp/pest": "^3.8|^4.0",
                 "pestphp/pest-plugin-arch": "^3.1|^4.0",
                 "pestphp/pest-plugin-laravel": "^3.2|^4.0",
@@ -7170,7 +7170,6 @@
             "suggest": {
                 "livewire/livewire": "Required when using the optional Livewire data-table adapter."
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -7242,7 +7241,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "A livewire blade UI component library",
+            "description": "A Laravel Blade component library with Alpine JS and Livewire support.",
             "homepage": "https://github.com/yungifez/april-ui",
             "keywords": [
                 "april-ui",
@@ -7250,10 +7249,10 @@
                 "yungifez"
             ],
             "support": {
-                "source": "https://github.com/yungifez/april-ui/tree/main",
+                "source": "https://github.com/yungifez/april-ui/tree/v1.0.0",
                 "issues": "https://github.com/yungifez/april-ui/issues"
             },
-            "time": "2026-09-01T01:14:11+00:00"
+            "time": "2026-09-01T02:59:06+00:00"
         }
     ],
     "packages-dev": [
@@ -10130,10 +10129,8 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "dev",
-    "stability-flags": {
-        "yungifez/april-ui": 20
-    },
+    "minimum-stability": "stable",
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

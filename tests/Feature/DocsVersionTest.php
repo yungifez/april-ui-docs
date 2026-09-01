@@ -12,37 +12,37 @@ class DocsVersionTest extends TestCase
         $entries = app(SearchIndex::class)->build();
 
         $this->assertNotEmpty($entries);
-        $this->assertSame('0.x', $entries[0]['version']);
-        $this->assertStringStartsWith('/docs/0.x', $entries[0]['url']);
+        $this->assertSame('1.x', $entries[0]['version']);
+        $this->assertStringStartsWith('/docs/1.x', $entries[0]['url']);
     }
 
     public function test_search_entries_can_be_limited_to_the_active_version(): void
     {
-        $entries = app(SearchIndex::class)->entries('0.x');
+        $entries = app(SearchIndex::class)->entries('1.x');
 
         $this->assertNotEmpty($entries);
         $this->assertTrue(collect($entries)->every(
-            fn (array $entry): bool => $entry['version'] === '0.x'
+            fn (array $entry): bool => $entry['version'] === '1.x'
         ));
-        $this->assertSame([], app(SearchIndex::class)->entries('1.x'));
+        $this->assertSame([], app(SearchIndex::class)->entries('2.x'));
     }
 
     public function test_docs_navigation_uses_the_configured_version(): void
     {
-        $html = $this->get('/docs/0.x/components/button')
+        $html = $this->get('/docs/1.x/components/button')
             ->assertOk()
             ->getContent();
 
-        $this->assertStringContainsString('href="/docs/0.x"', $html);
-        $this->assertStringContainsString('href="/docs/0.x/components/accordion"', $html);
+        $this->assertStringContainsString('href="/docs/1.x"', $html);
+        $this->assertStringContainsString('href="/docs/1.x/components/accordion"', $html);
         $this->assertStringContainsString('Alpine.navigate', $html);
     }
 
     public function test_docs_navigation_resolves_the_version_from_the_current_request(): void
     {
         config()->set('aui.versions', array_merge(config('aui.versions'), [
-            '1.x' => [
-                'label' => '1.x',
+            '2.x' => [
+                'label' => '2.x',
                 'links' => [
                     ['type' => 'header', 'text' => 'Components'],
                     ['href' => 'components/button', 'text' => 'Button'],
@@ -50,13 +50,13 @@ class DocsVersionTest extends TestCase
             ],
         ]));
 
-        $html = $this->get('/docs/0.x/components/button')
+        $html = $this->get('/docs/1.x/components/button')
             ->assertOk()
             ->getContent();
 
         $this->assertStringContainsString('Documentation version', $html);
-        $this->assertStringContainsString('1.x', $html);
-        $this->assertStringContainsString('/docs/0.x/components/button', $html);
-        $this->assertStringNotContainsString('/docs/1.x/components/button', $html);
+        $this->assertStringContainsString('2.x', $html);
+        $this->assertStringContainsString('/docs/1.x/components/button', $html);
+        $this->assertStringNotContainsString('/docs/2.x/components/button', $html);
     }
 }

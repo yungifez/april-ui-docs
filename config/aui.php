@@ -1,11 +1,11 @@
 <?php
 
 return [
-    'latest-version' => '0.x',
+    'latest-version' => '1.x',
 
     'versions' => [
-        '0.x' => [
-            'label' => '0.x',
+        '1.x' => [
+            'label' => '1.x',
             'links' => [
                 ['type' => 'header', 'text' => 'Getting Started'],
                 ['href' => '/', 'text' => 'introduction'],
@@ -23,6 +23,7 @@ return [
                 ['href' => 'components/attachment', 'text' => 'Attachment'],
                 ['href' => 'components/avatar', 'text' => 'Avatar'],
                 ['href' => 'components/badge', 'text' => 'Badge'],
+                ['href' => 'components/banner', 'text' => 'Banner'],
                 ['href' => 'components/breadcrumb', 'text' => 'Breadcrumb'],
                 ['href' => 'components/bubble', 'text' => 'Bubble'],
                 ['href' => 'components/button', 'text' => 'Button'],
@@ -31,6 +32,7 @@ return [
                 ['href' => 'components/card', 'text' => 'Card'],
                 ['href' => 'components/carousel', 'text' => 'Carousel'],
                 ['href' => 'components/chart', 'text' => 'Chart'],
+                ['href' => 'components/checkbox', 'text' => 'Checkbox'],
                 ['href' => 'components/command', 'text' => 'Command'],
                 ['href' => 'components/collapsible', 'text' => 'Collapsible'],
                 ['href' => 'components/combobox', 'text' => 'Combobox'],
@@ -39,13 +41,19 @@ return [
                 ['href' => 'components/date-picker', 'text' => 'Date Picker'],
                 ['href' => 'components/dialog', 'text' => 'Dialog'],
                 ['href' => 'components/dropdown-menu', 'text' => 'Dropdown Menu'],
+                ['href' => 'components/editor', 'text' => 'Editor'],
                 ['href' => 'components/input', 'text' => 'Input'],
+                ['href' => 'components/input-group', 'text' => 'Input Group'],
                 ['href' => 'components/label', 'text' => 'Label'],
+                ['href' => 'components/loading-spinner', 'text' => 'Loading Spinner'],
+                ['href' => 'components/native-select', 'text' => 'Native Select'],
                 ['href' => 'components/popover', 'text' => 'Popover'],
                 ['href' => 'components/select', 'text' => 'Select'],
+                ['href' => 'components/separator', 'text' => 'Separator'],
                 ['href' => 'components/sheet', 'text' => 'Sheet'],
                 ['href' => 'components/sidebar', 'text' => 'Sidebar'],
                 ['href' => 'components/skeleton', 'text' => 'Skeleton'],
+                ['href' => 'components/slider', 'text' => 'Slider'],
                 ['href' => 'components/steps', 'text' => 'Steps'],
                 ['href' => 'components/switch', 'text' => 'Switch'],
                 ['href' => 'components/tabs', 'text' => 'Tabs'],

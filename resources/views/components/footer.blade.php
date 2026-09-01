@@ -5,7 +5,7 @@
             <p class="mt-1">Built with love by Marvellous.</p>
         </div>
         <div class="flex flex-wrap gap-x-5 gap-y-2">
-            <a href="{{url('docs/0.x')}}">Docs</a>
+            <a href="{{url('docs/1.x')}}">Docs</a>
             <a href="/examples">Examples</a>
             <a href="{{route('customize')}}">Customize</a>
             <a href="https://github.com/yungifez/april-ui" target="_blank" rel="noreferrer">GitHub</a>

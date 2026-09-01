@@ -62,11 +62,11 @@ SHELL;
                         Inspired by <a href="https://ui.shadcn.com/" target="_blank" rel="noreferrer" class="font-medium text-foreground underline decoration-primary underline-offset-4">shadcn/ui</a>, built for Blade and Livewire.
                     </p>
                     <div data-april-reveal class="april-reveal mt-8 flex flex-wrap gap-3" style="--april-delay: 310ms">
-                        <april:button-link href="{{url('docs/0.x')}}" size="lg" class="font-semibold">
+                        <april:button-link href="{{url('docs/1.x')}}" size="lg" class="font-semibold">
                             Read the docs
                             <x-lucide-arrow-right class="ml-2 size-4" />
                         </april:button-link>
-                        <april:button-link href="{{url('docs/0.x/components/button')}}" variant="outline" size="lg" class="font-semibold">
+                        <april:button-link href="{{url('docs/1.x/components/button')}}" variant="outline" size="lg" class="font-semibold">
                             Browse components
                         </april:button-link>
                     </div>
@@ -133,7 +133,7 @@ SHELL;
                     <h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">The pieces behind a real application.</h2>
                     <p class="mt-4 text-lg leading-8 text-muted-foreground">Start with the small things. Reach for the larger surfaces when your route needs them.</p>
                 </div>
-                <april:button-link href="{{url('docs/0.x/components/accordion')}}" variant="outline" class="april-lift">See all components <x-lucide-arrow-right class="ml-2 size-4" /></april:button-link>
+                <april:button-link href="{{url('docs/1.x/components/accordion')}}" variant="outline" class="april-lift">See all components <x-lucide-arrow-right class="ml-2 size-4" /></april:button-link>
             </div>
             <div class="mt-12 grid gap-x-12 gap-y-10 border-y py-8 md:grid-cols-2 lg:grid-cols-3">
                 <div data-april-reveal class="april-reveal april-lift" style="--april-delay: 80ms"><p class="font-mono text-xs uppercase text-muted-foreground">Primitives</p><p class="mt-3 text-lg font-semibold">Button, card, badge, avatar</p><p class="mt-2 text-sm leading-6 text-muted-foreground">The basic language of a product interface.</p></div>
@@ -176,7 +176,7 @@ SHELL;
                 <p class="mt-4 text-lg leading-8 text-muted-foreground">Install with Composer, render with Blade, connect your data, and publish a view only when you need to own the markup.</p>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <april:button-link href="{{route('customize')}}" variant="outline">Customize the theme</april:button-link>
-                    <april:button-link href="{{url('docs/0.x/installation')}}" variant="ghost">Installation guide <x-lucide-arrow-right class="ml-2 size-4" /></april:button-link>
+                    <april:button-link href="{{url('docs/1.x/installation')}}" variant="ghost">Installation guide <x-lucide-arrow-right class="ml-2 size-4" /></april:button-link>
                 </div>
             </div>
             <div data-april-reveal class="april-reveal border border-border bg-card p-2 shadow-xl shadow-primary/5" style="--april-delay: 160ms">
@@ -190,7 +190,7 @@ SHELL;
             <div class="mx-auto flex max-w-screen-xl flex-col items-start justify-between gap-8 px-4 py-14 md:flex-row md:items-center md:px-10 md:py-20">
                 <div data-april-reveal class="april-reveal max-w-2xl" style="--april-delay: 80ms"><p class="text-sm font-medium text-primary-foreground/70">For the next route</p><h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Keep your application code in charge.</h2><p class="mt-3 text-primary-foreground/75">Read the docs, pick a component, and build the screen the way your Laravel app wants it built.</p></div>
                 <div class="flex flex-wrap gap-3">
-                    <april:button-link href="{{url('docs/0.x')}}" variant="secondary" size="lg" class="april-lift">Read the docs <x-lucide-arrow-right class="ml-2 size-4" /></april:button-link>
+                    <april:button-link href="{{url('docs/1.x')}}" variant="secondary" size="lg" class="april-lift">Read the docs <x-lucide-arrow-right class="ml-2 size-4" /></april:button-link>
                     <april:button-link href="https://github.com/yungifez/april-ui" target="_blank" variant="outline" size="lg" class="april-lift border-primary-foreground/30 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"><x-lucide-github class="mr-2 size-4" />GitHub</april:button-link>
                 </div>
             </div>

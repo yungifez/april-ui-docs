@@ -82,7 +82,7 @@ class ExampleTest extends TestCase
 
     public function test_docs_search_includes_markdown_content(): void
     {
-        $html = $this->get('/docs/0.x/components/chart')
+        $html = $this->get('/docs/1.x/components/chart')
             ->assertOk()
             ->getContent();
 
@@ -129,7 +129,7 @@ class ExampleTest extends TestCase
 
     public function test_docs_menu_persistence_is_scoped_to_the_desktop_sidebar(): void
     {
-        $html = $this->get('/docs/0.x/components/calendar')
+        $html = $this->get('/docs/1.x/components/calendar')
             ->assertOk()
             ->getContent();
 
@@ -143,20 +143,20 @@ class ExampleTest extends TestCase
 
     public function test_alert_previews_render_the_alert_content_not_a_markdown_code_block(): void
     {
-        $this->get('/docs/0.x/components/alert')
+        $this->get('/docs/1.x/components/alert')
             ->assertOk()
             ->assertSee('<h5 data-slot="alert-title"', false);
     }
 
     public function test_calendar_preview_renders_each_day_as_one_alpine_root(): void
     {
-        $html = $this->get('/docs/0.x/components/calendar')
+        $html = $this->get('/docs/1.x/components/calendar')
             ->assertOk()
             ->getContent();
 
         $this->assertStringContainsString('<div class="contents">', $html);
         $this->assertStringNotContainsString('x-if="cell.outside', $html);
         $this->assertStringContainsString('Use the following command to publish this view:', $html);
-        $this->assertStringContainsString('april-view-calendar', $html);
+        $this->assertStringContainsString('data-slot="calendar"', $html);
     }
 }

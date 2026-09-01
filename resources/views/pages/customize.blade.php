@@ -24,6 +24,16 @@
             }))
             window.applyAprilCustomization()
         },
+        clear() {
+            sessionStorage.removeItem('april-ui-customization')
+            this.theme = 'green'
+            this.radius = 'md'
+            this.density = 'comfortable'
+            this.font = 'sans'
+            this.dark = false
+            window.applyAprilCustomization()
+            window.determineColorMode()
+        },
         get palette() { return this.palettes[this.theme] },
         get tokens() { return this.palette[this.dark ? 'dark' : 'light'] },
         get previewStyle() {
@@ -115,10 +125,15 @@
 
                 <div class="flex items-center justify-between gap-4 border-t pt-6">
                     <div><h2 class="text-sm font-semibold">Preview mode</h2><p class="text-xs text-muted-foreground">See the theme in dark mode.</p></div>
-                    <april:button type="button" variant="outline" size="sm" @click="dark = !dark; persist()">
-                        <x-lucide-moon class="mr-2 h-4 w-4" />
-                        <span x-text="dark ? 'Dark' : 'Light'"></span>
-                    </april:button>
+                    <div class="flex items-center gap-2">
+                        <april:button type="button" variant="outline" size="sm" @click="dark = !dark; persist()">
+                            <x-lucide-moon class="mr-2 h-4 w-4" />
+                            <span x-text="dark ? 'Dark' : 'Light'"></span>
+                        </april:button>
+                        <april:button type="button" variant="ghost" size="sm" aria-label="Clear saved customization" @click="clear()">
+                            Clear
+                        </april:button>
+                    </div>
                 </div>
             </aside>
 

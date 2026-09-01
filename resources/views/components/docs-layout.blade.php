@@ -8,7 +8,7 @@
             </slot:content>
         </april:sidebar>
 
-        <april:sidebar-inset class="relative min-w-0 max-w-full docs-layout lg:mx-auto px-2 lg:max-w-3xl py-6 lg:gap-10 lg:py-8">
+        <april:sidebar-inset class="relative bg-transparent min-w-0 max-w-full docs-layout lg:mx-auto px-2 lg:max-w-3xl py-6 lg:gap-10 lg:py-8">
             <div class="space-y-2">
                 @isset($title)
                 <h1 class="scroll-m-20 text-4xl font-bold tracking-tight">

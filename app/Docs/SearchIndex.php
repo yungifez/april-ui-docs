@@ -11,9 +11,9 @@ class SearchIndex
     /**
      * Return the generated index, or build it when the app has no artifact yet.
      *
-     * @return array<int, array{title: string, description: string, url: string, search: string}>
+     * @return array<int, array{version?: string, title: string, description: string, url: string, search: string}>
      */
-    public function entries(): array
+    public function entries(?string $version = null): array
     {
         $path = public_path('docs-search.json');
 
@@ -21,17 +21,17 @@ class SearchIndex
             $entries = json_decode((string) file_get_contents($path), true);
 
             if (is_array($entries)) {
-                return $entries;
+                return $this->filterVersion($entries, $version);
             }
         }
 
-        return $this->build();
+        return $this->filterVersion($this->build(), $version);
     }
 
     /**
      * Build the search records from the installed Markdown pages.
      *
-     * @return array<int, array{title: string, description: string, url: string, search: string}>
+     * @return array<int, array{version: string, title: string, description: string, url: string, search: string}>
      */
     public function build(): array
     {
@@ -48,6 +48,36 @@ class SearchIndex
             ->sortBy('url')
             ->values()
             ->all();
+    }
+
+    /**
+     * Keep search results inside the active documentation version.
+     *
+     * @param  array<int, array<string, mixed>>  $entries
+     * @return array<int, array<string, mixed>>
+     */
+    protected function filterVersion(array $entries, ?string $version): array
+    {
+        if ($version === null) {
+            return $entries;
+        }
+
+        return array_values(array_filter(array_map(function (mixed $entry): ?array {
+            if (! is_array($entry)) {
+                return null;
+            }
+
+            $entry['version'] ??= $this->versionFromUrl((string) ($entry['url'] ?? ''));
+
+            return $entry;
+        }, $entries), fn (?array $entry): bool => $entry !== null && $entry['version'] === $version));
+    }
+
+    protected function versionFromUrl(string $url): string
+    {
+        $segments = explode('/', trim($url, '/'));
+
+        return $segments[0] === 'docs' ? ($segments[1] ?? '') : '';
     }
 
     /**
@@ -68,7 +98,7 @@ class SearchIndex
     /**
      * Convert one Markdown page into a browser search record.
      *
-     * @return array{title: string, description: string, url: string, search: string}|null
+     * @return array{version: string, title: string, description: string, url: string, search: string}|null
      */
     protected function record(object $file, string $pagesPath): ?array
     {
@@ -80,6 +110,7 @@ class SearchIndex
         }
 
         $segments = explode('/', $relative);
+        $version = (string) ($segments[0] ?? '');
 
         if (end($segments) === 'index') {
             array_pop($segments);
@@ -95,6 +126,7 @@ class SearchIndex
         $search = Str::squish(implode(' ', array_filter([$title, $description, $body])));
 
         return [
+            'version' => $version,
             'title' => $title,
             'description' => $description,
             'url' => $url,

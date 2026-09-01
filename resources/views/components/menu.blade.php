@@ -20,6 +20,20 @@ $groups[array_key_last($groups)]['links'][] = $link;
 }
 @endphp
 
+@if (request()->is('docs/*') && count($docsVersions ?? []) > 1)
+<div class="mb-4 px-2">
+    <label for="docs-version" class="mb-2 block text-xs font-medium text-muted-foreground">Documentation version</label>
+    <april:select id="docs-version" aria-label="Documentation version"
+        x-on:value-change="Alpine.navigate($event.detail.value)">
+        @foreach ($docsVersions as $version)
+        <option value="{{url('/docs/'.$version['key'])}}" @selected($version['key'] === $currentDocsVersion)>
+            {{$version['label']}}
+        </option>
+        @endforeach
+    </april:select>
+</div>
+@endif
+
 @foreach ($groups as $group)
 <april:sidebar-group>
     @if ($group['label'])

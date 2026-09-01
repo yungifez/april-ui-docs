@@ -1,11 +1,13 @@
+@php($docsVersion = $currentDocsVersion ?? config('aui.latest-version'))
+
 <header class="sticky top-0 z-10 w-full backdrop-blur-sm supports-backdrop-filter:bg-background/60 bg-background/95">
     <div class="px-2 lg:px-10 flex h-14 mx-auto items-center">
         <div class="mr-4 hidden md:flex">
             <a href="{{route('home')}}"
                 class="mr-6 flex no-underline items-center gap-2 font-bold"><span class="flex size-7 items-center justify-center rounded-md bg-primary text-xs text-primary-foreground">A</span><span>April UI</span></a>
             <nav class="flex items-center gap-4 text-sm lg:gap-6">
-                <x-link href="{{'/docs/' . config('aui.latest-version')}}">Docs</x-link>
-                <x-link href="{{'/docs/' . config('aui.latest-version').'/components/accordion'}}">Components</x-link>
+                <x-link href="{{'/docs/' . $docsVersion}}">Docs</x-link>
+                <x-link href="{{'/docs/' . $docsVersion.'/components/accordion'}}">Components</x-link>
                 <x-link href="/examples">Examples</x-link>
                 <x-link href="{{route('blocks')}}">Blocks</x-link>
                 <x-link href="{{route('customize')}}">Customize</x-link>
@@ -22,9 +24,9 @@
                     <a href="{{route('home')}}"
                         class="mr-6 flex no-underline items-center gap-2 font-bold"><span class="flex size-7 items-center justify-center rounded-md bg-primary text-xs text-primary-foreground">A</span><span>April UI</span></a>
                     <x-link class="block my-2 hover:no-underline"
-                        href="{{'/docs/' . config('aui.latest-version')}}">Docs</x-link>
+                        href="{{'/docs/' . $docsVersion}}">Docs</x-link>
                     <x-link class="block hover:no-underline"
-                        href="{{'/docs/' . config('aui.latest-version').'/components/accordion'}}">Components</x-link>
+                        href="{{'/docs/' . $docsVersion.'/components/accordion'}}">Components</x-link>
                     <x-link class="block hover:no-underline" href="/examples">Examples</x-link>
                     <x-link class="block hover:no-underline" href="{{route('blocks')}}">Blocks</x-link>
                     <x-link class="block hover:no-underline" href="{{route('customize')}}">Customize</x-link>

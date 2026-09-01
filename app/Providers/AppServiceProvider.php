@@ -13,59 +13,64 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $prefix = '/docs/0.x';
-        $links = [
-            ['type' => 'header' , 'text' => 'Getting Started'],
-            ['href' => $prefix.'/' , 'text' => 'introduction'],
-            ['href' => $prefix.'/installation', 'text' => 'installation'],
-            ['href' => '/examples', 'text' => 'examples'],
-            ['href' => '/customize', 'text' => 'customize'],
-            ['href' => $prefix.'/theming', 'text' => 'theming'],
-            ['href' => $prefix.'/data-attributes', 'text' => 'data attributes'],
-            ['type' => 'header' , 'text' => 'Components'],
-            ['href' => $prefix.'/components/accordion', 'text' => 'Accordion'],
-            ['href' => $prefix.'/components/alert', 'text' => 'Alert'],
-            ['href' => $prefix.'/components/alert-dialog', 'text' => 'Alert Dialog'],
-            ['href' => $prefix.'/components/aspect-ratio', 'text' => 'Aspect Ratio'],
-            ['href' => $prefix.'/components/attachment', 'text' => 'Attachment'],
-            ['href' => $prefix.'/components/avatar', 'text' => 'Avatar'],
-            ['href' => $prefix.'/components/badge', 'text' => 'Badge'],
-            ['href' => $prefix.'/components/breadcrumb', 'text' => 'Breadcrumb'],
-            ['href' => $prefix.'/components/bubble', 'text' => 'Bubble'],
-            ['href' => $prefix.'/components/button', 'text' => 'Button'],
-            ['href' => $prefix.'/components/button-group', 'text' => 'Button Group'],
-            ['href' => $prefix.'/components/calendar', 'text' => 'Calendar'],
-            ['href' => $prefix.'/components/card', 'text' => 'Card'],
-            ['href' => $prefix.'/components/carousel', 'text' => 'Carousel'],
-            ['href' => $prefix.'/components/chart', 'text' => 'Chart'],
-            ['href' => $prefix.'/components/command', 'text' => 'Command'],
-            ['href' => $prefix.'/components/collapsible', 'text' => 'Collapsible'],
-            ['href' => $prefix.'/components/combobox', 'text' => 'Combobox'],
-            ['href' => $prefix.'/components/context-menu', 'text' => 'Context Menu'],
-            ['href' => $prefix.'/components/data-table', 'text' => 'Data Table'],
-            ['href' => $prefix.'/components/date-picker', 'text' => 'Date Picker'],
-            ['href' => $prefix.'/components/dialog', 'text' => 'Dialog'],
-            ['href' => $prefix.'/components/dropdown-menu', 'text' => 'Dropdown Menu'],
-            ['href' => $prefix.'/components/input', 'text' => 'Input'],
-            ['href' => $prefix.'/components/label', 'text' => 'Label'],
-            ['href' => $prefix.'/components/popover', 'text' => 'Popover'],
-            ['href' => $prefix.'/components/select', 'text' => 'Select'],
-            ['href' => $prefix.'/components/sheet', 'text' => 'Sheet'],
-            ['href' => $prefix.'/components/sidebar', 'text' => 'Sidebar'],
-            ['href' => $prefix.'/components/skeleton', 'text' => 'Skeleton'],
-            ['href' => $prefix.'/components/steps', 'text' => 'Steps'],
-            ['href' => $prefix.'/components/switch', 'text' => 'Switch'],
-            ['href' => $prefix.'/components/tabs', 'text' => 'Tabs'],
-            ['href' => $prefix.'/components/textarea', 'text' => 'Textarea'],
-            ['href' => $prefix.'/components/tooltip', 'text' => 'Tooltip'],
-            ['type' => 'header', 'text' => 'Patterns'],
-            ['href' => '/blocks', 'text' => 'Blocks'],
+        View::composer(['components.header', 'components.menu'], function ($view): void {
+            $view->with($this->docsNavigation());
+        });
+    }
+
+    /**
+     * Build navigation for the version in the current request.
+     *
+     * @return array{links: array<int, array<string, mixed>>, searchIndex: array<int, array<string, mixed>>, docsVersions: array<int, array{key: string, label: string}>, currentDocsVersion: string|null}
+     */
+    protected function docsNavigation(): array
+    {
+        $cacheKey = 'april-ui.docs-navigation';
+
+        if (request()->attributes->has($cacheKey)) {
+            return request()->attributes->get($cacheKey);
+        }
+
+        $versions = config('aui.versions', []);
+        $latestVersion = config('aui.latest-version') ?: array_key_first($versions);
+        $requestedVersion = request()->segment(2);
+        $currentVersion = isset($versions[$requestedVersion])
+            ? $requestedVersion
+            : $latestVersion;
+        $prefix = $currentVersion === null ? '/docs' : '/docs/'.$currentVersion;
+        $versionConfig = is_string($currentVersion) ? ($versions[$currentVersion] ?? []) : [];
+        $links = collect($versionConfig['links'] ?? [])
+            ->map(function (array $link) use ($prefix): array {
+                if (! isset($link['href']) || ($link['scope'] ?? 'docs') === 'global') {
+                    unset($link['scope']);
+
+                    return $link;
+                }
+
+                $link['href'] = rtrim($prefix.'/'.ltrim($link['href'], '/'), '/');
+                if ($link['href'] === $prefix) {
+                    $link['href'] .= '/';
+                }
+                unset($link['scope']);
+
+                return $link;
+            })
+            ->all();
+        $navigation = [
+            'links' => $links,
+            'searchIndex' => $currentVersion === null
+                ? []
+                : app(SearchIndex::class)->entries($currentVersion),
+            'docsVersions' => collect($versions)->map(fn (array $version, string $key) => [
+                'key' => $key,
+                'label' => $version['label'] ?? $key,
+            ])->values()->all(),
+            'currentDocsVersion' => $currentVersion,
         ];
 
-        View::share([
-            'links' => $links,
-            'searchIndex' => app(SearchIndex::class)->entries(),
-        ]);
+        request()->attributes->set($cacheKey, $navigation);
+
+        return $navigation;
     }
 
     /**

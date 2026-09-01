@@ -249,13 +249,13 @@ html.dark:not([data-april-theme]) {
     }
 
     .torchlight > .line {
-        @apply bg-transparent grow inline-block py-1 tracking-tight;
+        @apply bg-transparent block shrink-0 py-1 tracking-tight;
     }
 }
 
 @utility line {
     .torchlight > & {
-        @apply grow inline-block py-1 tracking-tight;
+        @apply block shrink-0 py-1 tracking-tight;
     }
 
     &.highlight {

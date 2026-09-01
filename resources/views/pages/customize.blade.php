@@ -27,8 +27,20 @@
         get palette() { return this.palettes[this.theme] },
         get tokens() { return this.palette[this.dark ? 'dark' : 'light'] },
         get previewStyle() {
-            return Object.entries(this.tokens).map(([property, value]) => '--' + property + ': ' + value + ';').join('')
-                + '--custom-primary: ' + this.tokens.primary + '; --custom-primary-foreground: ' + this.tokens['primary-foreground'] + '; --custom-radius: ' + this.radiusValue + ';';
+            const variables = Object.entries(this.tokens).flatMap(([property, value]) => [
+                '--' + property + ': ' + value + ';',
+                '--color-' + property + ': hsl(var(--' + property + '));'
+            ])
+
+            variables.push(
+                '--color-sidebar: hsl(var(--sidebar-background));',
+                '--radius: ' + this.radiusValue + ';',
+                '--custom-primary: ' + this.tokens.primary + ';',
+                '--custom-primary-foreground: ' + this.tokens['primary-foreground'] + ';',
+                '--custom-radius: ' + this.radiusValue + ';'
+            )
+
+            return variables.join('')
         },
         get radiusValue() {
             return { sm: '0.375rem', md: '0.5rem', lg: '0.75rem', xl: '1rem' }[this.radius];
@@ -115,7 +127,7 @@
                     <div><p class="text-sm font-medium">Live preview</p><p class="text-sm text-muted-foreground">See how the tokens work together.</p></div>
                     <april:badge variant="outline"><span x-text="palette.name"></span></april:badge>
                 </div>
-                <div x-cloak class="overflow-hidden rounded-xl border bg-background shadow-sm" :class="dark ? 'dark' : ''" :style="previewStyle">
+                <div x-cloak class="overflow-hidden rounded-xl border bg-background text-foreground shadow-sm" :class="dark ? 'dark' : ''" :style="previewStyle">
                     <div class="border-b px-5 py-4">
                         <div class="flex items-center justify-between">
                             <div class="flex items-center gap-2"><div class="flex h-7 w-7 items-center justify-center rounded-md"

@@ -14,7 +14,7 @@
         @endisset
         <x-copy-button ::value="$refs.lightContent.innerText" class="ml-auto self-end w-fit"></x-copy-button>
     </div>
-    <div class="dark:hidden">
+    <div class="dark:hidden h-full min-h-0 max-h-full">
         <x-markdown :theme="$theme" class="code-block h-full grow w-full" x-ref="lightContent">
 ```{!!$language!!} theme:{!!$theme!!}
 {!!$code!!}
@@ -27,7 +27,7 @@
         @endisset
         <x-copy-button ::value="$refs.darkContent.innerText" class="ml-auto self-end w-fit"></x-copy-button>
     </div>
-    <div class="hidden dark:block">
+    <div class="hidden dark:block h-full min-h-0 max-h-full">
         <x-markdown :theme="$darkTheme" class="code-block h-full grow w-full" x-ref="darkContent">
 ```{!!$language!!} theme:{!!$darkTheme!!}
 {!!$code!!}

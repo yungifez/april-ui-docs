@@ -245,7 +245,7 @@ html.dark:not([data-april-theme]) {
     }
 
     code.torchlight {
-        @apply flex min-h-0 h-fit min-w-full max-h-full flex-col overflow-auto bg-card! beautify-scrollbar;
+        @apply flex min-h-0 h-full min-w-full max-h-full flex-col overflow-auto bg-card! beautify-scrollbar;
     }
 
     .torchlight > .line {

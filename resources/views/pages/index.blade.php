@@ -54,8 +54,8 @@ SHELL;
                         <span class="text-border">/</span>
                         <span>Laravel Blade components</span>
                     </div>
-                    <h1 data-april-reveal class="april-reveal mt-7 max-w-xl text-balance text-5xl font-bold tracking-[-0.04em] md:text-7xl" style="--april-delay: 150ms">
-                        Laravel UI, in the Blade way.
+                    <h1 data-april-reveal class="april-reveal mt-7 max-w-xl text-balance text-5xl font-bold tracking-[-0.04em] md:text-6xl" style="--april-delay: 150ms">
+                        UI components <span class="primary-text"> crafted </span> for Artisans
                     </h1>
                     <p data-april-reveal class="april-reveal mt-6 max-w-xl text-lg leading-8 text-muted-foreground md:text-xl" style="--april-delay: 230ms">
                         A component library for building product interfaces with the Laravel elegance you already know.

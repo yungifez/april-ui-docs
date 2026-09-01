@@ -2,26 +2,9 @@
 <html lang="en" dir="ltr">
 
 <head>
-    @php
-        $siteName = config('app.name') === 'Laravel' ? 'April UI' : config('app.name');
-        isset($title) ? $title = $title.' | '.$siteName : $title = $siteName;
-    @endphp
-    <title>{{$title}}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="description" content="{{$description ?? ''}}">
-    <meta name="theme-color" content="#303030">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="{{$title}}">
-    <meta property="og:description" content="{{$description ?? ''}}">
-    <meta property="og:image" content="{{asset('images/examples/dashboard.png')}}">
-    <meta property="og:url" content="{{url()->current()}}">
-    <meta property="og:site_name" content="{{$siteName}}">
-    <meta property="og:locale" content="en_US">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="{{url()->current()}}">
-    <meta name="twitter:title" content="{{$title}}">
-    <meta name="twitter:image" content="{{asset('images/examples/dashboard.png')}}">
+    <x-seo-head :title="$title ?? null" :description="$description ?? null" />
     <script>
         const createAprilPalette = (name, values) => {
             const light = {
@@ -32,6 +15,7 @@
                 popover: values.lightCard || '0 0% 100%',
                 'popover-foreground': values.lightForeground,
                 primary: values.primary,
+                'primary-text': values.primaryText || values.primary,
                 'primary-foreground': values.primaryForeground,
                 secondary: values.lightMuted,
                 'secondary-foreground': values.lightForeground,
@@ -61,6 +45,7 @@
                 popover: values.darkCard || values.darkBackground,
                 'popover-foreground': values.darkForeground || '0 0% 98%',
                 primary: values.darkPrimary || values.primary,
+                'primary-text': values.darkPrimaryText || values.darkPrimary || values.primary,
                 'primary-foreground': values.darkPrimaryForeground || values.primaryForeground,
                 secondary: values.darkMuted,
                 'secondary-foreground': values.darkForeground || '0 0% 98%',
@@ -123,26 +108,28 @@
                 darkPrimaryForeground: '222.2 47.4% 11.2%'
             }),
             green: createAprilPalette('Forest', {
-                primary: '28 38% 32%',
-                primaryForeground: '35 35% 97%',
-                lightBackground: '105 24% 95%',
-                lightForeground: '145 30% 16%',
-                lightCard: '95 30% 98%',
-                lightMuted: '100 25% 90%',
-                lightMutedForeground: '145 12% 41%',
-                lightBorder: '100 16% 83%',
-                lightAccent: '30 28% 91%',
-                lightSidebarBackground: '100 26% 92%',
-                darkBackground: '145 32% 7%',
-                darkForeground: '45 35% 94%',
-                darkCard: '145 26% 10%',
-                darkMuted: '145 20% 16%',
-                darkMutedForeground: '90 14% 68%',
-                darkBorder: '145 18% 20%',
-                darkAccent: '30 27% 18%',
-                darkSidebarBackground: '145 34% 5%',
-                darkPrimary: '28 37% 48%',
-                darkPrimaryForeground: '45 35% 94%'
+                primary: '28 38% 22%',
+                primaryText: '28 38% 22%',
+                primaryForeground: '35 25% 97%',
+                lightBackground: '105 20% 93%',
+                lightForeground: '145 18% 13%',
+                lightCard: '95 14% 97%',
+                lightMuted: '100 15% 87%',
+                lightMutedForeground: '145 8% 36%',
+                lightBorder: '100 10% 79%',
+                lightAccent: '30 20% 86%',
+                lightSidebarBackground: '100 16% 89%',
+                darkBackground: '145 20% 6%',
+                darkForeground: '45 28% 92%',
+                darkCard: '145 15% 9%',
+                darkMuted: '145 12% 14%',
+                darkMutedForeground: '90 9% 64%',
+                darkBorder: '145 10% 17%',
+                darkAccent: '30 20% 15%',
+                darkSidebarBackground: '145 22% 4%',
+                darkPrimary: '28 50% 22%',
+                darkPrimaryText: '28 50% 46%',
+                darkPrimaryForeground: '45 28% 92%'
             }),
             rose: createAprilPalette('Rose', {
                 primary: '346.8 77.2% 49.8%',
@@ -181,7 +168,7 @@
                 root.removeAttribute('data-april-density')
                 root.removeAttribute('data-april-font')
                 ;['--background', '--foreground', '--card', '--card-foreground', '--popover', '--popover-foreground',
-                    '--primary', '--primary-foreground', '--secondary', '--secondary-foreground', '--muted',
+                    '--primary', '--primary-text', '--primary-foreground', '--secondary', '--secondary-foreground', '--muted',
                     '--muted-foreground', '--accent', '--accent-foreground', '--destructive', '--destructive-foreground',
                     '--border', '--input', '--ring', '--sidebar-background', '--sidebar-foreground', '--sidebar-primary',
                     '--sidebar-primary-foreground', '--sidebar-accent', '--sidebar-accent-foreground', '--sidebar-border',
@@ -275,7 +262,6 @@
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="/favicon.png?width=76" />
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-    <link rel="canonical" href="">
     @vite('resources/css/app.css')
     @stack('head-scripts')
     <livewire:styles />

@@ -1,4 +1,4 @@
-<x-layout :title="$title ?? null">
+<x-layout :title="$title ?? null" :description="$description ?? null">
     <april:sidebar-layout class="items-start px-3">
         <april:sidebar collapsible="none"
             x-persist="desktop-menu"

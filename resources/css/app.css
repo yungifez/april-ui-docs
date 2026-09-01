@@ -46,72 +46,74 @@ html[data-april-density="compact"] [data-slot="card-footer"] {
 @source "../../april-ui/docs/previews";
 @source "../views/components/blocks";
 
-/* April's default palette: almost-white green surfaces, a soft brown accent,
+/* April's default palette: grey-mixed moss surfaces, a deeper brown accent,
    and a layered forest green workspace in dark mode. */
 :root:not([data-april-theme]) {
-    --background: 105 24% 95%;
-    --foreground: 145 30% 16%;
-    --card: 95 30% 98%;
-    --card-foreground: 145 30% 16%;
-    --popover: 95 30% 99%;
-    --popover-foreground: 145 30% 16%;
-    --primary: 28 38% 32%;
-    --primary-foreground: 35 35% 97%;
-    --secondary: 100 25% 90%;
-    --secondary-foreground: 145 30% 16%;
-    --muted: 100 25% 90%;
-    --muted-foreground: 145 12% 41%;
-    --accent: 30 28% 91%;
-    --accent-foreground: 145 30% 16%;
-    --border: 100 16% 83%;
-    --input: 100 16% 83%;
-    --ring: 28 38% 32%;
-    --sidebar-background: 100 26% 92%;
-    --sidebar-foreground: 145 30% 16%;
-    --sidebar-primary: 28 38% 32%;
-    --sidebar-primary-foreground: 35 35% 97%;
-    --sidebar-accent: 100 25% 88%;
-    --sidebar-accent-foreground: 145 30% 16%;
-    --sidebar-border: 100 16% 83%;
-    --sidebar-ring: 28 38% 32%;
-    --chart-1: hsl(28 38% 32%);
-    --chart-2: hsl(145 30% 28%);
-    --chart-3: hsl(84 25% 43%);
-    --chart-4: hsl(102 20% 57%);
-    --chart-5: hsl(38 45% 63%);
+    --background: 105 20% 93%;
+    --foreground: 145 18% 13%;
+    --card: 95 14% 97%;
+    --card-foreground: 145 18% 13%;
+    --popover: 95 14% 98%;
+    --popover-foreground: 145 18% 13%;
+    --primary: 28 38% 22%;
+    --primary-text: 28 38% 22%;
+    --primary-foreground: 35 25% 97%;
+    --secondary: 100 15% 87%;
+    --secondary-foreground: 145 18% 13%;
+    --muted: 100 15% 87%;
+    --muted-foreground: 145 8% 36%;
+    --accent: 30 20% 86%;
+    --accent-foreground: 145 18% 13%;
+    --border: 100 10% 79%;
+    --input: 100 10% 79%;
+    --ring: 28 38% 22%;
+    --sidebar-background: 100 16% 89%;
+    --sidebar-foreground: 145 18% 13%;
+    --sidebar-primary: 28 38% 22%;
+    --sidebar-primary-foreground: 35 25% 97%;
+    --sidebar-accent: 100 15% 84%;
+    --sidebar-accent-foreground: 145 18% 13%;
+    --sidebar-border: 100 10% 79%;
+    --sidebar-ring: 28 38% 22%;
+    --chart-1: hsl(28 50% 22%);
+    --chart-2: hsl(145 20% 23%);
+    --chart-3: hsl(84 18% 38%);
+    --chart-4: hsl(102 14% 50%);
+    --chart-5: hsl(38 32% 55%);
 }
 
 html.dark:not([data-april-theme]) {
-    --background: 145 32% 7%;
-    --foreground: 45 35% 94%;
-    --card: 145 26% 10%;
-    --card-foreground: 45 35% 94%;
-    --popover: 145 26% 10%;
-    --popover-foreground: 45 35% 94%;
-    --primary: 28 37% 48%;
-    --primary-foreground: 45 35% 94%;
-    --secondary: 145 20% 16%;
-    --secondary-foreground: 45 35% 94%;
-    --muted: 145 20% 16%;
-    --muted-foreground: 90 14% 68%;
-    --accent: 30 27% 18%;
-    --accent-foreground: 45 35% 94%;
-    --border: 145 18% 20%;
-    --input: 145 18% 20%;
-    --ring: 28 37% 48%;
-    --sidebar-background: 145 34% 5%;
-    --sidebar-foreground: 45 35% 94%;
-    --sidebar-primary: 28 37% 48%;
-    --sidebar-primary-foreground: 45 35% 94%;
-    --sidebar-accent: 145 20% 16%;
-    --sidebar-accent-foreground: 45 35% 94%;
-    --sidebar-border: 145 18% 17%;
-    --sidebar-ring: 28 37% 48%;
-    --chart-1: hsl(28 37% 48%);
-    --chart-2: hsl(145 35% 49%);
-    --chart-3: hsl(84 30% 58%);
-    --chart-4: hsl(102 25% 67%);
-    --chart-5: hsl(38 50% 72%);
+    --background: 145 20% 6%;
+    --foreground: 45 28% 92%;
+    --card: 145 15% 9%;
+    --card-foreground: 45 28% 92%;
+    --popover: 145 15% 9%;
+    --popover-foreground: 45 28% 92%;
+    --primary: 28 50% 22%;
+    --primary-text: 28 50% 46%;
+    --primary-foreground: 45 28% 92%;
+    --secondary: 145 12% 14%;
+    --secondary-foreground: 45 28% 92%;
+    --muted: 145 12% 14%;
+    --muted-foreground: 90 9% 64%;
+    --accent: 30 20% 15%;
+    --accent-foreground: 45 28% 92%;
+    --border: 145 10% 17%;
+    --input: 145 10% 17%;
+    --ring: 28 50% 22%;
+    --sidebar-background: 145 22% 4%;
+    --sidebar-foreground: 45 28% 92%;
+    --sidebar-primary: 28 50% 22%;
+    --sidebar-primary-foreground: 45 28% 92%;
+    --sidebar-accent: 145 12% 14%;
+    --sidebar-accent-foreground: 45 28% 92%;
+    --sidebar-border: 145 10% 15%;
+    --sidebar-ring: 28 50% 22%;
+    --chart-1: hsl(28 50% 22%);
+    --chart-2: hsl(145 22% 43%);
+    --chart-3: hsl(84 22% 52%);
+    --chart-4: hsl(102 18% 61%);
+    --chart-5: hsl(38 38% 65%);
 }
 
 @utility marketing-grid {
@@ -122,6 +124,12 @@ html.dark:not([data-april-theme]) {
 }
 
 @layer components {
+    /* The dark brown action color is too dark for copy on forest surfaces. */
+    .dark .text-primary,
+    .dark .hover\:text-primary:hover {
+        color: hsl(var(--primary-text));
+    }
+
     .april-reveal {
         transition:
             opacity 910ms cubic-bezier(0.22, 1, 0.36, 1),
@@ -153,20 +161,6 @@ html.dark:not([data-april-theme]) {
     .april-hero-frame {
         animation: april-float 12s ease-in-out infinite;
     }
-
-    .april-hero-frame::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-        background: linear-gradient(110deg, transparent 35%, color-mix(in oklab, hsl(var(--primary)) 12%, transparent) 50%, transparent 65%);
-        transform: translateX(-120%);
-        transition: transform 1200ms cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    .april-hero-frame:hover::after {
-        transform: translateX(120%);
-    }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -177,10 +171,6 @@ html.dark:not([data-april-theme]) {
 
     .april-reveal,
     .april-lift,
-    .april-hero-frame::after {
-        transition: none;
-    }
-
     .js .april-reveal {
         opacity: 1;
         transform: none;

@@ -102,7 +102,7 @@ SHELL;
                     <p class="mt-4 max-w-md leading-7 text-muted-foreground">April gives you a good starting point without asking you to replace Laravel’s conventions with a new system.</p>
                     <div class="mt-8 max-w-md border-l-2 border-primary pl-4 text-sm leading-6 text-muted-foreground">
                         <p><a href="https://fluxui.dev/" target="_blank" rel="noreferrer" class="font-semibold text-foreground underline decoration-primary underline-offset-4">Flux</a> has set a high bar for polished Livewire interfaces, and it is worth knowing about if you are building with Laravel.</p>
-                        <p class="mt-3">April is a free, MIT-licensed alternative for teams who want a package-first Blade workflow. It is not a replacement for Flux—just another good way to build, with a different set of trade-offs.</p>
+                        <p class="mt-3">April is a free, MIT-licensed alternative for teams who want a package-first Blade workflow. It is not a replacement for Flux. It is another good way to build, with a different set of trade-offs.</p>
                     </div>
                 </div>
                 <div class="divide-y border-y">

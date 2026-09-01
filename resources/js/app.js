@@ -1,5 +1,58 @@
 import './bootstrap';
 
+window.loadAprilDocsSearch = (() => {
+    let searchPromise;
+
+    return () => {
+        if (searchPromise) {
+            return searchPromise;
+        }
+
+        const root = document.querySelector('[data-docs-search-endpoint]');
+        const endpoint = root?.dataset.docsSearchEndpoint;
+
+        if (!endpoint) {
+            return Promise.resolve();
+        }
+
+        searchPromise = fetch(endpoint, {
+            headers: { Accept: 'application/json' },
+        })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(`Could not load docs search index (${response.status})`);
+                }
+
+                return response.json();
+            })
+            .then((entries) => {
+                const searchByUrl = new Map(
+                    entries.map((entry) => [entry.url, entry.search]),
+                );
+
+                document.querySelectorAll('[data-doc-search-url]').forEach((item) => {
+                    const search = searchByUrl.get(item.dataset.docSearchUrl);
+
+                    if (search) {
+                        item.dataset.search = search;
+                    }
+                });
+
+                // Re-run command filtering if the user started typing while
+                // the index was loading. The command component remains generic.
+                document.querySelectorAll('[data-slot="command-input"]').forEach((input) => {
+                    input.dispatchEvent(new Event('input', { bubbles: true }));
+                });
+            })
+            .catch((error) => {
+                searchPromise = undefined;
+                console.error(error);
+            });
+
+        return searchPromise;
+    };
+})();
+
 document.documentElement.classList.add('js');
 
 const initializeAprilMotion = () => {

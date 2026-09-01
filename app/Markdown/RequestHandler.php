@@ -89,7 +89,7 @@ class RequestHandler
             $mountPath
                 ->middleware
                 ->match($matchedView)
-                ->prepend('web')
+                ->prepend('docs')
                 ->merge($matchedView->inlineMiddleware())
                 ->unique()
                 ->values()

@@ -13,7 +13,9 @@
                 <x-link href="{{route('customize')}}">Customize</x-link>
             </nav>
         </div>
-        <div x-data="{searchOpened: false}" class="flex flex-1 items-center justify-between space-x-2 md:justify-end">
+        <div x-data="{searchOpened: false, openSearch() { window.loadAprilDocsSearch?.(); this.searchOpened = true }}"
+            data-docs-search-endpoint="{{asset('docs-search.json')}}"
+            class="flex flex-1 items-center justify-between space-x-2 md:justify-end">
             <april:sheet dismissable x-teleport="body">
                 <slot:trigger>
                     <april:button aria-label="Open Menu" class="justify-center md:hidden" size="icon" variant="ghost">
@@ -34,11 +36,11 @@
                     <april:sheet-footer />
                 </slot:content>
             </april:sheet>
-            <april:command-dialog @keydown.window.cmd.k.prevent="searchOpened = true"
-                @keydown.window.ctrl.k.prevent="searchOpened = true" x-teleport="body" x-model="searchOpened">
+            <april:command-dialog @keydown.window.cmd.k.prevent="openSearch()"
+                @keydown.window.ctrl.k.prevent="openSearch()" x-teleport="body" x-model="searchOpened">
                 <slot:group class="w-full flex-1 md:w-auto md:flex-none"></slot:group>
                 <slot:trigger class="w-full">
-                    <april:button aria-label="Open Search" size="sm" variant="outline"
+                    <april:button aria-label="Open Search" size="sm" variant="outline" x-on:click="openSearch()"
                         class="text-muted-foreground bg-muted/50 w-full flex relative justify-between items-center">
                         <span>
                             Search<span class="hidden lg:inline"> Documentation</span>...
@@ -65,7 +67,8 @@
                         </april:command-group>
                         <april:command-group heading="Documentation">
                             @foreach ($searchIndex as $page)
-                                <april:command-item data-search="{{$page['search']}}" @click="Alpine.navigate('{{$page['url']}}')">
+                                <april:command-item data-search="{{$page['title'].' '.$page['description']}}"
+                                    data-doc-search-url="{{$page['url']}}" @click="Alpine.navigate('{{$page['url']}}')">
                                     <x-lucide-file-text class="mr-2 h-4 w-4 shrink-0" />
                                     <span class="min-w-0"><span class="block truncate">{{$page['title']}}</span><span class="block truncate text-xs text-muted-foreground">{{$page['description']}}</span></span>
                                 </april:command-item>

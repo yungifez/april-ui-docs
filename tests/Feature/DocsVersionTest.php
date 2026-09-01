@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Docs\SearchIndex;
+use Illuminate\Support\Facades\Cache;
 use Tests\TestCase;
 
 class DocsVersionTest extends TestCase
@@ -58,5 +59,27 @@ class DocsVersionTest extends TestCase
         $this->assertStringContainsString('2.x', $html);
         $this->assertStringContainsString('/docs/1.x/components/button', $html);
         $this->assertStringNotContainsString('/docs/2.x/components/button', $html);
+    }
+
+    public function test_public_docs_pages_are_cached_without_a_session_cookie(): void
+    {
+        config()->set('docs.cache_store', 'array');
+        Cache::store('array')->flush();
+
+        $first = $this->get('/docs/1.x/components/button')->assertOk();
+
+        $first
+            ->assertHeader('Cache-Control', 'public, s-maxage=3600, stale-while-revalidate=86400')
+            ->assertHeaderMissing('Set-Cookie');
+
+        $second = $this->get('/docs/1.x/components/button')
+            ->assertOk()
+            ->assertHeader('Cache-Control', 'public, s-maxage=3600, stale-while-revalidate=86400')
+            ->assertSee('data-doc-search-url="/docs/1.x/components/button"', false);
+
+        preg_match_all('/data-search="([^"]*)"/', $second->getContent(), $matches);
+
+        $this->assertNotEmpty($matches[1]);
+        $this->assertTrue(collect($matches[1])->every(fn (string $search): bool => strlen($search) < 200));
     }
 }

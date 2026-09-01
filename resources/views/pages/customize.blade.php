@@ -4,7 +4,7 @@
         radius: 'md',
         density: 'comfortable',
         font: 'sans',
-        dark: false,
+        dark: document.documentElement.classList.contains('dark'),
         palettes: window.aprilCustomizationPalettes,
         init() {
             const saved = window.getAprilCustomization()
@@ -30,9 +30,9 @@
             this.radius = 'md'
             this.density = 'comfortable'
             this.font = 'sans'
-            this.dark = false
             window.applyAprilCustomization()
             window.determineColorMode()
+            this.dark = document.documentElement.classList.contains('dark')
         },
         get palette() { return this.palettes[this.theme] },
         get tokens() { return this.palette[this.dark ? 'dark' : 'light'] },

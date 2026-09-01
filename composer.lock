@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fb6f32b0dce03384cab2a2890b6ddf61",
+    "content-hash": "074608710b59ed96696c5acd472af66a",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -7135,16 +7135,16 @@
         },
         {
             "name": "yungifez/april-ui",
-            "version": "v1.0.21",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yungifez/april-ui.git",
-                "reference": "54db1b0799a28da0fe06d10dd21cfbc488ae3419"
+                "reference": "0f3a135902727800b65f82c8c9ccfdaf5c35743e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yungifez/april-ui/zipball/54db1b0799a28da0fe06d10dd21cfbc488ae3419",
-                "reference": "54db1b0799a28da0fe06d10dd21cfbc488ae3419",
+                "url": "https://api.github.com/repos/yungifez/april-ui/zipball/0f3a135902727800b65f82c8c9ccfdaf5c35743e",
+                "reference": "0f3a135902727800b65f82c8c9ccfdaf5c35743e",
                 "shasum": ""
             },
             "require": {
@@ -7249,10 +7249,10 @@
                 "yungifez"
             ],
             "support": {
-                "source": "https://github.com/yungifez/april-ui/tree/v1.0.21",
+                "source": "https://github.com/yungifez/april-ui/tree/v1.1.0",
                 "issues": "https://github.com/yungifez/april-ui/issues"
             },
-            "time": "2026-09-01T18:30:31+00:00"
+            "time": "2026-09-01T21:31:38+00:00"
         }
     ],
     "packages-dev": [

@@ -1,10 +1,10 @@
 <div class="bg-muted/20 p-4 md:p-8">
     <april:tabs defaultValue="account" class="mx-auto w-full max-w-3xl">
-        <slot:tabs-list class="grid w-full grid-cols-3">
+        <slot:list class="grid w-full grid-cols-3">
             <april:tabs-trigger value="account">Account</april:tabs-trigger>
             <april:tabs-trigger value="notifications">Notifications</april:tabs-trigger>
             <april:tabs-trigger value="appearance">Appearance</april:tabs-trigger>
-        </slot:tabs-list>
+        </slot:list>
 
         <april:tabs-content value="account">
             <april:card class="mt-4">

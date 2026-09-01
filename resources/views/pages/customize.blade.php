@@ -94,7 +94,7 @@
 
                 <div class="space-y-3">
                     <div><h2 class="text-sm font-semibold">Font</h2><p class="text-xs text-muted-foreground">Select the type scale foundation.</p></div>
-                    <april:select x-on:change="font = $event.detail.value; persist()">
+                    <april:select x-on:value-change="font = $event.detail.value; persist()">
                         <option value="sans">Geist / system sans</option>
                         <option value="serif">Serif</option>
                         <option value="mono">Mono</option>

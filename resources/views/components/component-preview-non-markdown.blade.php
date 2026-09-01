@@ -19,14 +19,14 @@ $code = $path ? file_get_contents($path) : '';
 @endphp
 @endif
 <april:tabs class="relative my-3 mr-auto w-full" defaultValue="preview">
-    <slot:tabs-list class=" bg-transparent">
+    <slot:list class=" bg-transparent">
         <april:tabs-trigger value="preview" class="w-fit">
             Preview
         </april:tabs-trigger>
         <april:tabs-trigger value="code" class="w-fit">
             Code
         </april:tabs-trigger>
-    </slot:tabs-list>
+    </slot:list>
     <april:tabs-content value="preview" class="min-h-[350px] component-preview relative rounded-md border">
         <div class="absolute top-0 right-0 p-3.5 w-fit flex">
             <x-copy-button :value="$code" class="ml-auto"></x-copy-button>

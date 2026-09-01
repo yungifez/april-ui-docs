@@ -2,9 +2,9 @@
 @isset($view)
 @php($views = [$view])
 @endisset
-## Publishing Views
+<h2 class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight">Publishing Views</h2>
 
-Use the following command{{ count($views) > 1 ? 's' : '' }} to publish {{ count($views) > 1 ? 'these views' : 'this view' }}:
+<p class="mt-4">Use the following command{{ count($views) > 1 ? 's' : '' }} to publish {{ count($views) > 1 ? 'these views' : 'this view' }}:</p>
 
 @foreach ($views as $view)
 <x-code-block-wrapper language="shell">

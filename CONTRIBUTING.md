@@ -44,4 +44,6 @@ Keep marketing copy direct and specific. Describe April UI as a Laravel-first pa
 
 ## Releases
 
-Maintainers update the April UI package constraint, refresh the docs dependency, run the site checks, and create a matching semantic version tag such as `v1.0.0`.
+Dependabot checks the April UI Composer package each day.
+
+When a new release is available, Dependabot opens a pull request with the updated lock file. Review the docs examples, run the site checks, and merge the pull request when it passes.

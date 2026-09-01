@@ -1,0 +1,14 @@
+version: 2
+
+updates:
+  - package-ecosystem: composer
+    directory: /
+    schedule:
+      interval: daily
+      time: "09:00"
+      timezone: America/Vancouver
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: chore
+    allow:
+      - dependency-name: yungifez/april-ui

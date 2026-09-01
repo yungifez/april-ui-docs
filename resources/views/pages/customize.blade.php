@@ -160,7 +160,7 @@
             </main>
         </div>
         <section class="mx-auto max-w-screen-xl border-t px-4 py-14 md:px-10">
-            <div class="max-w-3xl">
+            <div class="">
                 <april:badge variant="secondary">Package-first workflow</april:badge>
                 <h2 class="mt-4 text-3xl font-bold tracking-tight">Start with the package. Publish only what you need.</h2>
                 <p class="mt-4 text-muted-foreground">

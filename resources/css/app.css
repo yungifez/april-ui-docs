@@ -191,6 +191,34 @@ html.dark:not([data-april-theme]) {
 }
 
 @utility component-preview {
+    /* Keep preview overflow horizontal-only. Code panes are the place where
+       long content should scroll vertically. */
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted)) transparent;
+
+    &::-webkit-scrollbar,
+    & *::-webkit-scrollbar {
+        width: 7px;
+        height: 4px;
+        background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-corner,
+    & *::-webkit-scrollbar-corner {
+        background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb,
+    & *::-webkit-scrollbar-thumb {
+        background-color: hsl(var(--muted));
+        border-radius: 0.25rem;
+    }
+
+    & * {
+        scrollbar-width: thin;
+        scrollbar-color: hsl(var(--muted)) transparent;
+    }
+
     /* Keep fixed panels inside component previews instead of the browser viewport. */
     & [data-slot="sidebar-wrapper"] {
         transform: translateZ(0);

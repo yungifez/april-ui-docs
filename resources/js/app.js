@@ -34,5 +34,40 @@ const initializeAprilMotion = () => {
     elements.forEach((element) => observer.observe(element));
 };
 
+const initializeComponentPreviews = () => {
+    if (!('ResizeObserver' in window)) {
+        return;
+    }
+
+    document.querySelectorAll('[data-slot="tabs"]').forEach((tabs) => {
+        if (tabs.dataset.componentPreviewReady === 'true') {
+            return;
+        }
+
+        const preview = tabs.querySelector(':scope > [data-slot="tabs-content"].component-preview');
+        const code = tabs.querySelector(':scope > [data-slot="tabs-content"][value="code"]');
+
+        if (!preview || !code) {
+            return;
+        }
+
+        const syncCodeHeight = () => {
+            const height = Math.ceil(preview.getBoundingClientRect().height);
+
+            if (height > 0) {
+                code.style.height = `${height}px`;
+                code.style.maxHeight = `${height}px`;
+            }
+        };
+
+        const observer = new ResizeObserver(syncCodeHeight);
+        observer.observe(preview);
+        tabs.dataset.componentPreviewReady = 'true';
+        syncCodeHeight();
+    });
+};
+
 document.addEventListener('DOMContentLoaded', initializeAprilMotion);
 document.addEventListener('livewire:navigated', initializeAprilMotion);
+document.addEventListener('DOMContentLoaded', initializeComponentPreviews);
+document.addEventListener('livewire:navigated', initializeComponentPreviews);

@@ -109,7 +109,7 @@
             }),
             green: createAprilPalette('Forest', {
                 primary: '28 38% 74%',
-                primaryText: '28 38% 22%',
+                primaryText: '28 38% 16%',
                 primaryForeground: '35 25% 12%',
                 lightBackground: '105 20% 93%',
                 lightForeground: '145 18% 13%',

@@ -56,7 +56,7 @@ html[data-april-density="compact"] [data-slot="card-footer"] {
     --popover: 95 14% 98%;
     --popover-foreground: 145 18% 13%;
     --primary: 28 38% 74%;
-    --primary-text: 28 38% 22%;
+    --primary-text: 28 38% 16%;
     --primary-foreground: 35 25% 12%;
     --secondary: 100 15% 87%;
     --secondary-foreground: 145 18% 13%;
@@ -126,6 +126,7 @@ html.dark:not([data-april-theme]) {
 @layer components {
     /* The dark brown action color is too dark for copy on forest surfaces. */
     .text-primary,
+    .primary-text,
     .hover\:text-primary:hover {
         color: hsl(var(--primary-text));
     }

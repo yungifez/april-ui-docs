@@ -28,7 +28,7 @@ $code = $path ? file_get_contents($path) : '';
             Code
         </april:tabs-trigger>
     </slot:list>
-    <april:tabs-content value="preview" class="min-h-[350px] component-preview relative rounded-md border">
+    <april:tabs-content value="preview" class="component-preview relative h-[350px] max-h-[350px] overflow-auto rounded-md border">
         <div class="absolute top-0 right-0 p-3.5 w-fit flex">
             <x-copy-button :value="$code" class="ml-auto"></x-copy-button>
         </div>
@@ -52,7 +52,7 @@ $code = $path ? file_get_contents($path) : '';
             @endif
         </div>
     </april:tabs-content>
-    <april:tabs-content value="code">
+    <april:tabs-content value="code" class="h-[350px] max-h-[350px] overflow-hidden">
         @if ($attributes->has('component'))
         <x-code-block-wrapper language="{{$attributes->get('title') ?? 'blade'}}"
             title="{{$attributes->get('title') ?? 'Component Code'}}" class="w-full h-[350px] max-h-[350px]"

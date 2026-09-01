@@ -1,4 +1,12 @@
-@props(['theme' => 'github-light', 'darkTheme' => 'github-dark', 'language'=>'', 'title'])
+@props(['theme' => 'github-light', 'darkTheme' => 'github-dark', 'language'=>'', 'title', 'file' => null])
+@php
+    $code = $slot;
+
+    if ($file) {
+        $path = april_docs_path($file);
+        $code = file_exists($path) ? file_get_contents($path) : $slot;
+    }
+@endphp
 <div {{$attributes->class(['my-4 relative'])}} x-data>
     <div class="absolute flex justify-between w-full top-0 p-3.5 pb-0 dark:hidden">
         @isset($title)
@@ -9,7 +17,7 @@
     <div class="dark:hidden">
         <x-markdown :theme="$theme" class="code-block h-full grow w-full" x-ref="lightContent">
 ```{!!$language!!} theme:{!!$theme!!}
-{!!$slot!!}
+{!!$code!!}
 ```
         </x-markdown>
     </div>
@@ -22,7 +30,7 @@
     <div class="hidden dark:block">
         <x-markdown :theme="$darkTheme" class="code-block h-full grow w-full" x-ref="darkContent">
 ```{!!$language!!} theme:{!!$darkTheme!!}
-{!!$slot!!}
+{!!$code!!}
 ```
         </x-markdown>
     </div>

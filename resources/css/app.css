@@ -191,18 +191,6 @@ html.dark:not([data-april-theme]) {
 }
 
 @utility component-preview {
-    & h3 {
-        @apply scroll-m-0 text-base font-normal tracking-normal mt-0;
-    }
-
-    & p {
-        @apply mt-0;
-    }
-
-    & a {
-        @apply no-underline;
-    }
-
     /* Keep fixed panels inside component previews instead of the browser viewport. */
     & [data-slot="sidebar-wrapper"] {
         transform: translateZ(0);
@@ -213,11 +201,6 @@ html.dark:not([data-april-theme]) {
         height: 100%;
     }
 
-    /* Full-page blocks need the available preview width. Without this, a flex
-       preview lets centered forms and pricing grids shrink to their content. */
-    & > div:last-child > :first-child {
-        @apply w-full min-w-0;
-    }
 }
 
 @layer components {
@@ -311,57 +294,62 @@ html.dark:not([data-april-theme]) {
 }
 
 @utility docs-layout {
-    & code {
+    & > p code,
+    & > li code,
+    & > table code {
         @apply rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm;
     }
 
-    & h1 {
+    & > h1 {
         @apply scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-4xl;
     }
 
-    & h2 {
+    & > h2 {
         @apply mt-8 scroll-m-20 border-b pb-2 text-xl font-semibold tracking-tight first:mt-0;
     }
 
-    & h3 {
+    & > h3 {
         @apply scroll-m-20 text-lg font-semibold tracking-tight mt-4;
     }
 
-    & p {
+    & > p {
         @apply leading-7 not-first:mt-4;
     }
 
-    & a {
+    & > p a,
+    & > li a,
+    & > blockquote a,
+    & > table a {
         @apply underline underline-offset-2;
     }
 
-    & blockquote {
+    & > blockquote {
         @apply mt-6 border-l-2 pl-6 italic;
     }
 
-    & ul:not([data-sidebar]) {
+    & > ul:not([data-sidebar]) {
         @apply my-6 ml-6 list-disc [&>li]:mt-2;
     }
 
-    & hr {
+    & > hr {
         margin: 2rem 0 1rem 0;
     }
 
-    & table {
+    & > table {
         /* Markdown emits tables without a wrapper. Make the table itself the
            scroll container so wide columns cannot widen the page. */
         @apply block w-full max-w-full overflow-x-auto;
     }
 
-    & tr {
+    & > table tr {
         @apply m-0 border-t p-0;
     }
 
-    & th {
+    & > table th {
         @apply border px-4 py-2 text-left font-bold [[align=center]]:text-center [[align=right]]:text-right;
     }
 
-    & td {
+    & > table td {
         @apply border px-4 py-2 text-left [[align=center]]:text-center [[align=right]]:text-right;
     }
 }

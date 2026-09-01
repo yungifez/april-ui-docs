@@ -4,7 +4,7 @@
         <slot:content class="w-80">
             <div class="space-y-4">
                 <div><h2 class="font-medium">Share this page</h2><p class="mt-1 text-sm text-muted-foreground">Anyone with this link can view it.</p></div>
-                <div class="flex gap-2"><april:input value="april.dev/p/4x8m" readonly class="min-w-0 flex-1" /><april:button type="button" size="sm">Copy</april:button></div>
+                <div class="flex gap-2"><april:input value="https://aprilui.dev/blocks" readonly class="min-w-0 flex-1" /><april:button type="button" size="sm">Copy</april:button></div>
             </div>
         </slot:content>
     </april:popover>

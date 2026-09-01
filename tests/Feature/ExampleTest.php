@@ -44,6 +44,8 @@ class ExampleTest extends TestCase
             ->assertSee('Small compositions for real product work.')
             ->assertSee('Product showcase')
             ->assertSee('Share document')
+            ->assertSee('https://aprilui.dev/blocks')
+            ->assertDontSee('april.dev/p/4x8m')
             ->assertSee('Full-page layouts')
             ->assertSee('Sign Up');
     }

@@ -152,14 +152,14 @@ SHELL;
                 </div>
                 <div class="mt-12 grid gap-6 lg:grid-cols-[1.35fr_0.65fr]">
                     @foreach ($showcaseExamples as $example)
-                        <a data-april-reveal href="/examples" class="april-reveal april-lift group {{$example['class']}} overflow-hidden border bg-background no-underline hover:border-primary hover:shadow-lg" style="--april-delay: {{ $loop->index * 80 + 80 }}ms">
+                        <a data-april-reveal href="/examples" class="april-reveal {{$example['class']}} overflow-hidden border bg-background no-underline" style="--april-delay: {{ $loop->index * 80 + 80 }}ms">
                             <div class="aspect-[16/9] overflow-hidden border-b bg-muted">
-                                <div class="dark:hidden"><img src="{{$example['imageLight']}}" alt="{{$example['title']}} example" loading="lazy" class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.02]" /></div>
-                                <div class="hidden dark:block"><img src="{{$example['imageDark']}}" alt="{{$example['title']}} example" loading="lazy" class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.02]" /></div>
+                                <div class="dark:hidden"><img src="{{$example['imageLight']}}" alt="{{$example['title']}} example" loading="lazy" class="h-full w-full object-cover object-top" /></div>
+                                <div class="hidden dark:block"><img src="{{$example['imageDark']}}" alt="{{$example['title']}} example" loading="lazy" class="h-full w-full object-cover object-top" /></div>
                             </div>
                             <div class="flex items-start justify-between gap-4 p-5">
                                 <div><h3 class="font-semibold tracking-tight">{{$example['title']}}</h3><p class="mt-2 text-sm leading-6 text-muted-foreground">{{$example['description']}}</p></div>
-                                <x-lucide-arrow-up-right class="mt-0.5 size-4 shrink-0 text-muted-foreground transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" />
+                                <x-lucide-arrow-up-right class="mt-0.5 size-4 shrink-0 text-muted-foreground" />
                             </div>
                         </a>
                     @endforeach

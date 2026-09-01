@@ -37,7 +37,7 @@ $code = $path ? file_get_contents($path) : '';
                 class="max-h-[350px] w-full rounded-md object-contain object-top">
         </div>
         @if ($image)
-        <div class="hidden min-h-[350px] w-full items-center justify-center p-4 dark:flex md:hidden">
+        <div class="hidden min-h-[350px] w-full items-center justify-center p-4 dark:max-md:flex md:hidden">
             <img src="{{ $image }}" alt="{{ $imageAlt }}" loading="lazy"
                 class="max-h-[350px] w-full rounded-md object-contain object-top">
         </div>

@@ -12,7 +12,12 @@
     $pageTitle = $title ? $title.' | '.$siteName : $siteName;
     $pageDescription = $description ?: 'Laravel UI components for Blade and Livewire, with the workflow and elegance of Laravel.';
     $pageUrl = url()->current();
-    $socialImage = $image ?: asset('images/examples/dashboard.png');
+    $defaultSocialImagePath = 'images/examples/dashboard.png';
+    $socialImage = $image ?: asset($defaultSocialImagePath);
+
+    if (! $image && is_file(public_path($defaultSocialImagePath))) {
+        $socialImage .= '?v='.filemtime(public_path($defaultSocialImagePath));
+    }
     $siteUrl = url('/');
     $schema = [
         '@context' => 'https://schema.org',
@@ -60,8 +65,8 @@
 <meta property="og:image" content="{{ $socialImage }}">
 <meta property="og:image:secure_url" content="{{ $socialImage }}">
 <meta property="og:image:type" content="image/png">
-<meta property="og:image:width" content="1118">
-<meta property="og:image:height" content="636">
+<meta property="og:image:width" content="2236">
+<meta property="og:image:height" content="1272">
 <meta property="og:image:alt" content="{{ $imageAlt }}">
 
 <meta name="twitter:card" content="summary_large_image">

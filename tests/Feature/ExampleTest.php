@@ -120,6 +120,15 @@ class ExampleTest extends TestCase
             ->assertSee('System');
     }
 
+    public function test_the_layout_exposes_the_current_dashboard_social_image(): void
+    {
+        $this->get('/')
+            ->assertOk()
+            ->assertSee('images/examples/dashboard.png?v=', false)
+            ->assertSee('og:image:width" content="2236', false)
+            ->assertSee('og:image:height" content="1272', false);
+    }
+
     public function test_april_ui_registers_before_livewire_starts_alpine(): void
     {
         $html = $this->get('/')->assertOk()->getContent();

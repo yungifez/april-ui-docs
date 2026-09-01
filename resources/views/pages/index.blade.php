@@ -58,7 +58,7 @@ SHELL;
                         Laravel UI, in the Blade way.
                     </h1>
                     <p data-april-reveal class="april-reveal mt-6 max-w-xl text-lg leading-8 text-muted-foreground md:text-xl" style="--april-delay: 230ms">
-                        A component library for building product interfaces with the Laravel workflow you already know.
+                        A component library for building product interfaces with the Laravel elegance you already know.
                         Inspired by <a href="https://ui.shadcn.com/" target="_blank" rel="noreferrer" class="font-medium text-foreground underline decoration-primary underline-offset-4">shadcn/ui</a>, built for Blade and Livewire.
                     </p>
                     <div data-april-reveal class="april-reveal mt-8 flex flex-wrap gap-3" style="--april-delay: 310ms">

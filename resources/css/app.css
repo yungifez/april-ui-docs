@@ -118,14 +118,14 @@ html.dark:not([data-april-theme]) {
     background-image: linear-gradient(to right, color-mix(in oklab, hsl(var(--border)) 55%, transparent) 1px, transparent 1px), linear-gradient(to bottom, color-mix(in oklab, hsl(var(--border)) 55%, transparent) 1px, transparent 1px);
     background-size: 42px 42px;
     mask-image: linear-gradient(to bottom, black 0%, black 45%, transparent 100%);
-    animation: april-grid-drift 24s linear infinite;
+    animation: april-grid-drift 31s linear infinite;
 }
 
 @layer components {
     .april-reveal {
         transition:
-            opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
-            transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+            opacity 910ms cubic-bezier(0.22, 1, 0.36, 1),
+            transform 910ms cubic-bezier(0.22, 1, 0.36, 1);
         transition-delay: var(--april-delay, 0ms);
     }
 
@@ -141,9 +141,9 @@ html.dark:not([data-april-theme]) {
 
     .april-lift {
         transition:
-            transform 350ms cubic-bezier(0.22, 1, 0.36, 1),
-            box-shadow 350ms ease,
-            border-color 350ms ease;
+            transform 455ms cubic-bezier(0.22, 1, 0.36, 1),
+            box-shadow 455ms ease,
+            border-color 455ms ease;
     }
 
     .april-lift:hover {
@@ -151,7 +151,7 @@ html.dark:not([data-april-theme]) {
     }
 
     .april-hero-frame {
-        animation: april-float 9s ease-in-out infinite;
+        animation: april-float 12s ease-in-out infinite;
     }
 
     .april-hero-frame::after {
@@ -161,7 +161,7 @@ html.dark:not([data-april-theme]) {
         pointer-events: none;
         background: linear-gradient(110deg, transparent 35%, color-mix(in oklab, hsl(var(--primary)) 12%, transparent) 50%, transparent 65%);
         transform: translateX(-120%);
-        transition: transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+        transition: transform 1200ms cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     .april-hero-frame:hover::after {

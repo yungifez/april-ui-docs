@@ -248,6 +248,12 @@ html.dark:not([data-april-theme]) {
         @apply flex min-h-0 h-full min-w-full max-h-full flex-col overflow-auto bg-card! beautify-scrollbar;
     }
 
+    @media (max-width: 767px) {
+        code.torchlight {
+            @apply text-xs;
+        }
+    }
+
     .torchlight > .line {
         @apply bg-transparent block shrink-0 py-1 tracking-tight;
     }

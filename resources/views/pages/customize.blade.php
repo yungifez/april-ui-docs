@@ -115,7 +115,7 @@
                     <div><p class="text-sm font-medium">Live preview</p><p class="text-sm text-muted-foreground">See how the tokens work together.</p></div>
                     <april:badge variant="outline"><span x-text="palette.name"></span></april:badge>
                 </div>
-                <div class="overflow-hidden rounded-xl border bg-background shadow-sm" :class="dark ? 'dark' : ''" :style="previewStyle">
+                <div x-cloak class="overflow-hidden rounded-xl border bg-background shadow-sm" :class="dark ? 'dark' : ''" :style="previewStyle">
                     <div class="border-b px-5 py-4">
                         <div class="flex items-center justify-between">
                             <div class="flex items-center gap-2"><div class="flex h-7 w-7 items-center justify-center rounded-md"

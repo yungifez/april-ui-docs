@@ -57,7 +57,7 @@ SHELL;
                     <h1 data-april-reveal class="april-reveal mt-7 max-w-xl text-balance text-5xl font-bold tracking-[-0.04em] md:text-6xl" style="--april-delay: 150ms">
                         UI components <span class="primary-text"> crafted </span> for Artisans
                     </h1>
-                    <p data-april-reveal class="april-reveal mt-6 max-w-xl text-lg leading-8 text-muted-foreground md:text-xl" style="--april-delay: 230ms">
+                    <p data-april-reveal class="april-reveal mt-6 max-w-xl text-lg leading-8 text-muted-foreground" style="--april-delay: 230ms">
                         A component library for building product interfaces with the Laravel elegance you already know.
                         Inspired by <a href="https://ui.shadcn.com/" target="_blank" rel="noreferrer" class="font-medium text-foreground underline decoration-primary underline-offset-4">shadcn/ui</a>, built for Blade and Livewire.
                     </p>
@@ -71,9 +71,7 @@ SHELL;
                         </april:button-link>
                     </div>
                     <div data-april-reveal class="april-reveal mt-10 flex flex-wrap gap-x-6 gap-y-2 border-t pt-5 text-sm text-muted-foreground" style="--april-delay: 390ms">
-                        <span><strong class="font-semibold text-foreground">100+</strong> component pieces</span>
                         <span><strong class="font-semibold text-foreground">MIT</strong> licensed</span>
-                        <span><strong class="font-semibold text-foreground">Composer</strong> first</span>
                     </div>
                 </div>
 

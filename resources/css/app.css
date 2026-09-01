@@ -55,9 +55,9 @@ html[data-april-density="compact"] [data-slot="card-footer"] {
     --card-foreground: 145 18% 13%;
     --popover: 95 14% 98%;
     --popover-foreground: 145 18% 13%;
-    --primary: 28 38% 22%;
+    --primary: 28 38% 74%;
     --primary-text: 28 38% 22%;
-    --primary-foreground: 35 25% 97%;
+    --primary-foreground: 35 25% 12%;
     --secondary: 100 15% 87%;
     --secondary-foreground: 145 18% 13%;
     --muted: 100 15% 87%;
@@ -66,15 +66,15 @@ html[data-april-density="compact"] [data-slot="card-footer"] {
     --accent-foreground: 145 18% 13%;
     --border: 100 10% 79%;
     --input: 100 10% 79%;
-    --ring: 28 38% 22%;
+    --ring: 28 38% 74%;
     --sidebar-background: 100 16% 89%;
     --sidebar-foreground: 145 18% 13%;
-    --sidebar-primary: 28 38% 22%;
-    --sidebar-primary-foreground: 35 25% 97%;
+    --sidebar-primary: 28 38% 74%;
+    --sidebar-primary-foreground: 35 25% 12%;
     --sidebar-accent: 100 15% 84%;
     --sidebar-accent-foreground: 145 18% 13%;
     --sidebar-border: 100 10% 79%;
-    --sidebar-ring: 28 38% 22%;
+    --sidebar-ring: 28 38% 74%;
     --chart-1: hsl(28 50% 22%);
     --chart-2: hsl(145 20% 23%);
     --chart-3: hsl(84 18% 38%);
@@ -125,8 +125,8 @@ html.dark:not([data-april-theme]) {
 
 @layer components {
     /* The dark brown action color is too dark for copy on forest surfaces. */
-    .dark .text-primary,
-    .dark .hover\:text-primary:hover {
+    .text-primary,
+    .hover\:text-primary:hover {
         color: hsl(var(--primary-text));
     }
 

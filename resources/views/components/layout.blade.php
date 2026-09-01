@@ -346,9 +346,9 @@
             window.aprilCustomizationListenersBound = true
         }
     </script>
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="/favicon.png?width=76" />
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}" />
+    <link rel="apple-touch-icon" type="image/svg+xml" sizes="76x76" href="{{ asset('favicon.svg') }}" />
+    <link rel="mask-icon" href="{{ asset('favicon.svg') }}" color="#5b735e" />
     @vite('resources/css/app.css')
     @stack('head-scripts')
     <livewire:styles />

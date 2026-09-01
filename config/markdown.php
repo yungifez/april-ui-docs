@@ -17,7 +17,7 @@ return [
          * receives its theme from config/torchlight.php or a fence's theme:
          * info word.
          */
-        'theme' => 'github-dark',
+        'theme' => 'github-light',
     ],
 
     /*

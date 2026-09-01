@@ -1,5 +1,6 @@
 @props([
 'image' => null,
+'imageLight' => null,
 'imageAlt' => 'Component preview',
 ])
 
@@ -30,14 +31,20 @@ $code = $path ? file_get_contents($path) : '';
         <div class="absolute top-0 right-0 p-3.5 w-fit flex">
             <x-copy-button :value="$code" class="ml-auto"></x-copy-button>
         </div>
+        @if ($image || $imageLight)
+        <div class="flex min-h-[350px] w-full items-center justify-center p-4 md:hidden dark:hidden">
+            <img src="{{ $imageLight ?? $image }}" alt="{{ $imageAlt }}" loading="lazy"
+                class="max-h-[350px] w-full rounded-md object-contain object-top">
+        </div>
         @if ($image)
-        <div class="flex min-h-[350px] w-full items-center justify-center p-4 md:hidden">
+        <div class="hidden min-h-[350px] w-full items-center justify-center p-4 dark:flex md:hidden">
             <img src="{{ $image }}" alt="{{ $imageAlt }}" loading="lazy"
                 class="max-h-[350px] w-full rounded-md object-contain object-top">
         </div>
         @endif
-        <div @class([ 'w-full justify-center items-center min-h-[350px] p-10' , 'hidden md:flex'=> $image,
-            'flex' => ! $image,
+        @endif
+        <div @class([ 'w-full justify-center items-center min-h-[350px] p-10' , 'hidden md:flex'=> $image || $imageLight,
+            'flex' => ! ($image || $imageLight),
             ])>
             @if ($attributes->has('component'))
             <x-dynamic-component :component="$attributes->get('component')" />

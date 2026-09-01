@@ -28,30 +28,30 @@ html[data-april-density="compact"] [data-slot="card-footer"] {
 /* April's default palette: almost-white green surfaces, a soft brown accent,
    and a layered forest green workspace in dark mode. */
 :root:not([data-april-theme]) {
-    --background: 105 24% 97%;
+    --background: 105 24% 95%;
     --foreground: 145 30% 16%;
-    --card: 95 30% 99%;
+    --card: 95 30% 98%;
     --card-foreground: 145 30% 16%;
     --popover: 95 30% 99%;
     --popover-foreground: 145 30% 16%;
     --primary: 28 38% 32%;
     --primary-foreground: 35 35% 97%;
-    --secondary: 100 25% 93%;
+    --secondary: 100 25% 90%;
     --secondary-foreground: 145 30% 16%;
-    --muted: 100 25% 93%;
+    --muted: 100 25% 90%;
     --muted-foreground: 145 12% 41%;
-    --accent: 30 28% 94%;
+    --accent: 30 28% 91%;
     --accent-foreground: 145 30% 16%;
-    --border: 100 16% 87%;
-    --input: 100 16% 87%;
+    --border: 100 16% 83%;
+    --input: 100 16% 83%;
     --ring: 28 38% 32%;
-    --sidebar-background: 100 26% 95%;
+    --sidebar-background: 100 26% 92%;
     --sidebar-foreground: 145 30% 16%;
     --sidebar-primary: 28 38% 32%;
     --sidebar-primary-foreground: 35 35% 97%;
-    --sidebar-accent: 100 25% 91%;
+    --sidebar-accent: 100 25% 88%;
     --sidebar-accent-foreground: 145 30% 16%;
-    --sidebar-border: 100 16% 87%;
+    --sidebar-border: 100 16% 83%;
     --sidebar-ring: 28 38% 32%;
     --chart-1: hsl(28 38% 32%);
     --chart-2: hsl(145 30% 28%);
@@ -61,32 +61,32 @@ html[data-april-density="compact"] [data-slot="card-footer"] {
 }
 
 html.dark:not([data-april-theme]) {
-    --background: 145 27% 9%;
+    --background: 145 32% 7%;
     --foreground: 45 35% 94%;
-    --card: 145 24% 12%;
+    --card: 145 26% 10%;
     --card-foreground: 45 35% 94%;
-    --popover: 145 24% 12%;
+    --popover: 145 26% 10%;
     --popover-foreground: 45 35% 94%;
-    --primary: 30 46% 62%;
-    --primary-foreground: 145 27% 9%;
-    --secondary: 145 18% 18%;
+    --primary: 28 37% 48%;
+    --primary-foreground: 45 35% 94%;
+    --secondary: 145 20% 16%;
     --secondary-foreground: 45 35% 94%;
-    --muted: 145 18% 18%;
+    --muted: 145 20% 16%;
     --muted-foreground: 90 14% 68%;
-    --accent: 31 30% 22%;
+    --accent: 30 27% 18%;
     --accent-foreground: 45 35% 94%;
-    --border: 145 16% 24%;
-    --input: 145 16% 24%;
-    --ring: 30 46% 62%;
-    --sidebar-background: 145 30% 7%;
+    --border: 145 18% 20%;
+    --input: 145 18% 20%;
+    --ring: 28 37% 48%;
+    --sidebar-background: 145 34% 5%;
     --sidebar-foreground: 45 35% 94%;
-    --sidebar-primary: 30 46% 62%;
-    --sidebar-primary-foreground: 145 27% 9%;
-    --sidebar-accent: 145 18% 18%;
+    --sidebar-primary: 28 37% 48%;
+    --sidebar-primary-foreground: 45 35% 94%;
+    --sidebar-accent: 145 20% 16%;
     --sidebar-accent-foreground: 45 35% 94%;
-    --sidebar-border: 145 16% 20%;
-    --sidebar-ring: 30 46% 62%;
-    --chart-1: hsl(30 46% 62%);
+    --sidebar-border: 145 18% 17%;
+    --sidebar-ring: 28 37% 48%;
+    --chart-1: hsl(28 37% 48%);
     --chart-2: hsl(145 35% 49%);
     --chart-3: hsl(84 30% 58%);
     --chart-4: hsl(102 25% 67%);
@@ -139,11 +139,11 @@ html.dark:not([data-april-theme]) {
     }
 
     .code-block {
-        @apply box-border p-4 pt-8 rounded-lg border w-fit bg-zinc-900 dark:bg-zinc-950;
+        @apply box-border w-fit rounded-lg border border-border bg-card p-4 pt-8 text-card-foreground;
     }
 
     code.torchlight {
-        @apply bg-zinc-900! dark:bg-zinc-950! flex flex-col overflow-auto beautify-scrollbar min-w-full h-fit min-h-0 max-h-full;
+        @apply flex min-h-0 h-fit min-w-full max-h-full flex-col overflow-auto bg-card! beautify-scrollbar;
     }
 
     .torchlight > .line {

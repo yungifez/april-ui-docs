@@ -3,24 +3,29 @@
         [
             'title' => 'Product dashboard',
             'description' => 'Navigation, metrics, activity, and recent sales in one responsive workspace.',
-            'image' => asset('images/examples/dashboard.png'),
+            'imageDark' => asset('images/examples/dashboard.png'),
+            'imageLight' => asset('images/examples/dashboard-light.png'),
+            'class' => 'lg:col-span-2',
         ],
         [
             'title' => 'Team directory',
             'description' => 'A searchable data table with avatars, status states, and room for your own actions.',
-            'image' => asset('images/examples/team-directory.png'),
+            'imageDark' => asset('images/examples/team-directory.png'),
+            'imageLight' => asset('images/examples/team-directory-light.png'),
+            'class' => '',
         ],
         [
             'title' => 'Conversation workspace',
             'description' => 'Bubbles, avatars, badges, and a reply composer for focused product workflows.',
-            'image' => asset('images/examples/conversation.png'),
+            'imageDark' => asset('images/examples/conversation.png'),
+            'imageLight' => asset('images/examples/conversation-light.png'),
+            'class' => '',
         ],
     ];
 
     $installCode = <<<'BLADE'
 composer require yungifez/april-ui
 
-// resources/views/layouts/app.blade.php
 @aprilStyles
 @aprilScripts
 
@@ -40,187 +45,121 @@ SHELL;
 >
     <div class="overflow-hidden">
         <section class="relative border-b">
-            <div class="marketing-grid absolute inset-0 -z-10 opacity-70"></div>
-            <div class="mx-auto max-w-screen-xl px-4 pb-16 pt-20 md:px-10 md:pb-24 md:pt-28">
-                <div class="mx-auto max-w-4xl text-center">
-                    <april:badge variant="secondary" class="mb-6 gap-2 px-3 py-1">
-                        <span class="size-1.5 rounded-full bg-emerald-500"></span>
-                        Laravel Blade + Livewire
-                    </april:badge>
-                    <h1 class="text-balance text-5xl font-bold tracking-[-0.04em] md:text-7xl lg:text-8xl">
-                        Build interfaces that feel like your app.
+            <div class="marketing-grid absolute inset-0 -z-10 opacity-50"></div>
+            <div class="mx-auto grid max-w-screen-xl gap-14 px-4 pb-16 pt-16 md:px-10 md:pb-24 md:pt-24 lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:gap-20">
+                <div>
+                    <div class="flex items-center gap-3 text-sm font-medium text-muted-foreground">
+                        <span class="flex size-7 items-center justify-center rounded-md bg-primary text-xs text-primary-foreground">A</span>
+                        <span>April UI</span>
+                        <span class="text-border">/</span>
+                        <span>Laravel Blade components</span>
+                    </div>
+                    <h1 class="mt-7 max-w-xl text-balance text-5xl font-bold tracking-[-0.04em] md:text-7xl">
+                        Laravel UI, in the Blade way.
                     </h1>
-                    <p class="mx-auto mt-6 max-w-2xl text-balance text-lg leading-8 text-muted-foreground md:text-xl">
-                        April UI is a Laravel-first component library for building calm, capable product interfaces with
-                        familiar Blade syntax.
+                    <p class="mt-6 max-w-xl text-lg leading-8 text-muted-foreground md:text-xl">
+                        A component library for building product interfaces with the Laravel workflow you already know.
+                        Inspired by <a href="https://ui.shadcn.com/" target="_blank" rel="noreferrer" class="font-medium text-foreground underline decoration-primary underline-offset-4">shadcn/ui</a>, built for Blade and Livewire.
                     </p>
-                    <div class="mt-8 flex flex-wrap justify-center gap-3">
+                    <div class="mt-8 flex flex-wrap gap-3">
                         <april:button-link href="{{url('docs/0.x')}}" size="lg" class="font-semibold">
-                            Get started
-                            <x-lucide-arrow-right class="ml-2 h-4 w-4" />
+                            Read the docs
+                            <x-lucide-arrow-right class="ml-2 size-4" />
                         </april:button-link>
                         <april:button-link href="{{url('docs/0.x/components/button')}}" variant="outline" size="lg" class="font-semibold">
                             Browse components
                         </april:button-link>
                     </div>
-                    <p class="mt-4 text-sm text-muted-foreground">
-                        Open source · MIT licensed · Made for Laravel
-                    </p>
-                </div>
-
-                <div class="mx-auto mt-14 grid max-w-5xl gap-4 md:grid-cols-[1.15fr_0.85fr] md:items-stretch">
-                    <div class="rounded-xl border bg-card/90 p-5 text-left shadow-sm backdrop-blur md:p-6">
-                        <div class="mb-5 flex items-center justify-between gap-4">
-                            <div>
-                                <p class="text-sm font-semibold">A small API for a lot of UI</p>
-                                <p class="mt-1 text-sm text-muted-foreground">Install it, use it, then own the parts that matter.</p>
-                            </div>
-                            <x-lucide-terminal class="hidden size-5 text-muted-foreground sm:block" />
-                        </div>
-                        <pre class="overflow-x-auto rounded-lg bg-zinc-950 p-4 text-left text-sm leading-7 text-zinc-100"><code>{{ $installCode }}</code></pre>
-                    </div>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="rounded-xl border bg-card/90 p-5 shadow-sm backdrop-blur">
-                            <p class="text-3xl font-bold tracking-tight">100+</p>
-                            <p class="mt-1 text-sm font-medium">component pieces</p>
-                            <p class="mt-3 text-sm leading-6 text-muted-foreground">Primitives, parts, and composed surfaces.</p>
-                        </div>
-                        <div class="rounded-xl border bg-card/90 p-5 shadow-sm backdrop-blur">
-                            <p class="text-3xl font-bold tracking-tight">0</p>
-                            <p class="mt-1 text-sm font-medium">generators required</p>
-                            <p class="mt-3 text-sm leading-6 text-muted-foreground">Keep using the Laravel workflow you know.</p>
-                        </div>
-                        <div class="col-span-2 rounded-xl border bg-primary p-5 text-primary-foreground shadow-sm md:p-6">
-                            <div class="flex items-start justify-between gap-4">
-                                <div>
-                                    <p class="text-sm font-semibold">The interface is yours</p>
-                                    <p class="mt-2 max-w-sm text-sm leading-6 text-primary-foreground/75">
-                                        Package views stay in <code class="rounded bg-primary-foreground/10 px-1.5 py-0.5">vendor/</code> until you choose to publish an override.
-                                    </p>
-                                </div>
-                                <x-lucide-arrow-up-right class="size-5 shrink-0" />
-                            </div>
-                        </div>
+                    <div class="mt-10 flex flex-wrap gap-x-6 gap-y-2 border-t pt-5 text-sm text-muted-foreground">
+                        <span><strong class="font-semibold text-foreground">100+</strong> component pieces</span>
+                        <span><strong class="font-semibold text-foreground">MIT</strong> licensed</span>
+                        <span><strong class="font-semibold text-foreground">Composer</strong> first</span>
                     </div>
                 </div>
 
-                <div class="relative mx-auto mt-14 max-w-6xl rounded-2xl border bg-muted/60 p-2 shadow-2xl shadow-primary/10 md:mt-20">
-                    <div class="flex items-center gap-1.5 border-b px-3 pb-3 pt-1">
-                        <span class="size-2.5 rounded-full bg-red-400/80"></span>
-                        <span class="size-2.5 rounded-full bg-amber-400/80"></span>
-                        <span class="size-2.5 rounded-full bg-emerald-400/80"></span>
-                        <div class="mx-auto hidden rounded-md bg-background/70 px-20 py-1 text-[10px] text-muted-foreground sm:block">aprilui.dev/examples</div>
+                <div class="relative lg:pl-4">
+                    <div class="absolute -inset-5 rounded-[2rem] bg-primary/5 blur-2xl"></div>
+                    <div class="relative rounded-2xl border bg-muted/60 p-2 shadow-2xl shadow-primary/10">
+                        <div class="flex items-center justify-between border-b px-3 pb-3 pt-1 text-xs text-muted-foreground">
+                            <span>an application surface</span>
+                            <span class="font-mono">Blade + Livewire</span>
+                        </div>
+                        <div class="dark:hidden"><img src="{{ asset('images/examples/dashboard-light.png') }}" alt="April UI product dashboard example" class="block w-full rounded-lg border bg-background object-cover object-top" /></div>
+                        <div class="hidden dark:block"><img src="{{ asset('images/examples/dashboard.png') }}" alt="April UI product dashboard example" class="block w-full rounded-lg border bg-background object-cover object-top" /></div>
                     </div>
-                    <img src="{{ asset('images/examples/dashboard.png') }}" alt="April UI dashboard example" class="block w-full rounded-lg border bg-background object-cover object-top" />
+                    <div class="absolute -bottom-7 -left-4 hidden w-56 border bg-card p-4 shadow-lg sm:block lg:-left-8">
+                        <p class="font-mono text-xs text-muted-foreground">resources/views</p>
+                        <p class="mt-2 text-sm font-medium">Your markup stays close.</p>
+                        <p class="mt-1 text-xs leading-5 text-muted-foreground">No generated abstraction between you and Blade.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="border-b bg-muted/20">
-            <div class="mx-auto grid max-w-screen-xl gap-8 px-4 py-14 md:grid-cols-3 md:px-10 md:py-20">
+            <div class="mx-auto grid max-w-screen-xl gap-12 px-4 py-16 md:px-10 md:py-24 lg:grid-cols-[0.55fr_1fr] lg:gap-24">
                 <div>
-                    <x-lucide-panels-top-left class="size-6 text-primary" />
-                    <h2 class="mt-5 text-lg font-semibold tracking-tight">Composable by default</h2>
-                    <p class="mt-2 text-sm leading-6 text-muted-foreground">
-                        Use small Blade components on their own or combine them into the exact surface your product needs.
-                    </p>
+                    <p class="text-sm font-medium text-primary">Why April</p>
+                    <h2 class="mt-3 max-w-md text-3xl font-bold tracking-tight md:text-4xl">A UI kit that respects the framework.</h2>
+                    <p class="mt-4 max-w-md leading-7 text-muted-foreground">April gives you a good starting point without asking you to replace Laravel’s conventions with a new system.</p>
                 </div>
-                <div>
-                    <x-lucide-zap class="size-6 text-primary" />
-                    <h2 class="mt-5 text-lg font-semibold tracking-tight">Interactive where it counts</h2>
-                    <p class="mt-2 text-sm leading-6 text-muted-foreground">
-                        Alpine-powered dialogs, menus, calendars, charts, editors, and tables that work with your existing state.
-                    </p>
-                </div>
-                <div>
-                    <x-lucide-sliders-horizontal class="size-6 text-primary" />
-                    <h2 class="mt-5 text-lg font-semibold tracking-tight">Easy to make your own</h2>
-                    <p class="mt-2 text-sm leading-6 text-muted-foreground">
-                        Start with semantic tokens and sensible defaults. Tune the theme, then publish only the markup you need to change.
-                    </p>
+                <div class="divide-y border-y">
+                    <div class="grid gap-3 py-6 sm:grid-cols-[3rem_1fr] sm:gap-6">
+                        <span class="font-mono text-sm text-primary">01</span>
+                        <div><h3 class="font-semibold tracking-tight">Use normal Blade components</h3><p class="mt-2 max-w-xl text-sm leading-6 text-muted-foreground">Write <code class="rounded bg-muted px-1.5 py-0.5">&lt;april:button&gt;</code> and keep your templates readable, local, and easy to change.</p></div>
+                    </div>
+                    <div class="grid gap-3 py-6 sm:grid-cols-[3rem_1fr] sm:gap-6">
+                        <span class="font-mono text-sm text-primary">02</span>
+                        <div><h3 class="font-semibold tracking-tight">Let your state stay yours</h3><p class="mt-2 max-w-xl text-sm leading-6 text-muted-foreground">Use Alpine for browser interactions, Livewire for server state, or both. April does not assume an application architecture for you.</p></div>
+                    </div>
+                    <div class="grid gap-3 py-6 sm:grid-cols-[3rem_1fr] sm:gap-6">
+                        <span class="font-mono text-sm text-primary">03</span>
+                        <div><h3 class="font-semibold tracking-tight">Publish only the exception</h3><p class="mt-2 max-w-xl text-sm leading-6 text-muted-foreground">Package views remain in <code class="rounded bg-muted px-1.5 py-0.5">vendor/</code> until your product needs an application-owned override.</p></div>
+                    </div>
+                    <div class="grid gap-3 py-6 sm:grid-cols-[3rem_1fr] sm:gap-6">
+                        <span class="font-mono text-sm text-primary">04</span>
+                        <div><h3 class="font-semibold tracking-tight">Style the parts, not the fight</h3><p class="mt-2 max-w-xl text-sm leading-6 text-muted-foreground">Semantic tokens and <code class="rounded bg-muted px-1.5 py-0.5">data-slot</code> attributes give you targeted control without rewriting every component.</p></div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="mx-auto max-w-screen-xl px-4 py-16 md:px-10 md:py-24">
-            <div class="max-w-2xl">
-                <p class="text-sm font-medium text-primary">A toolkit for product work</p>
-                <h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">The pieces you reach for every day.</h2>
-                <p class="mt-4 text-lg leading-8 text-muted-foreground">
-                    April UI covers the common interface work, from a button on a form to the application shell around the whole product.
-                </p>
+            <div class="flex flex-col justify-between gap-5 md:flex-row md:items-end">
+                <div class="max-w-2xl">
+                    <p class="text-sm font-medium text-primary">What is in the box</p>
+                    <h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">The pieces behind a real application.</h2>
+                    <p class="mt-4 text-lg leading-8 text-muted-foreground">Start with the small things. Reach for the larger surfaces when your route needs them.</p>
+                </div>
+                <april:button-link href="{{url('docs/0.x/components/accordion')}}" variant="outline">See all components <x-lucide-arrow-right class="ml-2 size-4" /></april:button-link>
             </div>
-            <div class="mt-10 grid gap-4 md:grid-cols-3">
-                <april:card class="h-full">
-                    <slot:content>
-                        <div class="flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary"><x-lucide-mouse-pointer-click class="size-5" /></div>
-                        <h3 class="mt-5 text-lg font-semibold tracking-tight">Primitives</h3>
-                        <p class="mt-2 text-sm leading-6 text-muted-foreground">Button, badge, card, avatar, alert, skeleton, breadcrumb, and more.</p>
-                        <div class="mt-5 flex flex-wrap gap-2">
-                            @foreach (['Button', 'Card', 'Badge', 'Avatar', 'Alert'] as $componentName)
-                                <april:badge variant="outline" class="text-xs">{{$componentName}}</april:badge>
-                            @endforeach
-                        </div>
-                    </slot:content>
-                </april:card>
-                <april:card class="h-full">
-                    <slot:content>
-                        <div class="flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary"><x-lucide-panels-top-left class="size-5" /></div>
-                        <h3 class="mt-5 text-lg font-semibold tracking-tight">Forms and overlays</h3>
-                        <p class="mt-2 text-sm leading-6 text-muted-foreground">Inputs, selects, comboboxes, date pickers, dialogs, sheets, popovers, and command menus.</p>
-                        <div class="mt-5 flex flex-wrap gap-2">
-                            @foreach (['Input', 'Select', 'Dialog', 'Popover', 'Command'] as $componentName)
-                                <april:badge variant="outline" class="text-xs">{{$componentName}}</april:badge>
-                            @endforeach
-                        </div>
-                    </slot:content>
-                </april:card>
-                <april:card class="h-full">
-                    <slot:content>
-                        <div class="flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary"><x-lucide-layout-dashboard class="size-5" /></div>
-                        <h3 class="mt-5 text-lg font-semibold tracking-tight">Product surfaces</h3>
-                        <p class="mt-2 text-sm leading-6 text-muted-foreground">Sidebars, data tables, charts, calendars, editors, carousels, and complete blocks.</p>
-                        <div class="mt-5 flex flex-wrap gap-2">
-                            @foreach (['Sidebar', 'Data Table', 'Chart', 'Calendar', 'Blocks'] as $componentName)
-                                <april:badge variant="outline" class="text-xs">{{$componentName}}</april:badge>
-                            @endforeach
-                        </div>
-                    </slot:content>
-                </april:card>
-            </div>
-            <div class="mt-8">
-                <april:button-link href="{{url('docs/0.x/components/accordion')}}" variant="outline">
-                    See all components
-                    <x-lucide-arrow-right class="ml-2 size-4" />
-                </april:button-link>
+            <div class="mt-12 grid gap-x-12 gap-y-10 border-y py-8 md:grid-cols-2 lg:grid-cols-3">
+                <div><p class="font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">Primitives</p><p class="mt-3 text-lg font-semibold">Button, card, badge, avatar</p><p class="mt-2 text-sm leading-6 text-muted-foreground">The basic language of a product interface.</p></div>
+                <div><p class="font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">Forms</p><p class="mt-3 text-lg font-semibold">Input, select, editor, date picker</p><p class="mt-2 text-sm leading-6 text-muted-foreground">Controls that fit inside native Laravel forms.</p></div>
+                <div><p class="font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">Overlays</p><p class="mt-3 text-lg font-semibold">Dialog, sheet, popover, command</p><p class="mt-2 text-sm leading-6 text-muted-foreground">Useful interactions with Alpine-friendly state.</p></div>
+                <div><p class="font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">Data</p><p class="mt-3 text-lg font-semibold">Data table, chart, calendar</p><p class="mt-2 text-sm leading-6 text-muted-foreground">Sortable, searchable, responsive product data.</p></div>
+                <div><p class="font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">Navigation</p><p class="mt-3 text-lg font-semibold">Sidebar, breadcrumb, tabs</p><p class="mt-2 text-sm leading-6 text-muted-foreground">Keep context visible as the app grows.</p></div>
+                <div><p class="font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">Blocks</p><p class="mt-3 text-lg font-semibold">Dashboards, auth, pricing</p><p class="mt-2 text-sm leading-6 text-muted-foreground">Complete starting points for common routes.</p></div>
             </div>
         </section>
 
         <section class="border-y bg-muted/20">
             <div class="mx-auto max-w-screen-xl px-4 py-16 md:px-10 md:py-24">
-                <div class="flex flex-col justify-between gap-5 md:flex-row md:items-end">
-                    <div class="max-w-2xl">
-                        <p class="text-sm font-medium text-primary">See it in context</p>
-                        <h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">From a component to a product surface.</h2>
-                        <p class="mt-4 text-lg leading-8 text-muted-foreground">These examples are built from the same pieces you can use in your application. Copy the structure, then make it yours.</p>
-                    </div>
-                    <april:button-link href="/examples" variant="outline">
-                        View all examples
-                        <x-lucide-arrow-up-right class="ml-2 size-4" />
-                    </april:button-link>
+                <div class="max-w-2xl">
+                    <p class="text-sm font-medium text-primary">Built into the work</p>
+                    <h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Not just a component gallery.</h2>
+                    <p class="mt-4 text-lg leading-8 text-muted-foreground">These are application surfaces made from April’s smaller parts. Use them as references, starting points, or copyable Blade structure.</p>
                 </div>
-                <div class="mt-10 grid gap-5 lg:grid-cols-3">
+                <div class="mt-12 grid gap-6 lg:grid-cols-[1.35fr_0.65fr]">
                     @foreach ($showcaseExamples as $example)
-                        <a href="/examples" class="group overflow-hidden rounded-xl border bg-background no-underline shadow-sm transition hover:-translate-y-1 hover:border-primary hover:shadow-lg">
-                            <div class="aspect-[16/10] overflow-hidden border-b bg-muted">
-                                <img src="{{$example['image']}}" alt="{{$example['title']}} example" loading="lazy" class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.03]" />
+                        <a href="/examples" class="group {{$example['class']}} overflow-hidden border bg-background no-underline transition hover:border-primary hover:shadow-lg">
+                            <div class="aspect-[16/9] overflow-hidden border-b bg-muted">
+                                <div class="dark:hidden"><img src="{{$example['imageLight']}}" alt="{{$example['title']}} example" loading="lazy" class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.02]" /></div>
+                                <div class="hidden dark:block"><img src="{{$example['imageDark']}}" alt="{{$example['title']}} example" loading="lazy" class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.02]" /></div>
                             </div>
-                            <div class="p-5">
-                                <div class="flex items-center justify-between gap-4">
-                                    <h3 class="font-semibold tracking-tight">{{$example['title']}}</h3>
-                                    <x-lucide-arrow-up-right class="size-4 text-muted-foreground transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" />
-                                </div>
-                                <p class="mt-2 text-sm leading-6 text-muted-foreground">{{$example['description']}}</p>
+                            <div class="flex items-start justify-between gap-4 p-5">
+                                <div><h3 class="font-semibold tracking-tight">{{$example['title']}}</h3><p class="mt-2 text-sm leading-6 text-muted-foreground">{{$example['description']}}</p></div>
+                                <x-lucide-arrow-up-right class="mt-0.5 size-4 shrink-0 text-muted-foreground transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" />
                             </div>
                         </a>
                     @endforeach
@@ -228,40 +167,26 @@ SHELL;
             </div>
         </section>
 
-        <section class="mx-auto grid max-w-screen-xl gap-10 px-4 py-16 md:grid-cols-2 md:items-center md:px-10 md:py-24">
+        <section class="mx-auto grid max-w-screen-xl gap-12 px-4 py-16 md:grid-cols-[0.85fr_1.15fr] md:items-center md:px-10 md:py-24">
             <div>
-                <p class="text-sm font-medium text-primary">The Laravel workflow stays intact</p>
-                <h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Start with the package. Own the exceptions.</h2>
-                <p class="mt-4 text-lg leading-8 text-muted-foreground">
-                    Components live in the Composer package by default. When a product needs a different detail, publish that component to your application and keep moving.
-                </p>
-                <div class="mt-7 space-y-4">
-                    <div class="flex gap-3"><x-lucide-check class="mt-0.5 size-5 shrink-0 text-primary" /><div><p class="font-medium">Use familiar Blade tags</p><p class="mt-1 text-sm leading-6 text-muted-foreground">No new rendering layer or generator to learn.</p></div></div>
-                    <div class="flex gap-3"><x-lucide-check class="mt-0.5 size-5 shrink-0 text-primary" /><div><p class="font-medium">Connect Alpine or Livewire state</p><p class="mt-1 text-sm leading-6 text-muted-foreground">Components expose the hooks your application already uses.</p></div></div>
-                    <div class="flex gap-3"><x-lucide-check class="mt-0.5 size-5 shrink-0 text-primary" /><div><p class="font-medium">Style from tokens or data attributes</p><p class="mt-1 text-sm leading-6 text-muted-foreground">Make product-level changes without fighting the defaults.</p></div></div>
-                </div>
+                <p class="text-sm font-medium text-primary">A package-first workflow</p>
+                <h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Close to Laravel. Open to your decisions.</h2>
+                <p class="mt-4 text-lg leading-8 text-muted-foreground">Install with Composer, render with Blade, connect your data, and publish a view only when you need to own the markup.</p>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <april:button-link href="{{route('customize')}}" variant="outline">Customize the theme</april:button-link>
-                    <april:button-link href="{{url('docs/0.x/installation')}}" variant="ghost">Read the installation guide <x-lucide-arrow-right class="ml-2 size-4" /></april:button-link>
+                    <april:button-link href="{{url('docs/0.x/installation')}}" variant="ghost">Installation guide <x-lucide-arrow-right class="ml-2 size-4" /></april:button-link>
                 </div>
             </div>
-            <div class="rounded-xl border bg-zinc-950 p-2 shadow-xl">
-                <div class="flex items-center justify-between rounded-t-lg border-b border-white/10 px-4 py-3 text-xs text-zinc-400">
-                    <span>package-first workflow</span>
-                    <x-lucide-copy class="size-4" />
-                </div>
-                <pre class="overflow-x-auto p-5 text-sm leading-8 text-zinc-100"><code>{{ $workflowCode }}</code></pre>
-                <div class="border-t border-white/10 px-5 py-4 text-sm leading-6 text-zinc-400">Published files go to <span class="text-zinc-200">resources/views/vendor/april/components</span>.</div>
+            <div class="border border-border bg-card p-2 shadow-xl shadow-primary/5">
+                <div class="flex items-center justify-between border-b border-border px-4 py-3 text-xs text-muted-foreground"><span>artisan commands</span><span class="font-mono">april-ui</span></div>
+                <pre class="overflow-x-auto p-5 text-sm leading-8 text-card-foreground"><code>{{ $workflowCode }}</code></pre>
+                <div class="border-t border-border px-5 py-4 text-sm leading-6 text-muted-foreground">Published files go to <span class="text-card-foreground">resources/views/vendor/april/components</span>.</div>
             </div>
         </section>
 
         <section class="border-t bg-primary text-primary-foreground">
             <div class="mx-auto flex max-w-screen-xl flex-col items-start justify-between gap-8 px-4 py-14 md:flex-row md:items-center md:px-10 md:py-20">
-                <div class="max-w-2xl">
-                    <p class="text-sm font-medium text-primary-foreground/70">Ready when you are</p>
-                    <h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Build the next screen in Blade.</h2>
-                    <p class="mt-3 text-primary-foreground/75">Read the docs, pick a component, and keep your application code in charge.</p>
-                </div>
+                <div class="max-w-2xl"><p class="text-sm font-medium text-primary-foreground/70">For the next route</p><h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Keep your application code in charge.</h2><p class="mt-3 text-primary-foreground/75">Read the docs, pick a component, and build the screen the way your Laravel app wants it built.</p></div>
                 <div class="flex flex-wrap gap-3">
                     <april:button-link href="{{url('docs/0.x')}}" variant="secondary" size="lg">Read the docs <x-lucide-arrow-right class="ml-2 size-4" /></april:button-link>
                     <april:button-link href="https://github.com/yungifez/april-ui" target="_blank" variant="outline" size="lg" class="border-primary-foreground/30 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"><x-lucide-github class="mr-2 size-4" />GitHub</april:button-link>

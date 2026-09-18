@@ -93,6 +93,25 @@ class ExampleTest extends TestCase
         $this->assertStringContainsString('xKey', $html);
     }
 
+    public function test_editor_scripts_load_in_the_document_head(): void
+    {
+        $html = $this->get('/docs/1.x/components/editor')
+            ->assertOk()
+            ->getContent();
+
+        preg_match_all('/<script src="[^"]*\/april-ui\/editor[^>]*><\/script>/', $html, $matches);
+        $editorScript = strpos($html, '/april-ui/editor');
+
+        $this->assertNotFalse($editorScript);
+        $this->assertCount(1, $matches[0]);
+        $this->assertLessThan(strpos($html, '</head>'), $editorScript);
+
+        $this->assertStringNotContainsString(
+            '/april-ui/editor',
+            $this->get('/docs/1.x/components/chart')->assertOk()->getContent(),
+        );
+    }
+
     public function test_the_docs_introduction_explains_the_laravel_workflow(): void
     {
         $this->get('/docs/1.x')
@@ -166,7 +185,7 @@ class ExampleTest extends TestCase
     {
         $this->get('/docs/1.x/components/alert')
             ->assertOk()
-            ->assertSee('<h5 data-slot="alert-title"', false);
+            ->assertSee('<h2 data-slot="alert-title"', false);
     }
 
     public function test_calendar_preview_renders_each_day_as_one_alpine_root(): void

@@ -1,3 +1,9 @@
+@if ($editorScripts ?? false)
+    @push('head-scripts')
+        @aprilEditorScripts
+    @endpush
+@endif
+
 <x-layout :title="$title ?? null" :description="$description ?? null">
     <april:sidebar-layout class="items-start px-3">
         <april:sidebar collapsible="none"

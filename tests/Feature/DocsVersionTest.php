@@ -3,6 +3,8 @@
 namespace Tests\Feature;
 
 use App\Docs\SearchIndex;
+use App\Http\Middleware\CachePublicDocs;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Tests\TestCase;
 
@@ -81,5 +83,33 @@ class DocsVersionTest extends TestCase
 
         $this->assertNotEmpty($matches[1]);
         $this->assertTrue(collect($matches[1])->every(fn (string $search): bool => strlen($search) < 200));
+    }
+
+    public function test_a_package_update_does_not_serve_pages_cached_for_the_old_version(): void
+    {
+        config()->set('docs.cache_store', 'array');
+        Cache::store('array')->flush();
+
+        $oldVersion = new class extends CachePublicDocs
+        {
+            public function keyFor(Request $request): string
+            {
+                return $this->cacheKey($request);
+            }
+
+            protected function packageVersion(): string
+            {
+                return 'old-version';
+            }
+        };
+
+        Cache::store('array')->put($oldVersion->keyFor(Request::create('/docs/1.x/components/button')), [
+            'content' => 'Stale page',
+            'status' => 200,
+        ], 3600);
+
+        $this->get('/docs/1.x/components/button')
+            ->assertOk()
+            ->assertDontSee('Stale page');
     }
 }

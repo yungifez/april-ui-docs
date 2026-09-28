@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Composer\InstalledVersions;
 use Illuminate\Contracts\Cache\Repository;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -73,10 +74,21 @@ class CachePublicDocs
 
     protected function cacheKey(Request $request): string
     {
-        return 'april-ui:docs-page:'.config('docs.cache_version', '1').':'.hash(
+        return 'april-ui:docs-page:'.config('docs.cache_version', '1').':'.$this->packageVersion().':'.hash(
             'xxh3',
             $request->getRequestUri(),
         );
+    }
+
+    /**
+     * The installed April UI commit. The pages come from the package, so an
+     * update must not serve HTML that was rendered from the old version.
+     */
+    protected function packageVersion(): string
+    {
+        return InstalledVersions::getReference('yungifez/april-ui')
+            ?? InstalledVersions::getPrettyVersion('yungifez/april-ui')
+            ?? 'unknown';
     }
 
     /**

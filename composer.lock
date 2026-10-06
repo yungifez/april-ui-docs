@@ -1618,16 +1618,16 @@
         },
         {
             "name": "laravel/prompts",
-            "version": "v0.3.24",
+            "version": "v0.3.25",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/prompts.git",
-                "reference": "5d3cdef29e93ca3b62b1871359db3078cd99908b"
+                "reference": "21b7b49d60fcb700016dd27b582ae739c75de816"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/prompts/zipball/5d3cdef29e93ca3b62b1871359db3078cd99908b",
-                "reference": "5d3cdef29e93ca3b62b1871359db3078cd99908b",
+                "url": "https://api.github.com/repos/laravel/prompts/zipball/21b7b49d60fcb700016dd27b582ae739c75de816",
+                "reference": "21b7b49d60fcb700016dd27b582ae739c75de816",
                 "shasum": ""
             },
             "require": {
@@ -1670,10 +1670,9 @@
             ],
             "description": "Add beautiful and user-friendly forms to your command-line applications.",
             "support": {
-                "issues": "https://github.com/laravel/prompts/issues",
-                "source": "https://github.com/laravel/prompts/tree/v0.3.24"
+                "source": "https://github.com/laravel/prompts/tree/v0.3.25"
             },
-            "time": "2026-08-20T12:55:36+00:00"
+            "time": "2026-10-06T02:25:49+00:00"
         },
         {
             "name": "laravel/serializable-closure",
@@ -2604,16 +2603,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "3.14.1",
+            "version": "3.14.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/CarbonPHP/carbon.git",
-                "reference": "34e9109535165bf1d7ff17a610492372ae73a896"
+                "reference": "94cfc34887f07ab5c0efa07914c8f527544e3224"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CarbonPHP/carbon/zipball/34e9109535165bf1d7ff17a610492372ae73a896",
-                "reference": "34e9109535165bf1d7ff17a610492372ae73a896",
+                "url": "https://api.github.com/repos/CarbonPHP/carbon/zipball/94cfc34887f07ab5c0efa07914c8f527544e3224",
+                "reference": "94cfc34887f07ab5c0efa07914c8f527544e3224",
                 "shasum": ""
             },
             "require": {
@@ -2633,7 +2632,7 @@
                 "doctrine/orm": "^2.15.2 || ^3.0",
                 "friendsofphp/php-cs-fixer": "^v3.87.1",
                 "kylekatarnls/multi-tester": "^2.5.3",
-                "phpmd/phpmd": "^2.15.0",
+                "phpmd/phpmd": "^3.0@dev",
                 "phpstan/extension-installer": "^1.4.3",
                 "phpstan/phpstan": "^2.1.22",
                 "phpunit/phpunit": "^10.5.53",
@@ -2705,7 +2704,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-09-27T12:07:26+00:00"
+            "time": "2026-10-02T07:26:52+00:00"
         },
         {
             "name": "nette/schema",
@@ -6758,16 +6757,16 @@
         },
         {
             "name": "tales-from-a-dev/tailwind-merge-php",
-            "version": "v0.4.0",
+            "version": "v0.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tales-from-a-dev/tailwind-merge-php.git",
-                "reference": "d20c0f87dd70207170903e4af5e8ee6a26cc8a7c"
+                "reference": "14d38c09cd2299bbc899d6a297da4050fb81fbe5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tales-from-a-dev/tailwind-merge-php/zipball/d20c0f87dd70207170903e4af5e8ee6a26cc8a7c",
-                "reference": "d20c0f87dd70207170903e4af5e8ee6a26cc8a7c",
+                "url": "https://api.github.com/repos/tales-from-a-dev/tailwind-merge-php/zipball/14d38c09cd2299bbc899d6a297da4050fb81fbe5",
+                "reference": "14d38c09cd2299bbc899d6a297da4050fb81fbe5",
                 "shasum": ""
             },
             "require": {
@@ -6809,9 +6808,9 @@
             ],
             "support": {
                 "issues": "https://github.com/tales-from-a-dev/tailwind-merge-php/issues",
-                "source": "https://github.com/tales-from-a-dev/tailwind-merge-php/tree/v0.4.0"
+                "source": "https://github.com/tales-from-a-dev/tailwind-merge-php/tree/v0.4.1"
             },
-            "time": "2026-08-14T11:26:04+00:00"
+            "time": "2026-10-04T09:24:33+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
@@ -7148,16 +7147,16 @@
         },
         {
             "name": "yungifez/april-ui",
-            "version": "v1.3.5",
+            "version": "v1.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yungifez/april-ui.git",
-                "reference": "ba048be0d5964e604faabf39cf62b3a30df47c29"
+                "reference": "57ed064167c77a03f447c30f33437edf2c2bb0f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yungifez/april-ui/zipball/ba048be0d5964e604faabf39cf62b3a30df47c29",
-                "reference": "ba048be0d5964e604faabf39cf62b3a30df47c29",
+                "url": "https://api.github.com/repos/yungifez/april-ui/zipball/57ed064167c77a03f447c30f33437edf2c2bb0f2",
+                "reference": "57ed064167c77a03f447c30f33437edf2c2bb0f2",
                 "shasum": ""
             },
             "require": {
@@ -7262,10 +7261,10 @@
                 "yungifez"
             ],
             "support": {
-                "source": "https://github.com/yungifez/april-ui/tree/v1.3.5",
+                "source": "https://github.com/yungifez/april-ui/tree/v1.3.6",
                 "issues": "https://github.com/yungifez/april-ui/issues"
             },
-            "time": "2026-09-28T06:34:11+00:00"
+            "time": "2026-10-02T18:00:58+00:00"
         }
     ],
     "packages-dev": [

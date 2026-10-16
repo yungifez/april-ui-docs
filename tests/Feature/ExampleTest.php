@@ -21,7 +21,7 @@ class ExampleTest extends TestCase
     {
         $this->get('/showcase/skuul')
             ->assertOk()
-            ->assertSee('A whole school, built with April.')
+            ->assertSee('Skuul uses April UI for its screens.')
             ->assertSee('https://demo.skuul.org')
             ->assertSee('https://github.com/yungifez/skuul')
             ->assertSee('https://skuul.org')
@@ -29,14 +29,14 @@ class ExampleTest extends TestCase
             ->assertSee('images/skuul/family-light.webp', false)
             ->assertSee('/components/data-table', false)
             ->assertSee('/components/sidebar', false)
-            ->assertSee('Record sharing between campuses');
+            ->assertSee('What Skuul covers');
     }
 
     public function test_the_home_page_links_to_the_skuul_showcase(): void
     {
         $this->get('/')
             ->assertOk()
-            ->assertSee('Skuul runs a whole school on April.')
+            ->assertSee('Skuul is built with April UI.')
             ->assertSee(route('showcase.skuul'), false)
             ->assertSee('https://demo.skuul.org');
     }

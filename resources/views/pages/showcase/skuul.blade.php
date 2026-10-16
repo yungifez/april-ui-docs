@@ -38,7 +38,7 @@
     ];
 
     $components = [
-        ['button', 'Button', 'Every action, from Publish to Add invoice.'],
+        ['button', 'Button', 'Form actions, such as Publish and Add invoice.'],
         ['card', 'Card', 'Dashboard panels and campus cards.'],
         ['data-table', 'Data Table', 'Invoices, students, and teachers, with search and sorting.'],
         ['dropdown-menu', 'Dropdown Menu', 'Row actions and the user menu.'],
@@ -54,19 +54,19 @@
     ];
 
     $features = [
-        ['building-2', 'Multi-campus schools', 'Run many campuses from one place. Each campus keeps its own records.'],
-        ['graduation-cap', 'Gradebook', 'Assessments, weights, marks, and results for every subject.'],
-        ['calendar-days', 'Timetables', 'Build weekly schedules, publish them, and print them.'],
-        ['wallet', 'Finance ledger', 'Invoices, payments, and balances for each school year.'],
-        ['clipboard-check', 'Attendance', 'Take the register in seconds and see who is present.'],
-        ['users', 'Family portal', 'Parents see results, attendance, and invoices for their children.'],
-        ['share-2', 'Record sharing between campuses', 'Share a learner’s records with another campus when they move.'],
+        ['building-2', 'Multi-campus schools', 'One install can hold several campuses. Each campus keeps its own records and books.'],
+        ['graduation-cap', 'Gradebook', 'Assessments with weights and due dates, and marks for each subject.'],
+        ['calendar-days', 'Timetables', 'Weekly schedules for each section, in day, week, or month view.'],
+        ['wallet', 'Finance ledger', 'Invoices and payments post to a ledger, with a balance for each learner.'],
+        ['clipboard-check', 'Attendance', 'Mark the register for a section and a day. The dashboard shows the totals.'],
+        ['users', 'Family portal', 'Parents see their children’s results, attendance, and invoices.'],
+        ['share-2', 'Record sharing between campuses', 'A campus can request a learner’s records from another campus. Each request needs approval.'],
     ];
 @endphp
 
 <x-layout
-    title="Skuul, built with April UI"
-    description="Skuul is an open-source school management system. See how it uses April UI for its dashboards, tables, forms, and navigation."
+    title="Skuul"
+    description="Skuul is an open-source school management system. It uses April UI for its screens."
 >
     <div class="overflow-hidden">
         <section class="relative border-b">
@@ -74,9 +74,9 @@
             <div class="mx-auto max-w-screen-xl px-4 pb-16 pt-16 md:px-10 md:pb-24 md:pt-24">
                 <div class="max-w-3xl">
                     <p data-april-reveal class="april-reveal text-sm font-medium text-primary" style="--april-delay: 60ms">Showcase · Skuul</p>
-                    <h1 data-april-reveal class="april-reveal mt-5 text-balance text-4xl font-bold tracking-tight md:text-6xl" style="--april-delay: 130ms">A whole school, built with April.</h1>
+                    <h1 data-april-reveal class="april-reveal mt-5 text-balance text-4xl font-bold tracking-tight md:text-6xl" style="--april-delay: 130ms">Skuul uses April UI for its screens.</h1>
                     <p data-april-reveal class="april-reveal mt-5 max-w-2xl text-lg leading-8 text-muted-foreground" style="--april-delay: 200ms">
-                        Skuul is an open-source school management system. It is a real Laravel app with real data, and every screen comes from April components.
+                        Skuul is an open-source school management system, written with Laravel and Livewire. The demo has sample data for a school with two campuses.
                     </p>
                     <div data-april-reveal class="april-reveal mt-8 flex flex-wrap gap-3" style="--april-delay: 270ms">
                         <april:button-link href="https://demo.skuul.org" target="_blank" rel="noreferrer" size="lg" class="april-lift font-semibold">Live demo <x-lucide-arrow-up-right class="ml-2 size-4" /></april:button-link>
@@ -101,9 +101,8 @@
         <section class="border-b bg-muted/20">
             <div class="mx-auto max-w-screen-xl px-4 py-16 md:px-10 md:py-24">
                 <div data-april-reveal class="april-reveal max-w-2xl" style="--april-delay: 60ms">
-                    <p class="text-sm font-medium text-primary">What Skuul does</p>
-                    <h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Everything a school runs on.</h2>
-                    <p class="mt-4 text-lg leading-8 text-muted-foreground">One app for the office, the classroom, and the family.</p>
+                    <p class="text-sm font-medium text-primary">Features</p>
+                    <h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">What Skuul covers</h2>
                 </div>
                 <div class="mt-12 grid gap-x-12 gap-y-10 border-y py-8 md:grid-cols-2 lg:grid-cols-3">
                     @foreach ($features as [$icon, $title, $description])
@@ -120,8 +119,8 @@
         <section class="mx-auto max-w-screen-xl px-4 py-16 md:px-10 md:py-24">
             <div data-april-reveal class="april-reveal max-w-2xl" style="--april-delay: 60ms">
                 <p class="text-sm font-medium text-primary">Screens</p>
-                <h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">See it at work.</h2>
-                <p class="mt-4 text-lg leading-8 text-muted-foreground">Real screens from the demo school. Switch the theme and the screenshots follow.</p>
+                <h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Screenshots from the demo</h2>
+                <p class="mt-4 text-lg leading-8 text-muted-foreground">The screenshots change with this site’s light or dark theme.</p>
             </div>
             <div class="mt-12 grid gap-6 lg:grid-cols-2">
                 @foreach ($shots as $shot)
@@ -142,9 +141,9 @@
         <section class="border-y bg-muted/20">
             <div class="mx-auto max-w-screen-xl px-4 py-16 md:px-10 md:py-24">
                 <div data-april-reveal class="april-reveal max-w-2xl" style="--april-delay: 60ms">
-                    <p class="text-sm font-medium text-primary">Under the hood</p>
-                    <h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">The April components Skuul uses.</h2>
-                    <p class="mt-4 text-lg leading-8 text-muted-foreground">No custom UI kit. Skuul builds its screens from these parts. Each one links to its docs.</p>
+                    <p class="text-sm font-medium text-primary">Components</p>
+                    <h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">April components in Skuul</h2>
+                    <p class="mt-4 text-lg leading-8 text-muted-foreground">Skuul uses these 13 components. Each card links to the component’s docs.</p>
                 </div>
                 <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                     @foreach ($components as [$slug, $name, $description])
@@ -163,9 +162,8 @@
         <section class="bg-primary text-primary-foreground">
             <div class="mx-auto flex max-w-screen-xl flex-col items-start justify-between gap-8 px-4 py-14 md:flex-row md:items-center md:px-10 md:py-20">
                 <div data-april-reveal class="april-reveal max-w-2xl" style="--april-delay: 80ms">
-                    <p class="text-sm font-medium text-primary-foreground/70">Try it yourself</p>
-                    <h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Open the demo. Read the code.</h2>
-                    <p class="mt-3 text-primary-foreground/75">Click through the live demo, then read the source to see how each screen is built.</p>
+                    <h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Try the demo</h2>
+                    <p class="mt-3 text-primary-foreground/75">The demo sign-in page has a button for each role. The source is on GitHub under the MIT license.</p>
                 </div>
                 <div class="flex flex-wrap gap-3">
                     <april:button-link href="https://demo.skuul.org" target="_blank" rel="noreferrer" variant="secondary" size="lg" class="april-lift">Live demo <x-lucide-arrow-up-right class="ml-2 size-4" /></april:button-link>

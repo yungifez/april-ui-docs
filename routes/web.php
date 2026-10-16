@@ -10,6 +10,8 @@ Route::get('/docs', function () {
 
 Route::view('/customize', 'pages.customize')->name('customize');
 
+Route::view('/showcase/skuul', 'pages.showcase.skuul')->name('showcase.skuul');
+
 Route::view('/blocks', 'pages.blocks')->name('blocks');
 
 Route::get('/blocks/{category}', function (string $category) {

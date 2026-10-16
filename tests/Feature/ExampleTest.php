@@ -17,6 +17,30 @@ class ExampleTest extends TestCase
         $response->assertStatus(200);
     }
 
+    public function test_the_skuul_showcase_page_renders(): void
+    {
+        $this->get('/showcase/skuul')
+            ->assertOk()
+            ->assertSee('Skuul was built on April UI.')
+            ->assertSee('https://demo.skuul.org')
+            ->assertSee('https://github.com/yungifez/skuul')
+            ->assertSee('https://skuul.org')
+            ->assertSee('images/skuul/finance-dark.webp', false)
+            ->assertSee('images/skuul/family-light.webp', false)
+            ->assertSee('/components/data-table', false)
+            ->assertSee('/components/sidebar', false)
+            ->assertSee('What Skuul covers');
+    }
+
+    public function test_the_home_page_links_to_the_skuul_showcase(): void
+    {
+        $this->get('/')
+            ->assertOk()
+            ->assertSee('Skuul is built with April UI.')
+            ->assertSee(route('showcase.skuul'), false)
+            ->assertSee('https://demo.skuul.org');
+    }
+
     public function test_the_examples_page_renders_the_dashboard_showcase(): void
     {
         $response = $this->get('/examples');

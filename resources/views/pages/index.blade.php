@@ -169,6 +169,32 @@ SHELL;
             </div>
         </section>
 
+        <section class="border-b">
+            <div class="mx-auto grid max-w-screen-xl gap-12 px-4 py-16 md:px-10 md:py-24 lg:grid-cols-[0.7fr_1.3fr] lg:items-center lg:gap-16">
+                <div data-april-reveal class="april-reveal" style="--april-delay: 60ms">
+                    <p class="text-sm font-medium text-primary">In production</p>
+                    <h2 class="mt-3 max-w-md text-3xl font-bold tracking-tight md:text-4xl">Skuul is built with April UI.</h2>
+                    <p class="mt-4 max-w-md text-lg leading-8 text-muted-foreground">Skuul is an open-source school management system. It has gradebooks, timetables, finance, attendance, and a family portal, for one campus or several.</p>
+                    <div class="mt-8 flex flex-wrap gap-3">
+                        <april:button-link href="{{route('showcase.skuul')}}" size="lg" class="april-lift font-semibold">How Skuul uses April <x-lucide-arrow-right class="ml-2 size-4" /></april:button-link>
+                        <april:button-link href="https://demo.skuul.org" target="_blank" rel="noreferrer" variant="outline" size="lg" class="april-lift font-semibold">Live demo <x-lucide-arrow-up-right class="ml-2 size-4" /></april:button-link>
+                        <april:button-link href="https://github.com/yungifez/skuul" target="_blank" rel="noreferrer" variant="ghost" size="lg" class="april-lift"><x-lucide-github class="mr-2 size-4" />Source</april:button-link>
+                    </div>
+                </div>
+                <a data-april-reveal href="{{route('showcase.skuul')}}" class="april-reveal relative block no-underline" style="--april-delay: 160ms">
+                    <div class="absolute -inset-5 rounded-[2rem] bg-primary/5 blur-2xl"></div>
+                    <div class="relative rounded-2xl border bg-muted/60 p-2 shadow-2xl shadow-primary/10">
+                        <div class="flex items-center justify-between border-b px-3 pb-3 pt-1 text-xs text-muted-foreground">
+                            <span>Skuul, school administrator dashboard</span>
+                            <span class="font-mono">skuul.org</span>
+                        </div>
+                        <div class="dark:hidden"><img src="{{ asset('images/skuul/dashboard-light.webp') }}" alt="The Skuul administrator dashboard in light mode, with a sidebar, school setup progress, school totals, and attendance for today" width="1600" height="1000" loading="lazy" class="block w-full rounded-lg border bg-background object-cover object-top" /></div>
+                        <div class="hidden dark:block"><img src="{{ asset('images/skuul/dashboard-dark.webp') }}" alt="The Skuul administrator dashboard in dark mode, with a sidebar, school setup progress, school totals, and attendance for today" width="1600" height="1000" loading="lazy" class="block w-full rounded-lg border bg-background object-cover object-top" /></div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
         <section class="mx-auto grid max-w-screen-xl gap-12 px-4 py-16 md:grid-cols-[0.85fr_1.15fr] md:items-center md:px-10 md:py-24">
             <div data-april-reveal class="april-reveal" style="--april-delay: 60ms">
                 <p class="text-sm font-medium text-primary">A package-first workflow</p>

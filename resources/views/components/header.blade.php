@@ -9,6 +9,7 @@
                 <x-link href="{{'/docs/' . $docsVersion}}">Docs</x-link>
                 <x-link href="{{'/docs/' . $docsVersion.'/components/accordion'}}">Components</x-link>
                 <x-link href="/examples">Examples</x-link>
+                <x-link href="{{route('showcase.skuul')}}">Skuul</x-link>
                 <x-link href="{{route('blocks')}}">Blocks</x-link>
                 <x-link href="{{route('customize')}}">Customize</x-link>
             </nav>
@@ -30,6 +31,7 @@
                     <x-link class="block hover:no-underline"
                         href="{{'/docs/' . $docsVersion.'/components/accordion'}}">Components</x-link>
                     <x-link class="block hover:no-underline" href="/examples">Examples</x-link>
+                    <x-link class="block hover:no-underline" href="{{route('showcase.skuul')}}">Skuul</x-link>
                     <x-link class="block hover:no-underline" href="{{route('blocks')}}">Blocks</x-link>
                     <x-link class="block hover:no-underline" href="{{route('customize')}}">Customize</x-link>
                     <x-menu />

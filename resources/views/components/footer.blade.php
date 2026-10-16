@@ -7,6 +7,7 @@
         <div class="flex flex-wrap gap-x-5 gap-y-2">
             <a href="{{url('docs/1.x')}}">Docs</a>
             <a href="/examples">Examples</a>
+            <a href="{{route('showcase.skuul')}}">Skuul</a>
             <a href="{{route('customize')}}">Customize</a>
             <a href="https://github.com/yungifez/april-ui" target="_blank" rel="noreferrer">GitHub</a>
             <span>Syntax highlighting by <a href="https://torchlight.dev" target="_blank" rel="noreferrer">Torchlight</a>.</span>

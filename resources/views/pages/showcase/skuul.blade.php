@@ -31,8 +31,8 @@
         [
             'slug' => 'family',
             'title' => 'Family portal',
-            'description' => 'A parent picks a campus and goes straight to results, attendance, and payments.',
-            'alt' => 'The Skuul family portal showing one campus and one enrolled child, with shortcuts to results, attendance, and invoices',
+            'description' => 'Each page a parent or student can open is listed in the sidebar.',
+            'alt' => 'The Skuul family portal for one enrolled child, with its pages listed in the sidebar and as buttons on the page',
             'class' => '',
         ],
     ];

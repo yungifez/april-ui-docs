@@ -66,7 +66,7 @@
 
 <x-layout
     title="Skuul"
-    description="Skuul is an open-source school management system. It uses April UI for its screens."
+    description="Skuul is an open-source school management system. It was built on April UI."
 >
     <div class="overflow-hidden">
         <section class="relative border-b">
@@ -74,7 +74,7 @@
             <div class="mx-auto max-w-screen-xl px-4 pb-16 pt-16 md:px-10 md:pb-24 md:pt-24">
                 <div class="max-w-3xl">
                     <p data-april-reveal class="april-reveal text-sm font-medium text-primary" style="--april-delay: 60ms">Showcase · Skuul</p>
-                    <h1 data-april-reveal class="april-reveal mt-5 text-balance text-4xl font-bold tracking-tight md:text-6xl" style="--april-delay: 130ms">Skuul uses April UI for its screens.</h1>
+                    <h1 data-april-reveal class="april-reveal mt-5 text-balance text-4xl font-bold tracking-tight md:text-6xl" style="--april-delay: 130ms">Skuul was built on April UI.</h1>
                     <p data-april-reveal class="april-reveal mt-5 max-w-2xl text-lg leading-8 text-muted-foreground" style="--april-delay: 200ms">
                         Skuul is an open-source school management system, written with Laravel and Livewire. The demo has sample data for a school with two campuses.
                     </p>
@@ -118,7 +118,7 @@
 
         <section class="mx-auto max-w-screen-xl px-4 py-16 md:px-10 md:py-24">
             <div data-april-reveal class="april-reveal max-w-2xl" style="--april-delay: 60ms">
-                <p class="text-sm font-medium text-primary">Screens</p>
+                <p class="text-sm font-medium text-primary">Demo</p>
                 <h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Screenshots from the demo</h2>
                 <p class="mt-4 text-lg leading-8 text-muted-foreground">The screenshots change with this site’s light or dark theme.</p>
             </div>

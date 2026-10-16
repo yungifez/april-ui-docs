@@ -21,7 +21,7 @@ class ExampleTest extends TestCase
     {
         $this->get('/showcase/skuul')
             ->assertOk()
-            ->assertSee('Skuul uses April UI for its screens.')
+            ->assertSee('Skuul was built on April UI.')
             ->assertSee('https://demo.skuul.org')
             ->assertSee('https://github.com/yungifez/skuul')
             ->assertSee('https://skuul.org')

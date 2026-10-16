@@ -166,6 +166,17 @@ SHELL;
                         </a>
                     @endforeach
                 </div>
+                <div data-april-reveal class="april-reveal mt-6 flex flex-col justify-between gap-6 border bg-background p-5 md:flex-row md:items-center" style="--april-delay: 120ms">
+                    <div class="max-w-2xl">
+                        <p class="font-mono text-xs uppercase text-muted-foreground">In production</p>
+                        <h3 class="mt-3 text-lg font-semibold tracking-tight">Skuul, a school management system.</h3>
+                        <p class="mt-2 text-sm leading-6 text-muted-foreground">An open-source Laravel app built on April UI. Admissions, timetables, gradebooks, attendance, finance, and a family portal across many campuses.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <april:button-link href="https://skuul-production-c8qjrw.laravel.cloud" target="_blank" rel="noreferrer" variant="outline" class="april-lift">Live demo <x-lucide-arrow-up-right class="ml-2 size-4" /></april:button-link>
+                        <april:button-link href="https://github.com/yungifez/skuul" target="_blank" rel="noreferrer" variant="ghost" class="april-lift"><x-lucide-github class="mr-2 size-4" />Source</april:button-link>
+                    </div>
+                </div>
             </div>
         </section>
 

@@ -14,5 +14,5 @@ return [
      * immediately. The normal TTL also prevents stale pages from living
      * forever.
      */
-    'cache_version' => env('DOCS_CACHE_VERSION', '1'),
+    'cache_version' => env('DOCS_CACHE_VERSION', '2'),
 ];

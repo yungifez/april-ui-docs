@@ -1,5 +1,6 @@
 @props(['theme' => 'github-light', 'darkTheme' => 'github-dark', 'language'=>'', 'title', 'file' => null])
 @php
+    $language = trim($language);
     $code = $slot;
 
     if ($file) {

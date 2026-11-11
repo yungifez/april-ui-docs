@@ -12,7 +12,10 @@ use League\CommonMark\Extension\CommonMark\Node\Block\FencedCode;
 use League\CommonMark\Extension\CommonMark\Node\Block\HtmlBlock;
 use League\CommonMark\Extension\CommonMark\Node\Block\IndentedCode;
 use League\CommonMark\Extension\CommonMark\Node\Inline\Code;
+use League\CommonMark\Extension\CommonMark\Node\Inline\HtmlInline;
 use League\CommonMark\Extension\ExtensionInterface;
+use League\CommonMark\Node\Block\Paragraph;
+use League\CommonMark\Node\Inline\Text;
 use League\CommonMark\Output\RenderedContent;
 use League\CommonMark\Renderer\HtmlRenderer;
 
@@ -22,6 +25,9 @@ class BladeParsingExtension implements ExtensionInterface{
 
     public function register(EnvironmentBuilderInterface $environment): void
     {
+        // Slots must reach Blade before Markdown parses their contents.
+        $environment->addBlockStartParser(new BladeBlockStartParser(), 45);
+
         $environment->addEventListener(
             DocumentParsedEvent::class, [$this, 'onDocumentParsed'], -10
         );
@@ -37,6 +43,15 @@ class BladeParsingExtension implements ExtensionInterface{
     {
         // Walk through every node in the document
         foreach ($event->getDocument()->iterator() as $node) {
+            if ($node instanceof Paragraph && $node->parent() === $event->getDocument()
+                && $node->firstChild() instanceof Text && $node->firstChild() === $node->lastChild()
+                && trim($node->firstChild()->getLiteral()) === '@aprilEditorScripts') {
+                $event->getDocument()->data->set('editorScripts', true);
+                $node->detach();
+
+                continue;
+            }
+
             // We're only looking for code nodes.
             if (!$this->isCodeNode($node)) {
                 continue;
@@ -45,7 +60,9 @@ class BladeParsingExtension implements ExtensionInterface{
             $id = Str::uuid()->toString();
 
             // Create a new HTML block that just has our placeholder
-            $replacement = new HtmlBlock(HtmlBlock::TYPE_6_BLOCK_ELEMENT);
+            $replacement = $node instanceof Code
+                ? new HtmlInline()
+                : new HtmlBlock(HtmlBlock::TYPE_6_BLOCK_ELEMENT);
             $replacement->setLiteral("[[replace:$id]]");
 
             // Replace the code node with our placeholder

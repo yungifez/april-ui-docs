@@ -126,24 +126,19 @@ class RequestHandler
         $data = $parser->matter() + $matchedView->data;
         $body = $parser->body();
 
-        // Markdown pages cannot push into the parent Blade layout because the
-        // body is rendered in isolation before the layout receives its slot.
-        // Keep compatibility with released package docs that still place the
-        // editor directive in the body while allowing new pages to declare
-        // assets in front matter.
-        $hasEditorDirective = preg_match('/^\s*@aprilEditorScripts\s*$/m', $body) === 1;
-        $data['editorScripts'] = in_array('editor', (array) ($data['assets'] ?? []), true)
-            || $hasEditorDirective;
-        $body = preg_replace('/^\s*@aprilEditorScripts\s*$/m', '', $body);
-
         // Blade components must be rendered after CommonMark. Rendering them
         // here turns their indented HTML into Markdown code blocks. The
         // BladeParsingExtension renders them after the Markdown document is
         // complete, while preserving real code blocks as literal source.
-        $slot = app(MarkdownRenderer::class)
+        $rendered = app(MarkdownRenderer::class)
             ->disableHighlighting()
             ->disableAnchors()
-            ->toHtml($body);
+            ->convertToHtml($body);
+
+        // Only standalone directives request assets. Examples remain literal.
+        $data['editorScripts'] = in_array('editor', (array) ($data['assets'] ?? []), true)
+            || $rendered->getDocument()->data->get('editorScripts', false);
+        $slot = $rendered->getContent();
 
         if (isset($data['view'])) {
             $data['slot'] = $slot;
